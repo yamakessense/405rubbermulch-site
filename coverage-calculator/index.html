@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="/support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <title>Rubber Mulch Coverage Calculator | 405 Rubber Mulch</title>
+  <meta name="description" content="Figure how many 2,000-lb supersacks of rubber mulch you need. One sack covers about 300 sq ft at 3 inches, 150 sq ft at 6 inches.">
+  <link rel="canonical" href="https://405rubbermulch.com/coverage-calculator/">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="405 Rubber Mulch">
+  <meta property="og:title" content="Rubber Mulch Coverage Calculator | 405 Rubber Mulch">
+  <meta property="og:description" content="Figure how many 2,000-lb supersacks of rubber mulch you need. One sack covers about 300 sq ft at 3 inches, 150 sq ft at 6 inches.">
+  <meta property="og:url" content="https://405rubbermulch.com/coverage-calculator/">
+  <meta property="og:image" content="https://405rubbermulch.com/img/supersack.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Rubber Mulch Coverage Calculator | 405 Rubber Mulch">
+  <meta name="twitter:description" content="How many supersacks do you need? One covers 300 sq ft at 3 in, 150 sq ft at 6 in.">
+  <meta name="twitter:image" content="https://405rubbermulch.com/img/supersack.png">
+  <link rel="icon" type="image/png" href="/img/logo-tire.png">
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-R79TCCTYNZ"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-R79TCCTYNZ');
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@600;700;800&family=Public+Sans:wght@400;500;600;700&family=Spline+Sans+Mono:wght@500;600&display=swap" rel="stylesheet">
+  <style>
+    html { scroll-behavior: smooth; }
+    body { margin: 0; background: #FBF7EC; }
+    input:focus, select:focus, textarea:focus { outline: 3px solid rgba(76,139,90,.45); outline-offset: 1px; }
+  </style>
+</helmet>
+
+<div style="font-family: 'Public Sans', system-ui, sans-serif; color: #1C2230; background: #FBF7EC; font-size: 16px; line-height: 1.55; min-height: 100vh; display: flex; flex-direction: column;">
+
+  <div style="background: #1B2444; color: #FBF7EC; font-size: 13.5px;">
+    <div style="max-width: 1240px; margin: 0 auto; padding: 8px 24px; display: flex; align-items: center; justify-content: space-between; gap: 16px; flex-wrap: wrap;">
+      <span style="font-weight: 600;">Truckload delivery across <a href="/oklahoma/" style="color: #FBF7EC; text-decoration: underline;" style-hover="color: #FFFFFF;">OK</a> &#183; <a href="/arkansas/" style="color: #FBF7EC; text-decoration: underline;" style-hover="color: #FFFFFF;">AR</a> &#183; <a href="/kansas/" style="color: #FBF7EC; text-decoration: underline;" style-hover="color: #FFFFFF;">KS</a> &#183; <a href="/missouri/" style="color: #FBF7EC; text-decoration: underline;" style-hover="color: #FFFFFF;">MO</a></span>
+      <a href="tel:+14052068111" style="color: #C2CCEC; text-decoration: none; font-weight: 700;">(405) 206-8111</a>
+    </div>
+  </div>
+
+  <header style="position: sticky; top: 0; z-index: 50; background: rgba(251,247,236,.92); backdrop-filter: blur(8px); border-bottom: 1px solid #E3E0D6;">
+    <div style="max-width: 1240px; margin: 0 auto; padding: 0 24px; height: 72px; display: flex; align-items: center; justify-content: space-between; gap: 24px;">
+      <a href="/" style="display: flex; align-items: center; gap: 12px; text-decoration: none; color: #1C2230;">
+        <img src="/img/logo-tire.png" alt="405 Rubber Mulch — Jameson's" style="width: 48px; height: 48px; object-fit: contain;">
+        <span style="display: flex; flex-direction: column; line-height: 1.1;">
+          <b style="font-family: Archivo, sans-serif; font-weight: 800; font-size: 17px; letter-spacing: -0.02em; white-space: nowrap;">405 Rubber Mulch</b>
+          <span style="font-size: 12px; color: #5C6473;">Bulk &amp; truckload delivery</span>
+        </span>
+      </a>
+      <nav style="display: {{ navDisplay }}; align-items: center; gap: 26px; font-weight: 600; font-size: 15px;">
+        <a href="/premium-quality/" style="color: #3A4150; text-decoration: none;" style-hover="color: #2F5E3A; text-decoration: underline;">Why our mulch</a>
+        <a href="/commercial-playgrounds/" style="color: #3A4150; text-decoration: none;" style-hover="color: #2F5E3A; text-decoration: underline;">Schools &amp; daycares</a>
+        <a href="/get-a-quote/" style="background: #3B7349; color: #FBF7EC; font-weight: 700; text-decoration: none; padding: 11px 22px; border-radius: 999px; box-shadow: 0 2px 8px rgba(47,94,58,.35);" style-hover="background: #2F5E3A;" style-active="transform: scale(0.97);">Get a quote</a>
+      </nav>
+      <button aria-label="Menu" onClick="{{ toggleMenu }}" style="display: {{ burgerDisplay }}; align-items: center; justify-content: center; background: #FFFFFF; border: 1px solid #E3E0D6; border-radius: 10px; width: 44px; height: 44px; cursor: pointer; color: #1C2230;">
+        <sc-if value="{{ menuClosed }}" hint-placeholder-val="{{ true }}">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" style="width: 22px; height: 22px;"><path d="M4 6h16"></path><path d="M4 12h16"></path><path d="M4 18h16"></path></svg>
+        </sc-if>
+        <sc-if value="{{ menuOpen }}" hint-placeholder-val="{{ false }}">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" style="width: 22px; height: 22px;"><path d="M18 6 6 18"></path><path d="m6 6 12 12"></path></svg>
+        </sc-if>
+      </button>
+    </div>
+    <sc-if value="{{ menuOpen }}" hint-placeholder-val="{{ false }}">
+      <div style="border-top: 1px solid #E3E0D6; background: #FBF7EC; padding: 12px 24px 22px; display: flex; flex-direction: column; gap: 2px;">
+        <a href="/" style="padding: 14px 4px; font-weight: 700; font-size: 17px; color: #1C2230; text-decoration: none; border-bottom: 1px solid #EFE6CE;">Home</a>
+        <a href="/premium-quality/" style="padding: 14px 4px; font-weight: 700; font-size: 17px; color: #1C2230; text-decoration: none; border-bottom: 1px solid #EFE6CE;">Why our mulch</a>
+        <a href="/commercial-playgrounds/" style="padding: 14px 4px; font-weight: 700; font-size: 17px; color: #1C2230; text-decoration: none; border-bottom: 1px solid #EFE6CE;">Schools &amp; daycares</a>
+        <a href="tel:+14052068111" style="padding: 14px 4px; font-weight: 700; font-size: 17px; color: #2E3C77; text-decoration: none; border-bottom: 1px solid #EFE6CE;">Call (405) 206-8111</a>
+        <a href="/get-a-quote/" style="margin-top: 16px; background: #3B7349; color: #FBF7EC; font-weight: 700; font-size: 17px; text-decoration: none; padding: 14px 22px; border-radius: 999px; text-align: center;" style-active="transform: scale(0.97);">Get a quote</a>
+      </div>
+    </sc-if>
+    <div style="border-top: 1px solid #E3E0D6; background: #F4F1E8;">
+      <div style="max-width: 1240px; margin: 0 auto; padding: 9px 24px; display: flex; gap: 8px; flex-wrap: wrap; align-items: center; font-size: 13.5px;">
+        <span style="color: #818897; font-weight: 600;">We deliver in:</span>
+        <a href="/oklahoma/" style="color: #3A4150; text-decoration: none; padding: 5px 12px; border-radius: 7px; font-weight: 600;" style-hover="background: #E3E0D6;">Oklahoma</a>
+        <a href="/arkansas/" style="color: #3A4150; text-decoration: none; padding: 5px 12px; border-radius: 7px; font-weight: 600;" style-hover="background: #E3E0D6;">Arkansas</a>
+        <a href="/kansas/" style="color: #3A4150; text-decoration: none; padding: 5px 12px; border-radius: 7px; font-weight: 600;" style-hover="background: #E3E0D6;">Kansas</a>
+        <a href="/missouri/" style="color: #3A4150; text-decoration: none; padding: 5px 12px; border-radius: 7px; font-weight: 600;" style-hover="background: #E3E0D6;">Missouri</a>
+      </div>
+    </div>
+  </header>
+
+  <section id="coverage-calculator" data-screen-label="Coverage calculator page" style="background: #F4F1E8; padding: clamp(56px, 7vw, 90px) 24px; flex: 1;">
+    <div style="max-width: 1240px; margin: 0 auto;">
+      <div style="max-width: 680px; margin: 0 auto; text-align: center; display: flex; flex-direction: column; gap: 14px;">
+        <span style="color: #3B7349; font-weight: 700; font-size: 13px; letter-spacing: .12em; text-transform: uppercase;">Coverage calculator</span>
+        <h1 style="font-family: Archivo, sans-serif; font-weight: 800; letter-spacing: -0.022em; font-size: clamp(32px, 4.4vw, 50px); line-height: 1.06; margin: 0;">How many supersacks do you need?</h1>
+        <p style="color: #5C6473; font-size: 18px; margin: 0;">One 2,000-lb supersack covers about 300 sq ft at a 3-inch depth — 150 sq ft at 6 inches. Enter your area and depth; we'll do the math.</p>
+      </div>
+
+      <div style="max-width: 960px; margin: 44px auto 0; background: #FFFFFF; border: 1px solid #E3E0D6; border-radius: 14px; box-shadow: 0 8px 28px rgba(28,34,48,.08); display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); overflow: hidden;">
+        <div style="padding: clamp(28px, 4vw, 40px); display: flex; flex-direction: column; gap: 22px;">
+          <label style="display: flex; flex-direction: column; gap: 8px;">
+            <span style="font-weight: 700; font-size: 15px;">Area to cover (sq ft)</span>
+            <input type="number" min="1" placeholder="e.g. 2500" value="{{ sqft }}" onChange="{{ onSqft }}" style="font-family: 'Spline Sans Mono', monospace; font-size: 20px; padding: 14px 16px; border: 1px solid #D6DAE2; border-radius: 10px; background: #FBF7EC; color: #1C2230; width: 100%; box-sizing: border-box;">
+            <span style="font-size: 13.5px; color: #818897;">Length &#215; width of the area, in feet. Don't know it? <a href="/get-a-quote/" style="color: #3B7349; font-weight: 600;">Send us the address</a> — we'll measure from satellite.</span>
+          </label>
+          <div style="display: flex; flex-direction: column; gap: 8px;">
+            <span style="font-weight: 700; font-size: 15px;">Depth</span>
+            <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 10px;">
+              <button onClick="{{ setDepth15 }}" style="font-family: 'Spline Sans Mono', monospace; font-weight: 600; font-size: 15px; padding: 12px 8px; border-radius: 10px; cursor: pointer; border: {{ depthBorder15 }}; background: {{ depthBg15 }}; color: {{ depthColor15 }};">1.5 in<span style="display: block; font-family: 'Public Sans', sans-serif; font-weight: 500; font-size: 11.5px; margin-top: 2px;">weed control</span></button>
+              <button onClick="{{ setDepth3 }}" style="font-family: 'Spline Sans Mono', monospace; font-weight: 600; font-size: 15px; padding: 12px 8px; border-radius: 10px; cursor: pointer; border: {{ depthBorder3 }}; background: {{ depthBg3 }}; color: {{ depthColor3 }};">3 in<span style="display: block; font-family: 'Public Sans', sans-serif; font-weight: 500; font-size: 11.5px; margin-top: 2px;">landscape</span></button>
+              <button onClick="{{ setDepth6 }}" style="font-family: 'Spline Sans Mono', monospace; font-weight: 600; font-size: 15px; padding: 12px 8px; border-radius: 10px; cursor: pointer; border: {{ depthBorder6 }}; background: {{ depthBg6 }}; color: {{ depthColor6 }};">6 in<span style="display: block; font-family: 'Public Sans', sans-serif; font-weight: 500; font-size: 11.5px; margin-top: 2px;">playground</span></button>
+            </div>
+            <label style="display: flex; align-items: center; gap: 10px; margin-top: 2px;">
+              <span style="font-weight: 600; font-size: 14px; color: #4C5462;">Or a custom depth:</span>
+              <input type="number" min="1" max="12" step="0.5" placeholder="e.g. 4" value="{{ customDepth }}" onChange="{{ onCustomDepth }}" style="font-family: 'Spline Sans Mono', monospace; font-size: 16px; padding: 9px 12px; border: 1px solid #D6DAE2; border-radius: 10px; background: #FBF7EC; color: #1C2230; width: 90px; box-sizing: border-box;">
+              <span style="font-weight: 600; font-size: 14px; color: #4C5462;">inches</span>
+            </label>
+            <span style="font-size: 13.5px; color: #818897;">Rubber needs just 1.5 in to control weeds — half the depth of wood mulch. Playgrounds need 6 in to meet fall-height standards.</span>
+          </div>
+        </div>
+
+        <div style="background: #2F5E3A; color: #FBF7EC; padding: clamp(28px, 4vw, 40px); display: flex; flex-direction: column; justify-content: center; gap: 18px;">
+          <div>
+            <span style="font-size: 13px; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; color: #B9D5C0;">You'll need about</span>
+            <div style="display: flex; align-items: baseline; gap: 12px; margin-top: 4px;">
+              <b style="font-family: 'Spline Sans Mono', monospace; font-size: clamp(44px, 5vw, 64px); line-height: 1; color: #FFFFFF;">{{ sacks }}</b>
+              <span style="font-size: 19px; font-weight: 600;">supersacks</span>
+            </div>
+          </div>
+          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px 18px; font-size: 15px; border-top: 1px solid rgba(251,247,236,.25); padding-top: 16px;">
+            <span style="color: #B9D5C0;">Total weight</span><b style="font-family: 'Spline Sans Mono', monospace; text-align: right;">{{ totalWeight }}</b>
+            <span style="color: #B9D5C0;">Truckloads</span><b style="font-family: 'Spline Sans Mono', monospace; text-align: right;">{{ truckloads }}</b>
+            <span style="color: #B9D5C0;">Delivered price</span><b style="font-family: 'Spline Sans Mono', monospace; text-align: right;">{{ estPrice }}</b>
+          </div>
+          <span style="font-size: 13px; color: #B9D5C0;">$425 a sack (flat $9,350) applies at a full 22-sack truckload. Less than a full truckload? We'll quote your delivered price individually. Color-locked brown or red adds $115 a sack.</span>
+          <a href="/get-a-quote/" style="align-self: flex-start; background: #D8403F; color: #FFFFFF; font-weight: 700; font-size: 16px; text-decoration: none; padding: 13px 26px; border-radius: 999px;" style-hover="background: #BE3534;" style-active="transform: scale(0.97);">Quote {{ sacks }} sacks delivered</a>
+        </div>
+      </div>
+
+      <!-- Safety standards grid -->
+      <div style="max-width: 960px; margin: 28px auto 0; background: #FFFFFF; border: 1px solid #E3E0D6; border-radius: 14px; overflow: hidden;">
+        <div style="background: #1B2444; color: #FBF7EC; padding: 16px 24px; display: flex; align-items: center; gap: 10px;">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width: 18px; height: 18px; flex: none;"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"></path></svg>
+          <b style="font-family: Archivo, sans-serif; font-size: 16px; letter-spacing: .02em;">National Playground Safety Standards (ASTM F1292)</b>
+        </div>
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));">
+          <div style="padding: 22px 24px; border-right: 1px solid #E3E0D6; display: flex; flex-direction: column; gap: 6px;">
+            <div style="display: flex; align-items: baseline; gap: 10px;">
+              <b style="font-family: 'Spline Sans Mono', monospace; font-size: 22px; color: #2F5E3A;">3-Inch Depth</b>
+              <span style="font-weight: 700; font-size: 14px; color: #3A4150;">Critical Fall Height up to 4 feet</span>
+            </div>
+            <span style="color: #5C6473; font-size: 14.5px;">Perfect for low-to-the-ground equipment, nurseries, and standard landscaping.</span>
+          </div>
+          <div style="padding: 22px 24px; display: flex; flex-direction: column; gap: 6px;">
+            <div style="display: flex; align-items: baseline; gap: 10px;">
+              <b style="font-family: 'Spline Sans Mono', monospace; font-size: 22px; color: #2F5E3A;">6-Inch Depth</b>
+              <span style="font-weight: 700; font-size: 14px; color: #3A4150;">Critical Fall Height up to 10 feet</span>
+            </div>
+            <span style="color: #5C6473; font-size: 14.5px;">The national commercial standard for school and daycare playground equipment. Taller equipment needs more depth — tell us the fall height and we'll spec it.</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Liability disclaimer footnote -->
+      <p style="max-width: 960px; margin: 20px auto 0; font-size: 12.5px; line-height: 1.6; color: #818897;">Disclaimer: While 405 Rubber Mulch chunk nuggets are tested to meet standard ASTM F1292 impact-attenuation guidelines (providing up to a 10-foot critical fall height protection at a consolidated 6-inch depth), playground fall height requirements and mandatory safety depths can vary strictly by state, municipal code, and individual childcare licensing agencies. Final compliance and safety verification remain the sole responsibility of the buyer, the equipment manufacturer's specified fall height guidelines, and the local certified playground safety inspector (CPSI).</p>
+    </div>
+  </section>
+
+  <footer style="background: #1B2444; color: #C2CCEC; padding: 32px 24px; font-size: 14px;">
+    <div style="max-width: 1240px; margin: 0 auto; display: flex; justify-content: space-between; gap: 16px; flex-wrap: wrap; align-items: center;">
+      <span>&#169; 2026 405 Rubber Mulch &#183; Part of Jameson's Discount Home Improvement, OKC</span>
+      <nav style="display: flex; gap: 22px; flex-wrap: wrap;">
+        <a href="/" style="color: #C2CCEC; text-decoration: none;" style-hover="color: #FFFFFF; text-decoration: underline;">Home</a>
+        <a href="/premium-quality/" style="color: #C2CCEC; text-decoration: none;" style-hover="color: #FFFFFF; text-decoration: underline;">Why our mulch</a>
+        <a href="/commercial-playgrounds/" style="color: #C2CCEC; text-decoration: none;" style-hover="color: #FFFFFF; text-decoration: underline;">Schools &amp; daycares</a>
+        <a href="/get-a-quote/" style="color: #C2CCEC; text-decoration: none;" style-hover="color: #FFFFFF; text-decoration: underline;">Get a quote</a>
+        <a href="/terms/" style="color: #C2CCEC; text-decoration: none;" style-hover="color: #FFFFFF; text-decoration: underline;">Terms &amp; policies</a>
+        <a href="/oklahoma/" style="color: #C2CCEC; text-decoration: none;" style-hover="color: #FFFFFF; text-decoration: underline;">States we serve</a>
+      </nav>
+    </div>
+  </footer>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  state = { sqft: '', depth: 3, customDepth: '', menuOpen: false, isMobile: (typeof window !== 'undefined' && window.innerWidth < 900) };
+
+  componentDidMount() {
+    this._onResize = () => this.setState({ isMobile: window.innerWidth < 900 });
+    window.addEventListener('resize', this._onResize);
+  }
+
+  renderVals() {
+    const sqftNum = Math.max(0, parseFloat(this.state.sqft) || 0);
+    const depth = this.state.depth;
+    // One 2,000-lb supersack covers 300 sq ft at 3-inch depth (150 sq ft at 6 in)
+    const coveragePerSack = 300 * 3 / depth;
+    const sacks = sqftNum > 0 ? Math.max(1, Math.ceil(sqftNum / coveragePerSack)) : 0;
+    const lbs = sacks * 2000;
+    const totalWeight = lbs >= 2000 ? (lbs / 2000).toLocaleString() + ' tons' : lbs.toLocaleString() + ' lbs';
+    const tl = sacks / 22;
+    const truckloads = sacks === 0 ? '—' : (tl <= 1 ? (sacks === 22 ? '1 full truck' : 'partial truck') : tl.toFixed(1) + ' trucks');
+    const isFullTruckloads = sacks > 0 && sacks % 22 === 0;
+    const estPrice = sacks === 0 ? '—' : (isFullTruckloads ? '$' + (Math.round(sacks / 22) * 9350).toLocaleString() + ' flat' : 'Quote required');
+
+    const depthBtn = (d) => {
+      const active = depth === d && !this.state.customDepth;
+      return {
+        border: active ? '2px solid #2F5E3A' : '1px solid #D6DAE2',
+        bg: active ? '#2F5E3A' : '#FFFFFF',
+        color: active ? '#FBF7EC' : '#3A4150',
+      };
+    };
+    const b15 = depthBtn(1.5), b3 = depthBtn(3), b6 = depthBtn(6);
+
+    return {
+      navDisplay: this.state.isMobile ? 'none' : 'flex',
+      burgerDisplay: this.state.isMobile ? 'inline-flex' : 'none',
+      menuOpen: this.state.menuOpen,
+      menuClosed: !this.state.menuOpen,
+      toggleMenu: () => this.setState(s => ({ menuOpen: !s.menuOpen })),
+      sqft: this.state.sqft,
+      onSqft: (e) => this.setState({ sqft: e.target.value }),
+      setDepth15: () => this.setState({ depth: 1.5, customDepth: '' }),
+      setDepth3: () => this.setState({ depth: 3, customDepth: '' }),
+      setDepth6: () => this.setState({ depth: 6, customDepth: '' }),
+      customDepth: this.state.customDepth,
+      onCustomDepth: (e) => {
+        const v = e.target.value;
+        const n = parseFloat(v);
+        this.setState({ customDepth: v, depth: (n > 0 && n <= 12) ? n : 3 });
+      },
+      depthBorder15: b15.border, depthBg15: b15.bg, depthColor15: b15.color,
+      depthBorder3: b3.border, depthBg3: b3.bg, depthColor3: b3.color,
+      depthBorder6: b6.border, depthBg6: b6.bg, depthColor6: b6.color,
+      sacks: sacks === 0 ? '—' : String(sacks),
+      totalWeight: sacks === 0 ? '—' : totalWeight,
+      truckloads, estPrice,
+    };
+  }
+}
+</script>
+</body>
+</html>

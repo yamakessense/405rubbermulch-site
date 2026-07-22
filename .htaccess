@@ -1,0 +1,24 @@
+# 301 redirects from old area-code landing pages to current state pages
+# (old site used one page per phone area code; consolidated into 4 state pages)
+
+RewriteEngine On
+
+# Oklahoma
+Redirect 301 /405-area.html /oklahoma/
+Redirect 301 /918-area.html /oklahoma/
+Redirect 301 /580-area.html /oklahoma/
+
+# Kansas
+Redirect 301 /316-area.html /kansas/
+Redirect 301 /620-area.html /kansas/
+Redirect 301 /785-area.html /kansas/
+
+# Missouri
+Redirect 301 /417-area.html /missouri/
+Redirect 301 /660-area.html /missouri/
+Redirect 301 /573-area.html /missouri/
+
+# Arkansas
+Redirect 301 /479-area.html /arkansas/
+Redirect 301 /501-area.html /arkansas/
+Redirect 301 /870-area.html /arkansas/
