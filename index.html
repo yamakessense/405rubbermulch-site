@@ -369,10 +369,14 @@
                 <input type="text" required="{{ true }}" name="name" placeholder="Your name" style="font-size: 16px; padding: 12px 14px; border: 1px solid #D6DAE2; border-radius: 10px; background: #FFFFFF; width: 100%; box-sizing: border-box;">
               </label>
               <label style="display: flex; flex-direction: column; gap: 6px;">
-                <span style="font-weight: 700; font-size: 14px;">Phone or email</span>
-                <input type="text" required="{{ true }}" name="contact" placeholder="How we reach you" style="font-size: 16px; padding: 12px 14px; border: 1px solid #D6DAE2; border-radius: 10px; background: #FFFFFF; width: 100%; box-sizing: border-box;">
+                <span style="font-weight: 700; font-size: 14px;">Phone</span>
+                <input type="tel" required="{{ true }}" name="phone" autoComplete="tel" inputMode="tel" placeholder="(405) 555-0134" style="font-size: 16px; padding: 12px 14px; border: 1px solid #D6DAE2; border-radius: 10px; background: #FFFFFF; width: 100%; box-sizing: border-box;">
               </label>
             </div>
+            <label style="display: flex; flex-direction: column; gap: 6px;">
+              <span style="font-weight: 700; font-size: 14px;">Email</span>
+              <input type="email" required="{{ true }}" name="email" autoComplete="email" placeholder="you@example.com" style="font-size: 16px; padding: 12px 14px; border: 1px solid #D6DAE2; border-radius: 10px; background: #FFFFFF; width: 100%; box-sizing: border-box;">
+            </label>
             <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px;">
               <label style="display: flex; flex-direction: column; gap: 6px;">
                 <span style="font-weight: 700; font-size: 14px;">Project type</span>
@@ -390,6 +394,16 @@
                 <input type="text" required="{{ true }}" name="zip" placeholder="e.g. 73102" inputMode="numeric" style="font-size: 16px; padding: 12px 14px; border: 1px solid #D6DAE2; border-radius: 10px; background: #FFFFFF; width: 100%; box-sizing: border-box;">
               </label>
             </div>
+            <label style="display: flex; flex-direction: column; gap: 6px;">
+              <span style="font-weight: 700; font-size: 14px;">Can you unload? <span style="font-weight: 500; color: #818897;">(supersacks come off with forks)</span></span>
+              <select name="unload" required="{{ true }}" style="font-size: 16px; padding: 12px 14px; border: 1px solid #D6DAE2; border-radius: 10px; background: #FFFFFF; width: 100%; box-sizing: border-box; color: #1C2230;">
+                <option value="">Select one&#8230;</option>
+                <option>Yes &#8212; I have a forklift</option>
+                <option>Yes &#8212; tractor with forks / skid steer</option>
+                <option>No &#8212; I'll need unloading help</option>
+                <option>Not sure yet</option>
+              </select>
+            </label>
             <label style="display: flex; flex-direction: column; gap: 6px;">
               <span style="font-weight: 700; font-size: 14px;">Square footage <span style="font-weight: 500; color: #818897;">(or paste the site address and we'll measure)</span></span>
               <input type="text" name="sqft" value="{{ formSqft }}" onChange="{{ onFormSqft }}" placeholder="e.g. 2,500 sq ft — or '123 Main St, Edmond OK'" style="font-size: 16px; padding: 12px 14px; border: 1px solid #D6DAE2; border-radius: 10px; background: #FFFFFF; width: 100%; box-sizing: border-box;">
