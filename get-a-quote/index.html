@@ -23,12 +23,13 @@
   <meta name="twitter:description" content="One delivered price, usually same business day. OK, AR, KS &amp; MO.">
   <meta name="twitter:image" content="https://405rubbermulch.com/img/supersack.png">
   <link rel="icon" type="image/png" href="/img/logo-tire.png">
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-R79TCCTYNZ"></script>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=GT-WB72BHMG"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
     gtag('js', new Date());
-    gtag('config', 'G-R79TCCTYNZ');
+    gtag('config', 'GT-WB72BHMG');
+    gtag('config', 'G-F6P1TCFK29');
   </script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@600;700;800&family=Public+Sans:wght@400;500;600;700&family=Spline+Sans+Mono:wght@500;600&display=swap" rel="stylesheet">
@@ -94,7 +95,7 @@
 
   <section id="get-a-quote" data-screen-label="Get a quote page" style="background: #FFFFFF; padding: clamp(56px, 7vw, 90px) 24px; flex: 1;">
     <div style="max-width: 1240px; margin: 0 auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: clamp(32px, 5vw, 72px); align-items: start;">
-      <div style="display: flex; flex-direction: column; gap: 18px;">
+      <div style="display: flex; flex-direction: column; gap: 18px; order: {{ introOrder }};">
         <span style="color: #3B7349; font-weight: 700; font-size: 13px; letter-spacing: .12em; text-transform: uppercase;">Get a quote</span>
         <h1 style="font-family: Archivo, sans-serif; font-weight: 800; letter-spacing: -0.022em; font-size: clamp(32px, 4.4vw, 50px); line-height: 1.06; margin: 0;">Ready to order? Drop us a line.</h1>
         <p style="color: #5C6473; font-size: 18px; margin: 0;">Tell us where the mulch is going and roughly how much ground it covers. We'll come back with a delivered price — freight included, no surprises at the curb.</p>
@@ -112,14 +113,18 @@
       <div style="background: #FBF7EC; border: 1px solid #E3E0D6; border-radius: 14px; padding: clamp(26px, 3.5vw, 38px); box-shadow: 0 8px 28px rgba(28,34,48,.08);">
         <sc-if value="{{ notSubmitted }}" hint-placeholder-val="{{ true }}">
           <form onSubmit="{{ onSubmit }}" style="display: flex; flex-direction: column; gap: 18px;">
+            <label style="display: flex; flex-direction: column; gap: 6px;">
+              <span style="font-weight: 700; font-size: 14px;">Name</span>
+              <input type="text" required="{{ true }}" name="name" autoComplete="name" placeholder="Your name" style="font-size: 16px; padding: 12px 14px; border: 1px solid #D6DAE2; border-radius: 10px; background: #FFFFFF; width: 100%; box-sizing: border-box;">
+            </label>
             <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px;">
               <label style="display: flex; flex-direction: column; gap: 6px;">
-                <span style="font-weight: 700; font-size: 14px;">Name</span>
-                <input type="text" required="{{ true }}" name="name" placeholder="Your name" style="font-size: 16px; padding: 12px 14px; border: 1px solid #D6DAE2; border-radius: 10px; background: #FFFFFF; width: 100%; box-sizing: border-box;">
+                <span style="font-weight: 700; font-size: 14px;">Phone</span>
+                <input type="tel" required="{{ true }}" name="phone" autoComplete="tel" inputMode="tel" placeholder="(405) 555-0134" style="font-size: 16px; padding: 12px 14px; border: 1px solid #D6DAE2; border-radius: 10px; background: #FFFFFF; width: 100%; box-sizing: border-box;">
               </label>
               <label style="display: flex; flex-direction: column; gap: 6px;">
-                <span style="font-weight: 700; font-size: 14px;">Phone or email</span>
-                <input type="text" required="{{ true }}" name="contact" placeholder="How we reach you" style="font-size: 16px; padding: 12px 14px; border: 1px solid #D6DAE2; border-radius: 10px; background: #FFFFFF; width: 100%; box-sizing: border-box;">
+                <span style="font-weight: 700; font-size: 14px;">Email</span>
+                <input type="email" required="{{ true }}" name="email" autoComplete="email" placeholder="you@example.com" style="font-size: 16px; padding: 12px 14px; border: 1px solid #D6DAE2; border-radius: 10px; background: #FFFFFF; width: 100%; box-sizing: border-box;">
               </label>
             </div>
             <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px;">
@@ -136,15 +141,25 @@
               </label>
               <label style="display: flex; flex-direction: column; gap: 6px;">
                 <span style="font-weight: 700; font-size: 14px;">Delivery ZIP code</span>
-                <input type="text" required="{{ true }}" name="zip" placeholder="e.g. 73102" inputMode="numeric" style="font-size: 16px; padding: 12px 14px; border: 1px solid #D6DAE2; border-radius: 10px; background: #FFFFFF; width: 100%; box-sizing: border-box;">
+                <input type="text" required="{{ true }}" name="zip" placeholder="e.g. 73102" inputMode="numeric" pattern="[0-9]{5}" title="5-digit ZIP code" autoComplete="postal-code" style="font-size: 16px; padding: 12px 14px; border: 1px solid #D6DAE2; border-radius: 10px; background: #FFFFFF; width: 100%; box-sizing: border-box;">
               </label>
             </div>
+            <label style="display: flex; flex-direction: column; gap: 6px;">
+              <span style="font-weight: 700; font-size: 14px;">Can you unload? <span style="font-weight: 500; color: #818897;">(supersacks come off with forks)</span></span>
+              <select name="unload" required="{{ true }}" style="font-size: 16px; padding: 12px 14px; border: 1px solid #D6DAE2; border-radius: 10px; background: #FFFFFF; width: 100%; box-sizing: border-box; color: #1C2230;">
+                <option value="">Select one&#8230;</option>
+                <option>Yes &#8212; I have a forklift</option>
+                <option>Yes &#8212; tractor with forks / skid steer</option>
+                <option>No &#8212; I'll need unloading help</option>
+                <option>Not sure yet</option>
+              </select>
+            </label>
             <label style="display: flex; flex-direction: column; gap: 6px;">
               <span style="font-weight: 700; font-size: 14px;">Square footage <span style="font-weight: 500; color: #818897;">(or paste the site address and we'll measure)</span></span>
               <input type="text" name="sqft" placeholder="e.g. 2,500 sq ft — or '123 Main St, Edmond OK'" style="font-size: 16px; padding: 12px 14px; border: 1px solid #D6DAE2; border-radius: 10px; background: #FFFFFF; width: 100%; box-sizing: border-box;">
             </label>
             <label style="display: flex; flex-direction: column; gap: 6px;">
-              <span style="font-weight: 700; font-size: 14px;">Anything else? <span style="font-weight: 500; color: #818897;">(color, timeline, unloading equipment)</span></span>
+              <span style="font-weight: 700; font-size: 14px;">Anything else? <span style="font-weight: 500; color: #818897;">(color, timeline)</span></span>
               <textarea name="notes" rows="3" placeholder="Black, brown or red? When do you need it?" style="font-family: 'Public Sans', sans-serif; font-size: 16px; padding: 12px 14px; border: 1px solid #D6DAE2; border-radius: 10px; background: #FFFFFF; width: 100%; box-sizing: border-box; resize: vertical;"></textarea>
             </label>
             <button type="submit" style="background: #D8403F; color: #FFFFFF; font-family: 'Public Sans', sans-serif; font-weight: 700; font-size: 17px; border: none; cursor: pointer; padding: 16px 28px; border-radius: 999px; box-shadow: 0 4px 14px rgba(216,64,63,.35);" style-hover="background: #BE3534;" style-active="transform: scale(0.97);">Get my delivered quote</button>
@@ -164,6 +179,10 @@
     </div>
   </section>
 
+  <div style="height: {{ mobileBarSpacer }};"></div>
+  <div style="display: {{ mobileBarDisplay }}; position: fixed; bottom: 0; left: 0; right: 0; z-index: 60; background: rgba(251,247,236,.96); backdrop-filter: blur(8px); border-top: 1px solid #E3E0D6; padding: 10px 14px calc(10px + env(safe-area-inset-bottom)); gap: 10px;">
+    <a href="tel:+14052068111" style="flex: 1; display: flex; align-items: center; justify-content: center; gap: 8px; min-height: 48px; background: #2E3C77; color: #FFFFFF; font-weight: 700; font-size: 16px; text-decoration: none; border-radius: 999px;">Prefer to talk? Call (405) 206-8111</a>
+  </div>
   <footer style="background: #1B2444; color: #C2CCEC; padding: 32px 24px; font-size: 14px;">
     <div style="max-width: 1240px; margin: 0 auto; display: flex; justify-content: space-between; gap: 16px; flex-wrap: wrap; align-items: center;">
       <span>&#169; 2026 405 Rubber Mulch &#183; Part of Jameson's Discount Home Improvement, OKC</span>
@@ -194,6 +213,9 @@ class Component extends DCLogic {
     return {
       navDisplay: this.state.isMobile ? 'none' : 'flex',
       burgerDisplay: this.state.isMobile ? 'inline-flex' : 'none',
+      introOrder: this.state.isMobile ? 2 : 0,
+      mobileBarDisplay: this.state.isMobile ? 'flex' : 'none',
+      mobileBarSpacer: this.state.isMobile ? '72px' : '0',
       menuOpen: this.state.menuOpen,
       menuClosed: !this.state.menuOpen,
       toggleMenu: () => this.setState(s => ({ menuOpen: !s.menuOpen })),
@@ -210,6 +232,7 @@ class Component extends DCLogic {
         const form = e.target;
         const fireConversion = () => {
           if (typeof window !== 'undefined' && typeof window.gtag === 'function') {
+            window.gtag('event', 'conversion', { 'send_to': 'AW-7690523498/m5BVCOqmkNMcEKn8pKdE' });
             window.gtag('event', 'generate_lead', { event_category: 'quote_form', event_label: 'get-a-quote' });
           }
         };
@@ -222,7 +245,7 @@ class Component extends DCLogic {
           this.setState({ submitted: true, submitting: false });
         } else {
           const fd = new FormData(form);
-          const body = ['Name: ' + (fd.get('name') || ''), 'Contact: ' + (fd.get('contact') || ''), 'Project type: ' + (fd.get('type') || ''), 'ZIP: ' + (fd.get('zip') || ''), 'Square footage / address: ' + (fd.get('sqft') || ''), 'Notes: ' + (fd.get('notes') || '')].join('\n');
+          const body = ['Name: ' + (fd.get('name') || ''), 'Phone: ' + (fd.get('phone') || ''), 'Email: ' + (fd.get('email') || ''), 'Can unload: ' + (fd.get('unload') || ''), 'Project type: ' + (fd.get('type') || ''), 'ZIP: ' + (fd.get('zip') || ''), 'Square footage / address: ' + (fd.get('sqft') || ''), 'Notes: ' + (fd.get('notes') || '')].join('\n');
           window.location.href = 'mailto:b2b@discountokc.com?subject=' + encodeURIComponent('Quote request — 405 Rubber Mulch') + '&body=' + encodeURIComponent(body);
           fireConversion();
           this.setState({ submitted: true, usedMailto: true });
