@@ -90,7 +90,7 @@
 
 <div style="font-family: 'Public Sans', system-ui, sans-serif; color: #1C2230; background: #FBF7EC; font-size: 16px; line-height: 1.6; min-height: 100vh; display: flex; flex-direction: column;">
 
-  <header style="position: sticky; top: 0; z-index: 50; background: rgba(251,247,236,.92); backdrop-filter: blur(8px); border-bottom: 1px solid #E3E0D6;">
+  <header style="position: sticky; top: 0; z-index: 50; background: rgba(251,247,236,.92); backdrop-filter: blur(8px); border-bottom: 1px solid #E3E0D6; transform: {{ headerShift }}; transition: transform .28s ease;">
     <div style="max-width: 1240px; margin: 0 auto; padding: 0 24px; height: 72px; display: flex; align-items: center; justify-content: space-between; gap: 24px;">
       <a href="/" style="display: flex; align-items: center; gap: 12px; text-decoration: none; color: #1C2230;">
         <img src="/img/logo-tire.png" alt="405 Rubber Mulch — Jameson's" style="width: 48px; height: 48px; object-fit: contain;">
@@ -99,7 +99,14 @@
           <span style="font-size: 12px; color: #5C6473;">Bulk &amp; truckload delivery</span>
         </span>
       </a>
-      <a href="/get-a-quote/" style="background: #3B7349; color: #FBF7EC; font-weight: 700; text-decoration: none; padding: 11px 22px; border-radius: 999px; box-shadow: 0 2px 8px rgba(47,94,58,.35); font-size: 15px;" style-hover="background: #2F5E3A;">Get a quote</a>
+      <nav style="display: {{ navDisplay }}; align-items: center; gap: 22px; font-weight: 600; font-size: 15px;">
+        <a href="/premium-quality/" style="color: #3A4150; text-decoration: none;" style-hover="color: #2F5E3A; text-decoration: underline;">Why our mulch</a>
+        <a href="/commercial-playgrounds/" style="color: #3A4150; text-decoration: none;" style-hover="color: #2F5E3A; text-decoration: underline;">Schools &amp; daycares</a>
+        <a href="/fundraiser/" style="color: #3A4150; text-decoration: none;" style-hover="color: #2F5E3A; text-decoration: underline;">Fundraising</a>
+        <a href="/coverage-calculator/" style="color: #3A4150; text-decoration: none;" style-hover="color: #2F5E3A; text-decoration: underline;">Calculator</a>
+        <a href="/about/" style="color: #3A4150; text-decoration: none;" style-hover="color: #2F5E3A; text-decoration: underline;">About</a>
+        <a href="/get-a-quote/" style="background: #3B7349; color: #FBF7EC; font-weight: 700; text-decoration: none; padding: 11px 22px; border-radius: 999px; box-shadow: 0 2px 8px rgba(47,94,58,.35);" style-hover="background: #2F5E3A;" style-active="transform: scale(0.97);">Get a quote</a>
+      </nav>
     </div>
     <div style="border-top: 1px solid #E3E0D6; background: #F4F1E8;">
       <div style="max-width: 1240px; margin: 0 auto; padding: 6px 12px; display: flex; gap: 2px 4px; flex-wrap: wrap; align-items: center; font-size: 12.5px;">
@@ -240,9 +247,22 @@ class Component extends DCLogic {
   componentDidMount() {
     this._onResize = () => this.setState({ isMobile: window.innerWidth < 900 });
     window.addEventListener('resize', this._onResize);
+    this._lastY = window.scrollY;
+    this._onScroll = () => {
+      const y = window.scrollY;
+      if (y > this._lastY + 6 && y > 160) {
+        if (!this.state.hideHeader) this.setState({ hideHeader: true });
+      } else if (y < this._lastY - 6 || y <= 160) {
+        if (this.state.hideHeader) this.setState({ hideHeader: false });
+      }
+      this._lastY = y;
+    };
+    window.addEventListener('scroll', this._onScroll, { passive: true });
   }
   renderVals() {
     return {
+      navDisplay: this.state.isMobile ? 'none' : 'flex',
+      headerShift: this.state.hideHeader ? 'translateY(-110%)' : 'none',
       mobileBarDisplay: this.state.isMobile ? 'flex' : 'none',
       mobileBarSpacer: this.state.isMobile ? '72px' : '0',
     };
