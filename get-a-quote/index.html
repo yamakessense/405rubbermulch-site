@@ -132,12 +132,12 @@
     <div style="max-width: 960px; margin: 0 auto;">
       <div style="background: radial-gradient(700px 320px at 85% -10%, rgba(99,132,255,.35), transparent 60%), linear-gradient(150deg, #131A36 0%, #1C2650 55%, #27336B 100%); color: #FBF7EC; border-radius: 18px; box-shadow: 0 18px 44px rgba(17,20,28,.25); padding: clamp(20px, 3vw, 30px); display: flex; flex-direction: column; gap: 14px;">
         <div style="display: flex; align-items: center; justify-content: space-between; gap: 10px 18px; flex-wrap: wrap;">
-          <b style="font-family: Archivo, sans-serif; font-size: clamp(18px, 2.2vw, 22px); color: #FFFFFF;">Fill the truck &#8212; watch the price drop</b>
+          <b style="font-family: Archivo, sans-serif; font-size: clamp(17px, 2vw, 20px); color: #FFFFFF; white-space: nowrap;">Fill the truck &#8212; watch the price drop</b>
           <span style="display: inline-flex; align-items: center; gap: 10px;">
             <span style="display: inline-flex; align-items: center; justify-content: center; border: 1.5px dashed rgba(74,222,128,.65); border-radius: 8px; background: rgba(74,222,128,.08); width: {{ playW }}; height: {{ playH }}; font-size: {{ playFont }}; line-height: 1; white-space: nowrap; overflow: hidden;">{{ playEmoji }}</span>
             <span style="display: flex; flex-direction: column; line-height: 1.25;">
               <b style="font-size: 13px; color: #FFFFFF;">covers &#8776; {{ playSqft }}</b>
-              <span style="font-size: 11.5px; color: #97A3D1;">{{ playDims }} at playground depth</span>
+              <span style="font-size: 11.5px; color: #97A3D1; white-space: nowrap;">{{ playDims }} footprint at 6" depth</span>
             </span>
           </span>
           <label style="display: flex; align-items: center; gap: 10px;">
@@ -362,8 +362,8 @@ class Component extends DCLogic {
     const sideB = n === 0 ? 0 : Math.max(5, Math.round(area / sideA / 5) * 5);
     const playSqft = n === 0 ? '—' : area.toLocaleString() + ' sq ft';
     const playDims = n === 0 ? 'enter a sack count' : '~' + sideA + ' × ' + sideB + ' ft';
-    const playEmoji = n === 0 ? '🛝' : (n <= 3 ? '🛝' : n <= 8 ? '🛝🌳' : n <= 15 ? '🛝🛝🌳' : n <= 21 ? '🛝🛝🌳🏀' : '🛝🛝🛝🌳🏀');
-    const playScale = n === 0 ? 36 : Math.max(36, Math.min(100, Math.round(Math.sqrt(area) / Math.sqrt(3300) * 100)));
+    const playEmoji = n === 0 ? '🛝' : (n <= 3 ? '🛝' : n <= 8 ? '🛝🌳' : n <= 15 ? '🛝🛝🌳' : '🛝🛝🌳🏀');
+    const playScale = n === 0 ? 36 : Math.max(36, Math.min(64, Math.round(Math.sqrt(area) / Math.sqrt(3300) * 64)));
     const playW = playScale + 'px';
     const playH = Math.min(40, Math.max(24, Math.round(playScale * 0.55))) + 'px';
     const playFont = (n <= 3 ? '15' : '13') + 'px';
