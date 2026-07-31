@@ -96,11 +96,12 @@
       <sc-if value="{{ showParentBrand }}" hint-placeholder-val="{{ true }}">
         <span style="color: #C2CCEC;">Part of Jameson's Discount Home Improvement · <a href="https://discountokc.com" target="_blank" rel="noopener" style="color: #C2CCEC; text-decoration: underline;" style-hover="color: #FFFFFF;">discountokc.com</a></span>
       </sc-if>
+      <a href="tel:+14052068111" style="color: #FBF7EC; text-decoration: none; font-weight: 700;">(405) 206-8111</a>
     </div>
   </div>
 
   <!-- ===== Sticky header ===== -->
-  <header style="position: sticky; top: 0; z-index: 50; background: rgba(251,247,236,.92); backdrop-filter: blur(8px); border-bottom: 1px solid #E3E0D6;">
+  <header style="position: sticky; top: 0; z-index: 50; background: rgba(251,247,236,.92); backdrop-filter: blur(8px); border-bottom: 1px solid #E3E0D6; transform: {{ headerShift }}; transition: transform .28s ease;">
     <div style="max-width: 1240px; margin: 0 auto; padding: 0 24px; height: 72px; display: flex; align-items: center; justify-content: space-between; gap: 24px;">
       <a href="#top" style="display: flex; align-items: center; gap: 12px; text-decoration: none; color: #1C2230;">
         <img src="/img/logo-tire.png" alt="405 Rubber Mulch — Jameson's" style="width: 48px; height: 48px; object-fit: contain;">
@@ -109,15 +110,12 @@
           <span style="font-size: 12px; color: #5C6473;">Bulk &amp; truckload delivery</span>
         </span>
       </a>
-      <nav style="display: {{ navDisplay }}; align-items: center; gap: 26px; font-weight: 600; font-size: 15px;">
+      <nav style="display: {{ navDisplay }}; align-items: center; gap: 22px; font-weight: 600; font-size: 15px;">
         <a href="/premium-quality/" style="color: #3A4150; text-decoration: none;" style-hover="color: #2F5E3A; text-decoration: underline;">Why our mulch</a>
         <a href="/commercial-playgrounds/" style="color: #3A4150; text-decoration: none;" style-hover="color: #2F5E3A; text-decoration: underline;">Schools &amp; daycares</a>
         <a href="/fundraiser/" style="color: #3A4150; text-decoration: none;" style-hover="color: #2F5E3A; text-decoration: underline;">Fundraising</a>
-        <a href="/coverage-calculator/" style="color: #3A4150; text-decoration: none;" style-hover="color: #2F5E3A; text-decoration: underline;">Coverage calculator</a>
-        <a href="tel:+14052068111" style="color: #2E3C77; text-decoration: none; display: flex; align-items: center; gap: 7px;" style-hover="text-decoration: underline;">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width: 16px; height: 16px;"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
-          (405) 206-8111
-        </a>
+        <a href="/coverage-calculator/" style="color: #3A4150; text-decoration: none;" style-hover="color: #2F5E3A; text-decoration: underline;">Calculator</a>
+        <a href="/about/" style="color: #3A4150; text-decoration: none;" style-hover="color: #2F5E3A; text-decoration: underline;">About</a>
         <a href="#get-a-quote" style="background: #3B7349; color: #FBF7EC; font-weight: 700; text-decoration: none; padding: 11px 22px; border-radius: 999px; box-shadow: 0 2px 8px rgba(47,94,58,.35);" style-hover="background: #2F5E3A;" style-active="transform: scale(0.97);">Get a quote</a>
       </nav>
       <button aria-label="Menu" onClick="{{ toggleMenu }}" style="display: {{ burgerDisplay }}; align-items: center; justify-content: center; background: #FFFFFF; border: 1px solid #E3E0D6; border-radius: 10px; width: 44px; height: 44px; cursor: pointer; color: #1C2230;">
@@ -131,10 +129,12 @@
     </div>
     <sc-if value="{{ menuOpen }}" hint-placeholder-val="{{ false }}">
       <div style="border-top: 1px solid #E3E0D6; background: #FBF7EC; padding: 12px 24px 22px; display: flex; flex-direction: column; gap: 2px;">
+        <a href="/" onClick="{{ closeMenu }}" style="padding: 14px 4px; font-weight: 700; font-size: 17px; color: #1C2230; text-decoration: none; border-bottom: 1px solid #EFE6CE;">Home</a>
         <a href="/premium-quality/" onClick="{{ closeMenu }}" style="padding: 14px 4px; font-weight: 700; font-size: 17px; color: #1C2230; text-decoration: none; border-bottom: 1px solid #EFE6CE;">Why our mulch</a>
         <a href="/commercial-playgrounds/" onClick="{{ closeMenu }}" style="padding: 14px 4px; font-weight: 700; font-size: 17px; color: #1C2230; text-decoration: none; border-bottom: 1px solid #EFE6CE;">Schools &amp; daycares</a>
         <a href="/fundraiser/" onClick="{{ closeMenu }}" style="padding: 14px 4px; font-weight: 700; font-size: 17px; color: #1C2230; text-decoration: none; border-bottom: 1px solid #EFE6CE;">Fundraising</a>
-        <a href="/coverage-calculator/" onClick="{{ closeMenu }}" style="padding: 14px 4px; font-weight: 700; font-size: 17px; color: #1C2230; text-decoration: none; border-bottom: 1px solid #EFE6CE;">Coverage calculator</a>
+        <a href="/coverage-calculator/" onClick="{{ closeMenu }}" style="padding: 14px 4px; font-weight: 700; font-size: 17px; color: #1C2230; text-decoration: none; border-bottom: 1px solid #EFE6CE;">Calculator</a>
+        <a href="/about/" onClick="{{ closeMenu }}" style="padding: 14px 4px; font-weight: 700; font-size: 17px; color: #1C2230; text-decoration: none; border-bottom: 1px solid #EFE6CE;">About</a>
         <a href="tel:+14052068111" onClick="{{ closeMenu }}" style="padding: 14px 4px; font-weight: 700; font-size: 17px; color: #2E3C77; text-decoration: none; border-bottom: 1px solid #EFE6CE;">Call (405) 206-8111</a>
         <a href="#get-a-quote" onClick="{{ closeMenu }}" style="margin-top: 16px; background: #3B7349; color: #FBF7EC; font-weight: 700; font-size: 17px; text-decoration: none; padding: 14px 22px; border-radius: 999px; text-align: center;" style-active="transform: scale(0.97);">Get a quote</a>
       </div>
@@ -172,7 +172,7 @@
           IPEMA-certified · Semi-truck tires only
         </span>
         <h1 style="font-family: Archivo, sans-serif; font-weight: 800; letter-spacing: -0.022em; font-size: clamp(38px, 5.2vw, 60px); line-height: 1.04; color: #FFFFFF; margin: 0;">Premium commercial-grade rubber mulch. Delivered by the truckload.</h1>
-        <p style="font-size: clamp(17px, 2vw, 20px); color: #E2E7F5; margin: 0; max-width: 54ch;">Heavy chunk nuggets made from semi-truck tires — not the flimsy shredded stuff. It hunkers down in wind and rain, cushions falls, and holds its color for years. Delivered across Oklahoma, Arkansas, Kansas &amp; Missouri.</p>
+        <p style="font-size: clamp(17px, 2vw, 20px); color: #E2E7F5; margin: 0; max-width: 54ch;">Heavy chunk nuggets cut from semi-truck tires — not the flimsy shredded stuff. A premium product at a bare-bones DIY price, true to our Jameson's Discount roots: you meet the truck, your community spreads it, and everybody keeps the savings. Delivered across Oklahoma, Arkansas, Kansas &amp; Missouri.</p>
         <div style="display: flex; gap: 14px; flex-wrap: wrap; margin-top: 6px;">
           <a href="#get-a-quote" style="background: #D8403F; color: #FFFFFF; font-weight: 700; font-size: 17px; text-decoration: none; padding: 15px 30px; border-radius: 999px; box-shadow: 0 4px 14px rgba(216,64,63,.4);" style-hover="background: #BE3534;" style-active="transform: scale(0.97);">Get a delivery quote</a>
           <a href="/coverage-calculator/" style="background: rgba(251,247,236,.12); border: 1px solid rgba(251,247,236,.45); color: #FBF7EC; font-weight: 700; font-size: 17px; text-decoration: none; padding: 15px 30px; border-radius: 999px;" style-hover="background: rgba(251,247,236,.22);" style-active="transform: scale(0.97);">How many sacks do I need?</a>
@@ -180,7 +180,7 @@
         <div style="display: flex; gap: 26px; flex-wrap: wrap; margin-top: 14px; color: #E2E7F5; font-size: 14.5px; font-weight: 600;">
           <span style="display: flex; align-items: center; gap: 7px;"><svg viewBox="0 0 24 24" fill="none" stroke="#7FBF8E" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" style="width: 16px; height: 16px;"><path d="M20 6 9 17l-5-5"></path></svg> 2,000-lb supersacks</span>
           <span style="display: flex; align-items: center; gap: 7px;"><svg viewBox="0 0 24 24" fill="none" stroke="#7FBF8E" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" style="width: 16px; height: 16px;"><path d="M20 6 9 17l-5-5"></path></svg> 12-year color-lock warranty</span>
-          <span style="display: flex; align-items: center; gap: 7px;"><svg viewBox="0 0 24 24" fill="none" stroke="#7FBF8E" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" style="width: 16px; height: 16px;"><path d="M20 6 9 17l-5-5"></path></svg> Quick, easy process</span>
+          <span style="display: flex; align-items: center; gap: 7px;"><svg viewBox="0 0 24 24" fill="none" stroke="#7FBF8E" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" style="width: 16px; height: 16px;"><path d="M20 6 9 17l-5-5"></path></svg> DIY &amp; save pricing</span>
         </div>
       </div>
     </div>
@@ -403,7 +403,7 @@
               </label>
               <label style="display: flex; flex-direction: column; gap: 6px;">
                 <span style="font-weight: 700; font-size: 14px;">Phone</span>
-                <input type="tel" required="{{ true }}" name="phone" autoComplete="tel" inputMode="tel" placeholder="(405) 555-0134" style="font-size: 16px; padding: 12px 14px; border: 1px solid #D6DAE2; border-radius: 10px; background: #FFFFFF; width: 100%; box-sizing: border-box;">
+                <input type="tel" required="{{ true }}" name="phone" autoComplete="tel" inputMode="tel" placeholder="Your phone number" style="font-size: 16px; padding: 12px 14px; border: 1px solid #D6DAE2; border-radius: 10px; background: #FFFFFF; width: 100%; box-sizing: border-box;">
               </label>
             </div>
             <label style="display: flex; flex-direction: column; gap: 6px;">
@@ -440,7 +440,7 @@
             </label>
             <label style="display: flex; flex-direction: column; gap: 6px;">
               <span style="font-weight: 700; font-size: 14px;">Square footage <span style="font-weight: 500; color: #818897;">(or paste the site address and we'll measure)</span></span>
-              <input type="text" name="sqft" value="{{ formSqft }}" onChange="{{ onFormSqft }}" placeholder="e.g. 2,500 sq ft — or '123 Main St, Edmond OK'" style="font-size: 16px; padding: 12px 14px; border: 1px solid #D6DAE2; border-radius: 10px; background: #FFFFFF; width: 100%; box-sizing: border-box;">
+              <input type="text" name="sqft" value="{{ formSqft }}" onChange="{{ onFormSqft }}" placeholder="e.g. 2,500 sq ft — or paste the site address" style="font-size: 16px; padding: 12px 14px; border: 1px solid #D6DAE2; border-radius: 10px; background: #FFFFFF; width: 100%; box-sizing: border-box;">
             </label>
             <label style="display: flex; flex-direction: column; gap: 6px;">
               <span style="font-weight: 700; font-size: 14px;">Anything else? <span style="font-weight: 500; color: #818897;">(color, timeline, unloading equipment)</span></span>
@@ -500,7 +500,7 @@
         </nav>
       </div>
       <div style="border-top: 1px solid rgba(194,204,236,.2); padding-top: 20px; display: flex; justify-content: space-between; gap: 16px; flex-wrap: wrap; font-size: 13px; color: #95A4D9;">
-        <span>© 2026 405 Rubber Mulch · 405rubbermulch.com</span>
+        <span>© 2026 405 Rubber Mulch · 405rubbermulch.com &#183; <a href="/terms/#cookies" style="color: inherit; text-decoration: underline;">We use cookies for analytics</a></span>
         <span>IPEMA-certified · Semi-truck tire chunk nuggets only</span>
       </div>
     </div>
@@ -518,6 +518,17 @@ class Component extends DCLogic {
   componentDidMount() {
     this._onResize = () => this.setState({ isMobile: window.innerWidth < 900 });
     window.addEventListener('resize', this._onResize);
+    this._lastY = window.scrollY;
+    this._onScroll = () => {
+      const y = window.scrollY;
+      if (y > this._lastY + 6 && y > 160) {
+        if (!this.state.hideHeader) this.setState({ hideHeader: true });
+      } else if (y < this._lastY - 6 || y <= 160) {
+        if (this.state.hideHeader) this.setState({ hideHeader: false });
+      }
+      this._lastY = y;
+    };
+    window.addEventListener('scroll', this._onScroll, { passive: true });
     const hash = window.location.hash;
     if (hash && hash.length > 1) {
       setTimeout(() => {
@@ -558,6 +569,7 @@ class Component extends DCLogic {
     return {
       showPricing, showParentBrand,
       navDisplay: this.state.isMobile ? 'none' : 'flex',
+      headerShift: (this.state.hideHeader && !this.state.menuOpen) ? 'translateY(-110%)' : 'none',
       burgerDisplay: this.state.isMobile ? 'inline-flex' : 'none',
       mobileBarDisplay: this.state.isMobile ? 'flex' : 'none',
       mobileBarSpacer: this.state.isMobile ? '72px' : '0',

@@ -70,7 +70,7 @@
     </div>
   </div>
 
-  <header style="position: sticky; top: 0; z-index: 50; background: rgba(251,247,236,.92); backdrop-filter: blur(8px); border-bottom: 1px solid #E3E0D6;">
+  <header style="position: sticky; top: 0; z-index: 50; background: rgba(251,247,236,.92); backdrop-filter: blur(8px); border-bottom: 1px solid #E3E0D6; transform: {{ headerShift }}; transition: transform .28s ease;">
     <div style="max-width: 1240px; margin: 0 auto; padding: 0 24px; height: 72px; display: flex; align-items: center; justify-content: space-between; gap: 24px;">
       <a href="/" style="display: flex; align-items: center; gap: 12px; text-decoration: none; color: #1C2230;">
         <img src="/img/logo-tire.png" alt="405 Rubber Mulch — Jameson's" style="width: 48px; height: 48px; object-fit: contain;">
@@ -79,9 +79,12 @@
           <span style="font-size: 12px; color: #5C6473;">Bulk &amp; truckload delivery</span>
         </span>
       </a>
-      <nav style="display: {{ navDisplay }}; align-items: center; gap: 26px; font-weight: 600; font-size: 15px;">
+      <nav style="display: {{ navDisplay }}; align-items: center; gap: 22px; font-weight: 600; font-size: 15px;">
+        <a href="/premium-quality/" style="color: #3A4150; text-decoration: none;" style-hover="color: #2F5E3A; text-decoration: underline;">Why our mulch</a>
         <a href="/commercial-playgrounds/" style="color: #3A4150; text-decoration: none;" style-hover="color: #2F5E3A; text-decoration: underline;">Schools &amp; daycares</a>
-        <a href="/coverage-calculator/" style="color: #3A4150; text-decoration: none;" style-hover="color: #2F5E3A; text-decoration: underline;">Coverage calculator</a>
+        <a href="/fundraiser/" style="color: #3A4150; text-decoration: none;" style-hover="color: #2F5E3A; text-decoration: underline;">Fundraising</a>
+        <a href="/coverage-calculator/" style="color: #3A4150; text-decoration: none;" style-hover="color: #2F5E3A; text-decoration: underline;">Calculator</a>
+        <a href="/about/" style="color: #3A4150; text-decoration: none;" style-hover="color: #2F5E3A; text-decoration: underline;">About</a>
         <a href="/get-a-quote/" style="background: #3B7349; color: #FBF7EC; font-weight: 700; text-decoration: none; padding: 11px 22px; border-radius: 999px; box-shadow: 0 2px 8px rgba(47,94,58,.35);" style-hover="background: #2F5E3A;" style-active="transform: scale(0.97);">Get a quote</a>
       </nav>
       <button aria-label="Menu" onClick="{{ toggleMenu }}" style="display: {{ burgerDisplay }}; align-items: center; justify-content: center; background: #FFFFFF; border: 1px solid #E3E0D6; border-radius: 10px; width: 44px; height: 44px; cursor: pointer; color: #1C2230;">
@@ -96,8 +99,11 @@
     <sc-if value="{{ menuOpen }}" hint-placeholder-val="{{ false }}">
       <div style="border-top: 1px solid #E3E0D6; background: #FBF7EC; padding: 12px 24px 22px; display: flex; flex-direction: column; gap: 2px;">
         <a href="/" style="padding: 14px 4px; font-weight: 700; font-size: 17px; color: #1C2230; text-decoration: none; border-bottom: 1px solid #EFE6CE;">Home</a>
+        <a href="/premium-quality/" style="padding: 14px 4px; font-weight: 700; font-size: 17px; color: #1C2230; text-decoration: none; border-bottom: 1px solid #EFE6CE;">Why our mulch</a>
         <a href="/commercial-playgrounds/" style="padding: 14px 4px; font-weight: 700; font-size: 17px; color: #1C2230; text-decoration: none; border-bottom: 1px solid #EFE6CE;">Schools &amp; daycares</a>
-        <a href="/coverage-calculator/" style="padding: 14px 4px; font-weight: 700; font-size: 17px; color: #1C2230; text-decoration: none; border-bottom: 1px solid #EFE6CE;">Coverage calculator</a>
+        <a href="/fundraiser/" style="padding: 14px 4px; font-weight: 700; font-size: 17px; color: #1C2230; text-decoration: none; border-bottom: 1px solid #EFE6CE;">Fundraising</a>
+        <a href="/coverage-calculator/" style="padding: 14px 4px; font-weight: 700; font-size: 17px; color: #1C2230; text-decoration: none; border-bottom: 1px solid #EFE6CE;">Calculator</a>
+        <a href="/about/" style="padding: 14px 4px; font-weight: 700; font-size: 17px; color: #1C2230; text-decoration: none; border-bottom: 1px solid #EFE6CE;">About</a>
         <a href="tel:+14052068111" style="padding: 14px 4px; font-weight: 700; font-size: 17px; color: #2E3C77; text-decoration: none; border-bottom: 1px solid #EFE6CE;">Call (405) 206-8111</a>
         <a href="/get-a-quote/" style="margin-top: 16px; background: #3B7349; color: #FBF7EC; font-weight: 700; font-size: 17px; text-decoration: none; padding: 14px 22px; border-radius: 999px; text-align: center;" style-active="transform: scale(0.97);">Get a quote</a>
       </div>
@@ -190,7 +196,7 @@
   </div>
   <footer style="background: #1B2444; color: #C2CCEC; padding: 32px 24px; font-size: 14px;">
     <div style="max-width: 1240px; margin: 0 auto; display: flex; justify-content: space-between; gap: 16px; flex-wrap: wrap; align-items: center;">
-      <span>&#169; 2026 405 Rubber Mulch &#183; Part of Jameson's Discount Home Improvement, OKC</span>
+      <span>&#169; 2026 405 Rubber Mulch &#183; Part of Jameson's Discount Home Improvement, OKC &#183; <a href="/terms/#cookies" style="color: inherit; text-decoration: underline;">We use cookies for analytics</a></span>
       <nav style="display: flex; gap: 22px; flex-wrap: wrap;">
         <a href="/" style="color: #C2CCEC; text-decoration: none;" style-hover="color: #FFFFFF; text-decoration: underline;">Home</a>
         <a href="/commercial-playgrounds/" style="color: #C2CCEC; text-decoration: none;" style-hover="color: #FFFFFF; text-decoration: underline;">Schools &amp; daycares</a>
@@ -210,11 +216,23 @@ class Component extends DCLogic {
   componentDidMount() {
     this._onResize = () => this.setState({ isMobile: window.innerWidth < 900 });
     window.addEventListener('resize', this._onResize);
+    this._lastY = window.scrollY;
+    this._onScroll = () => {
+      const y = window.scrollY;
+      if (y > this._lastY + 6 && y > 160) {
+        if (!this.state.hideHeader) this.setState({ hideHeader: true });
+      } else if (y < this._lastY - 6 || y <= 160) {
+        if (this.state.hideHeader) this.setState({ hideHeader: false });
+      }
+      this._lastY = y;
+    };
+    window.addEventListener('scroll', this._onScroll, { passive: true });
   }
 
   renderVals() {
     return {
       navDisplay: this.state.isMobile ? 'none' : 'flex',
+      headerShift: (this.state.hideHeader && !this.state.menuOpen) ? 'translateY(-110%)' : 'none',
       burgerDisplay: this.state.isMobile ? 'inline-flex' : 'none',
       mobileBarDisplay: this.state.isMobile ? 'flex' : 'none',
       mobileBarSpacer: this.state.isMobile ? '72px' : '0',
