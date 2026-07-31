@@ -194,7 +194,7 @@
     <div style="max-width: 1240px; margin: 0 auto;">
       <div style="max-width: 720px; margin: 0 auto; text-align: center; display: flex; flex-direction: column; gap: 14px; align-items: center;">
         <span style="display: inline-flex; align-items: center; gap: 8px; background: rgba(255,255,255,.07); border: 1px solid rgba(255,255,255,.16); color: #C7D0F0; font-weight: 700; font-size: 12.5px; letter-spacing: .12em; text-transform: uppercase; padding: 7px 16px; border-radius: 999px;"><span style="width: 8px; height: 8px; border-radius: 50%; background: linear-gradient(160deg, #4ADE80, #16A34A); box-shadow: 0 0 10px rgba(74,222,128,.8);"></span>Fill the truck</span>
-        <h2 style="font-family: Archivo, sans-serif; font-weight: 800; letter-spacing: -0.022em; font-size: clamp(30px, 4vw, 44px); line-height: 1.08; margin: 0; color: #FFFFFF;">Your playground fills part of the flatbed. <span style="background: linear-gradient(90deg, #4ADE80, #FDE047); -webkit-background-clip: text; background-clip: text; color: transparent;">Your town fills the rest.</span></h2>
+        <h2 style="font-family: Archivo, sans-serif; font-weight: 800; letter-spacing: -0.022em; font-size: clamp(30px, 4vw, 44px); line-height: 1.08; margin: 0; color: #FFFFFF;">Your playground fills part of the flatbed. <span style="background: linear-gradient(90deg, #4ADE80, #86EFAC); -webkit-background-clip: text; background-clip: text; color: transparent;">Your town fills the rest.</span></h2>
         <p style="color: #B9C3E8; font-size: 17.5px; margin: 0;">Tell us how many sacks your playground needs, and watch the raffle and sponsorship sacks turn a partial load into full-truck pricing.</p>
       </div>
 
@@ -239,8 +239,8 @@
               <span title="Pallet 22" style="aspect-ratio: 1; border-radius: 7px; box-shadow: inset 0 1px 0 rgba(255,255,255,.16), 0 2px 6px rgba(0,0,0,.25); background: {{ slot22 }};"></span>
             </div>
             <div style="display: flex; gap: 12px; flex-wrap: wrap; font-size: 14px; color: #D7DEF5;">
-              <span style="display: inline-flex; align-items: center; gap: 8px; background: rgba(255,255,255,.07); border: 1px solid rgba(255,255,255,.14); padding: 7px 14px; border-radius: 999px;"><span style="width: 12px; height: 12px; border-radius: 4px; background: linear-gradient(160deg, #4ADE80, #16A34A); display: inline-block;"></span> Your playground &#8212; <b style="font-family: 'Spline Sans Mono', monospace; color: #FFFFFF;">{{ yourSacks }}</b></span>
-              <span style="display: inline-flex; align-items: center; gap: 8px; background: rgba(255,255,255,.07); border: 1px solid rgba(255,255,255,.14); padding: 7px 14px; border-radius: 999px;"><span style="width: 12px; height: 12px; border-radius: 4px; background: linear-gradient(160deg, #FDE047, #F59E0B); display: inline-block;"></span> Raffle &amp; sponsor sacks &#8212; <b style="font-family: 'Spline Sans Mono', monospace; color: #FFFFFF;">{{ communitySacks }}</b></span>
+              <span style="display: inline-flex; align-items: center; gap: 8px; background: rgba(255,255,255,.07); border: 1px solid rgba(255,255,255,.14); padding: 7px 14px; border-radius: 999px;"><span style="width: 12px; height: 12px; border-radius: 4px; background: linear-gradient(160deg, #FFFFFF, #CBD5E1); display: inline-block;"></span> Your playground &#8212; <b style="font-family: 'Spline Sans Mono', monospace; color: #FFFFFF;">{{ yourSacks }}</b></span>
+              <span style="display: inline-flex; align-items: center; gap: 8px; background: rgba(255,255,255,.07); border: 1px solid rgba(255,255,255,.14); padding: 7px 14px; border-radius: 999px;"><span style="width: 12px; height: 12px; border-radius: 4px; background: linear-gradient(160deg, #4ADE80, #16A34A); display: inline-block;"></span> Raffle &amp; sponsor sacks &#8212; <b style="font-family: 'Spline Sans Mono', monospace; color: #FFFFFF;">{{ communitySacks }}</b></span>
             </div>
           </div>
 
@@ -543,7 +543,7 @@ class Component extends DCLogic {
     // 22 pallet slots: green = your playground, amber = raffle/sponsor sacks, dim = empty state
     const slots = {};
     for (let i = 1; i <= 22; i++) {
-      slots['slot' + i] = n === 0 ? 'rgba(255,255,255,.08)' : (i <= onTruck ? 'linear-gradient(160deg, #4ADE80, #16A34A)' : 'linear-gradient(160deg, #FDE047, #F59E0B)');
+      slots['slot' + i] = n === 0 ? 'rgba(255,255,255,.08)' : (i <= onTruck ? 'linear-gradient(160deg, #FFFFFF, #CBD5E1)' : 'linear-gradient(160deg, #4ADE80, #16A34A)');
     }
 
     const money = (v) => '$' + v.toLocaleString();
