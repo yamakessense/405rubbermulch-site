@@ -79,7 +79,7 @@
     </div>
   </div>
 
-  <header style="position: sticky; top: 0; z-index: 50; background: rgba(251,247,236,.92); backdrop-filter: blur(8px); border-bottom: 1px solid #E3E0D6; transform: {{ headerShift }}; transition: transform .28s ease;">
+  <header style="position: sticky; top: 0; z-index: 50; background: rgba(251,247,236,.92); -webkit-backdrop-filter: blur(8px); backdrop-filter: blur(8px); border-bottom: 1px solid #E3E0D6; transform: {{ headerShift }}; transition: transform .28s ease;">
     <div style="max-width: 1240px; margin: 0 auto; padding: 0 24px; height: 72px; display: flex; align-items: center; justify-content: space-between; gap: 24px;">
       <a href="/" style="display: flex; align-items: center; gap: 12px; text-decoration: none; color: #1C2230;">
         <img src="/img/logo-tire.png" alt="405 Rubber Mulch — Jameson's" style="width: 48px; height: 48px; object-fit: contain;">
@@ -128,7 +128,7 @@
   </header>
 
   <section id="get-a-quote" data-screen-label="Get a quote page" style="background: #FFFFFF; padding: clamp(56px, 7vw, 90px) 24px; flex: 1;">
-    <div style="max-width: 1240px; margin: 0 auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: clamp(32px, 5vw, 72px); align-items: start;">
+    <div style="max-width: 1240px; margin: 0 auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(min(320px, 100%), 1fr)); gap: clamp(32px, 5vw, 72px); align-items: start;">
       <div style="display: flex; flex-direction: column; gap: 18px; order: {{ introOrder }};">
         <span style="color: #3B7349; font-weight: 700; font-size: 13px; letter-spacing: .12em; text-transform: uppercase;">Get a quote</span>
         <h1 style="font-family: Archivo, sans-serif; font-weight: 800; letter-spacing: -0.022em; font-size: clamp(32px, 4.4vw, 50px); line-height: 1.06; margin: 0;">Ready to order? Drop us a line.</h1>
@@ -225,7 +225,7 @@
   </section>
 
   <div style="height: {{ mobileBarSpacer }};"></div>
-  <div style="display: {{ mobileBarDisplay }}; position: fixed; bottom: 0; left: 0; right: 0; z-index: 60; background: rgba(251,247,236,.96); backdrop-filter: blur(8px); border-top: 1px solid #E3E0D6; padding: 10px 14px calc(10px + env(safe-area-inset-bottom)); gap: 10px;">
+  <div style="display: {{ mobileBarDisplay }}; position: fixed; bottom: 0; left: 0; right: 0; z-index: 60; background: rgba(251,247,236,.96); -webkit-backdrop-filter: blur(8px); backdrop-filter: blur(8px); border-top: 1px solid #E3E0D6; padding: 10px 14px calc(10px + env(safe-area-inset-bottom)); gap: 10px;">
     <a href="tel:+14052068111" style="flex: 1; display: flex; align-items: center; justify-content: center; gap: 8px; min-height: 48px; background: #2E3C77; color: #FFFFFF; font-weight: 700; font-size: 16px; text-decoration: none; border-radius: 999px;">Prefer to talk? Call (405) 206-8111</a>
   </div>
   <footer style="background: #1B2444; color: #C2CCEC; padding: 32px 24px; font-size: 14px;">

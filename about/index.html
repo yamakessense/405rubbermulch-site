@@ -77,7 +77,7 @@
     </div>
   </div>
 
-  <header style="position: sticky; top: 0; z-index: 50; background: rgba(251,247,236,.92); backdrop-filter: blur(8px); border-bottom: 1px solid #E3E0D6; transform: {{ headerShift }}; transition: transform .28s ease;">
+  <header style="position: sticky; top: 0; z-index: 50; background: rgba(251,247,236,.92); -webkit-backdrop-filter: blur(8px); backdrop-filter: blur(8px); border-bottom: 1px solid #E3E0D6; transform: {{ headerShift }}; transition: transform .28s ease;">
     <div style="max-width: 1240px; margin: 0 auto; padding: 0 24px; height: 72px; display: flex; align-items: center; justify-content: space-between; gap: 24px;">
       <a href="/" style="display: flex; align-items: center; gap: 12px; text-decoration: none; color: #1C2230;">
         <img src="/img/logo-tire.png" alt="405 Rubber Mulch — Jameson's" style="width: 48px; height: 48px; object-fit: contain;">
@@ -128,7 +128,7 @@
 
   <!-- ===== Hero / origin story ===== -->
   <section data-screen-label="About hero" style="background: #1B2444; color: #FBF7EC; padding: clamp(56px, 7vw, 100px) 24px;">
-    <div style="max-width: 1240px; margin: 0 auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: clamp(32px, 5vw, 64px); align-items: center;">
+    <div style="max-width: 1240px; margin: 0 auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(min(320px, 100%), 1fr)); gap: clamp(32px, 5vw, 64px); align-items: center;">
       <div style="display: flex; flex-direction: column; gap: 18px;">
         <span style="color: #95A4D9; font-weight: 700; font-size: 13px; letter-spacing: .12em; text-transform: uppercase;">About 405 Rubber Mulch</span>
         <h1 style="font-family: Archivo, sans-serif; font-weight: 800; letter-spacing: -0.022em; font-size: clamp(32px, 4.4vw, 50px); line-height: 1.06; margin: 0; color: #FFFFFF;">From a home improvement warehouse to a truckload at a time.</h1>
@@ -162,7 +162,7 @@
 
   <!-- ===== Why black stays black ===== -->
   <section data-screen-label="Why our mulch stays black" style="background: #FFFFFF; padding: clamp(56px, 7vw, 100px) 24px;">
-    <div style="max-width: 1240px; margin: 0 auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: clamp(32px, 5vw, 64px); align-items: center;">
+    <div style="max-width: 1240px; margin: 0 auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(min(320px, 100%), 1fr)); gap: clamp(32px, 5vw, 64px); align-items: center;">
       <img src="/img/nugget-rubber-mulch.jpg" alt="Unpainted black rubber mulch chunk nuggets cut from semi-truck tires" style="width: 100%; border-radius: 14px; aspect-ratio: 4/3; object-fit: cover; box-shadow: 0 8px 28px rgba(28,34,48,.12);">
       <div style="display: flex; flex-direction: column; gap: 16px;">
         <span style="color: #3B7349; font-weight: 700; font-size: 13px; letter-spacing: .12em; text-transform: uppercase;">No paint. No fade.</span>
@@ -226,7 +226,7 @@
   </section>
 
   <div style="height: {{ mobileBarSpacer }};"></div>
-  <div style="display: {{ mobileBarDisplay }}; position: fixed; bottom: 0; left: 0; right: 0; z-index: 60; background: rgba(251,247,236,.96); backdrop-filter: blur(8px); border-top: 1px solid #E3E0D6; padding: 10px 14px calc(10px + env(safe-area-inset-bottom)); gap: 10px;">
+  <div style="display: {{ mobileBarDisplay }}; position: fixed; bottom: 0; left: 0; right: 0; z-index: 60; background: rgba(251,247,236,.96); -webkit-backdrop-filter: blur(8px); backdrop-filter: blur(8px); border-top: 1px solid #E3E0D6; padding: 10px 14px calc(10px + env(safe-area-inset-bottom)); gap: 10px;">
     <a href="tel:+14052068111" style="flex: 1; display: flex; align-items: center; justify-content: center; gap: 8px; min-height: 48px; background: #FFFFFF; border: 1.5px solid #2E3C77; color: #2E3C77; font-weight: 700; font-size: 16px; text-decoration: none; border-radius: 999px;">Call now</a>
     <a href="/get-a-quote/" style="flex: 1.2; display: flex; align-items: center; justify-content: center; min-height: 48px; background: #D8403F; color: #FFFFFF; font-weight: 700; font-size: 16px; text-decoration: none; border-radius: 999px; box-shadow: 0 4px 14px rgba(216,64,63,.35);">Get a quote</a>
   </div>

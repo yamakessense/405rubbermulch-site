@@ -94,7 +94,7 @@
     </div>
   </div>
 
-  <header style="position: sticky; top: 0; z-index: 50; background: rgba(251,247,236,.92); backdrop-filter: blur(8px); border-bottom: 1px solid #E3E0D6; transform: {{ headerShift }}; transition: transform .28s ease;">
+  <header style="position: sticky; top: 0; z-index: 50; background: rgba(251,247,236,.92); -webkit-backdrop-filter: blur(8px); backdrop-filter: blur(8px); border-bottom: 1px solid #E3E0D6; transform: {{ headerShift }}; transition: transform .28s ease;">
     <div style="max-width: 1240px; margin: 0 auto; padding: 0 24px; height: 72px; display: flex; align-items: center; justify-content: space-between; gap: 24px;">
       <a href="/" style="display: flex; align-items: center; gap: 12px; text-decoration: none; color: #1C2230;">
         <img src="/img/logo-tire.png" alt="405 Rubber Mulch — Jameson's" style="width: 48px; height: 48px; object-fit: contain;">
@@ -171,7 +171,7 @@
   <!-- ===== The real problem: freight ===== -->
   <section id="truck-math" data-screen-label="The truck math" style="scroll-margin-top: 84px; background: #FFFFFF; padding: clamp(56px, 7vw, 100px) 24px;">
     <div style="max-width: 1240px; margin: 0 auto;">
-      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: clamp(32px, 5vw, 64px); align-items: center;">
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(320px, 100%), 1fr)); gap: clamp(32px, 5vw, 64px); align-items: center;">
         <div style="display: flex; flex-direction: column; gap: 16px;">
           <span style="color: #3B7349; font-weight: 700; font-size: 13px; letter-spacing: .12em; text-transform: uppercase;">The real problem</span>
           <h2 style="font-family: Archivo, sans-serif; font-weight: 800; letter-spacing: -0.022em; font-size: clamp(30px, 4vw, 44px); line-height: 1.08; margin: 0;">You're not paying for mulch. You're paying for a truck.</h2>
@@ -225,7 +225,7 @@
         <p style="color: #B9C3E8; font-size: 17.5px; margin: 0;">An HOA might only need 7 sacks — the neighborhood can use the rest. The truck is coming either way, so every pallet added pulls your per-sack price down toward $425.</p>
       </div>
 
-      <div style="max-width: 960px; margin: 44px auto 0; background: rgba(255,255,255,.05); border: 1px solid rgba(255,255,255,.13); color: #FBF7EC; border-radius: 22px; box-shadow: 0 24px 60px rgba(5,8,20,.45); backdrop-filter: blur(14px); overflow: hidden;">
+      <div style="max-width: 960px; margin: 44px auto 0; background: rgba(255,255,255,.05); border: 1px solid rgba(255,255,255,.13); color: #FBF7EC; border-radius: 22px; box-shadow: 0 24px 60px rgba(5,8,20,.45); -webkit-backdrop-filter: blur(14px); backdrop-filter: blur(14px); overflow: hidden;">
         <div style="padding: clamp(26px, 4vw, 40px); display: flex; flex-direction: column; gap: 26px;">
           <div style="display: flex; align-items: center; gap: 16px; flex-wrap: wrap;">
             <label style="display: flex; align-items: center; gap: 12px;">
@@ -303,7 +303,7 @@
         <p style="color: #5C6473; font-size: 18px; margin: 0;">These aren't just fundraisers — they're the mechanism that makes $425 delivered possible for a town that only needs eight sacks.</p>
       </div>
 
-      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 28px; margin-top: 48px;">
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(320px, 100%), 1fr)); gap: 28px; margin-top: 48px;">
         <!-- Mulch Raffle -->
         <div style="background: #FFFFFF; border: 1px solid #E3E0D6; border-radius: 14px; padding: clamp(26px, 3.5vw, 36px); display: flex; flex-direction: column; gap: 16px; box-shadow: 0 1px 4px rgba(28,34,48,.06);">
           <span style="display: inline-flex; align-self: flex-start; align-items: center; gap: 8px; background: #2F5E3A; color: #FBF7EC; font-weight: 700; font-size: 12.5px; letter-spacing: .08em; text-transform: uppercase; padding: 6px 12px; border-radius: 999px;">
@@ -383,7 +383,7 @@
 
   <!-- ===== Quote form + supersack ad card ===== -->
   <section id="get-a-quote" data-screen-label="Start your fundraiser" style="scroll-margin-top: 84px; background: #F4F1E8; padding: clamp(56px, 7vw, 100px) 24px;">
-    <div style="max-width: 1240px; margin: 0 auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: clamp(32px, 5vw, 72px); align-items: start;">
+    <div style="max-width: 1240px; margin: 0 auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(min(320px, 100%), 1fr)); gap: clamp(32px, 5vw, 72px); align-items: start;">
       <div style="display: flex; flex-direction: column; gap: 20px; order: {{ introOrder }};">
         <span style="color: #3B7349; font-weight: 700; font-size: 13px; letter-spacing: .12em; text-transform: uppercase;">Get a quote</span>
         <h2 style="font-family: Archivo, sans-serif; font-weight: 800; letter-spacing: -0.022em; font-size: clamp(30px, 4vw, 44px); line-height: 1.08; margin: 0;">Tell us about your playground. We'll do the math.</h2>
@@ -538,7 +538,7 @@
   </section>
 
   <div style="height: {{ mobileBarSpacer }};"></div>
-  <div style="display: {{ mobileBarDisplay }}; position: fixed; bottom: 0; left: 0; right: 0; z-index: 60; background: rgba(251,247,236,.96); backdrop-filter: blur(8px); border-top: 1px solid #E3E0D6; padding: 10px 14px calc(10px + env(safe-area-inset-bottom)); gap: 10px;">
+  <div style="display: {{ mobileBarDisplay }}; position: fixed; bottom: 0; left: 0; right: 0; z-index: 60; background: rgba(251,247,236,.96); -webkit-backdrop-filter: blur(8px); backdrop-filter: blur(8px); border-top: 1px solid #E3E0D6; padding: 10px 14px calc(10px + env(safe-area-inset-bottom)); gap: 10px;">
     <a href="tel:+14052068111" style="flex: 1; display: flex; align-items: center; justify-content: center; gap: 8px; min-height: 48px; background: #FFFFFF; border: 1.5px solid #2E3C77; color: #2E3C77; font-weight: 700; font-size: 16px; text-decoration: none; border-radius: 999px;">Call now</a>
     <a href="#get-a-quote" style="flex: 1.2; display: flex; align-items: center; justify-content: center; min-height: 48px; background: #D8403F; color: #FFFFFF; font-weight: 700; font-size: 16px; text-decoration: none; border-radius: 999px; box-shadow: 0 4px 14px rgba(216,64,63,.35);">Get a quote</a>
   </div>
