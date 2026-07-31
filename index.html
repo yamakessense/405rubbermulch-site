@@ -198,6 +198,68 @@
     </div>
   </section>
 
+  <!-- ===== Fill the truck (compact) ===== -->
+  <section id="fill-the-truck" data-screen-label="Fill the truck" style="scroll-margin-top: 84px; background: #FFFFFF; padding: clamp(28px, 4vw, 48px) 24px 0;">
+    <div style="max-width: 960px; margin: 0 auto;">
+      <div style="background: radial-gradient(700px 320px at 85% -10%, rgba(99,132,255,.35), transparent 60%), linear-gradient(150deg, #131A36 0%, #1C2650 55%, #27336B 100%); color: #FBF7EC; border-radius: 18px; box-shadow: 0 18px 44px rgba(17,20,28,.25); padding: clamp(20px, 3vw, 30px); display: flex; flex-direction: column; gap: 14px;">
+        <div style="display: flex; align-items: center; justify-content: space-between; gap: 10px 18px; flex-wrap: wrap;">
+          <b style="font-family: Archivo, sans-serif; font-size: clamp(18px, 2.2vw, 22px); color: #FFFFFF;">Fill the truck &#8212; watch the price drop</b>
+          <label style="display: flex; align-items: center; gap: 10px;">
+            <span style="font-weight: 700; font-size: 14px; color: #D7DEF5;">Sacks you need:</span>
+            <input type="number" min="1" max="200" value="{{ needSacks }}" onChange="{{ onNeedSacks }}" style="font-family: 'Spline Sans Mono', monospace; font-size: 17px; padding: 9px 12px; border: 1px solid rgba(255,255,255,.22); border-radius: 10px; background: rgba(255,255,255,.08); color: #FFFFFF; width: 80px; box-sizing: border-box;">
+          </label>
+        </div>
+        <div style="border: 1px solid rgba(255,255,255,.14); border-radius: 12px; background: rgba(7,10,24,.45); padding: 8px; display: grid; grid-template-columns: repeat(11, 1fr); gap: 5px;">
+              <span style="aspect-ratio: 1; border-radius: 5px; box-shadow: inset 0 1px 0 rgba(255,255,255,.14); background: {{ slot1 }};"></span>
+              <span style="aspect-ratio: 1; border-radius: 5px; box-shadow: inset 0 1px 0 rgba(255,255,255,.14); background: {{ slot2 }};"></span>
+              <span style="aspect-ratio: 1; border-radius: 5px; box-shadow: inset 0 1px 0 rgba(255,255,255,.14); background: {{ slot3 }};"></span>
+              <span style="aspect-ratio: 1; border-radius: 5px; box-shadow: inset 0 1px 0 rgba(255,255,255,.14); background: {{ slot4 }};"></span>
+              <span style="aspect-ratio: 1; border-radius: 5px; box-shadow: inset 0 1px 0 rgba(255,255,255,.14); background: {{ slot5 }};"></span>
+              <span style="aspect-ratio: 1; border-radius: 5px; box-shadow: inset 0 1px 0 rgba(255,255,255,.14); background: {{ slot6 }};"></span>
+              <span style="aspect-ratio: 1; border-radius: 5px; box-shadow: inset 0 1px 0 rgba(255,255,255,.14); background: {{ slot7 }};"></span>
+              <span style="aspect-ratio: 1; border-radius: 5px; box-shadow: inset 0 1px 0 rgba(255,255,255,.14); background: {{ slot8 }};"></span>
+              <span style="aspect-ratio: 1; border-radius: 5px; box-shadow: inset 0 1px 0 rgba(255,255,255,.14); background: {{ slot9 }};"></span>
+              <span style="aspect-ratio: 1; border-radius: 5px; box-shadow: inset 0 1px 0 rgba(255,255,255,.14); background: {{ slot10 }};"></span>
+              <span style="aspect-ratio: 1; border-radius: 5px; box-shadow: inset 0 1px 0 rgba(255,255,255,.14); background: {{ slot11 }};"></span>
+              <span style="aspect-ratio: 1; border-radius: 5px; box-shadow: inset 0 1px 0 rgba(255,255,255,.14); background: {{ slot12 }};"></span>
+              <span style="aspect-ratio: 1; border-radius: 5px; box-shadow: inset 0 1px 0 rgba(255,255,255,.14); background: {{ slot13 }};"></span>
+              <span style="aspect-ratio: 1; border-radius: 5px; box-shadow: inset 0 1px 0 rgba(255,255,255,.14); background: {{ slot14 }};"></span>
+              <span style="aspect-ratio: 1; border-radius: 5px; box-shadow: inset 0 1px 0 rgba(255,255,255,.14); background: {{ slot15 }};"></span>
+              <span style="aspect-ratio: 1; border-radius: 5px; box-shadow: inset 0 1px 0 rgba(255,255,255,.14); background: {{ slot16 }};"></span>
+              <span style="aspect-ratio: 1; border-radius: 5px; box-shadow: inset 0 1px 0 rgba(255,255,255,.14); background: {{ slot17 }};"></span>
+              <span style="aspect-ratio: 1; border-radius: 5px; box-shadow: inset 0 1px 0 rgba(255,255,255,.14); background: {{ slot18 }};"></span>
+              <span style="aspect-ratio: 1; border-radius: 5px; box-shadow: inset 0 1px 0 rgba(255,255,255,.14); background: {{ slot19 }};"></span>
+              <span style="aspect-ratio: 1; border-radius: 5px; box-shadow: inset 0 1px 0 rgba(255,255,255,.14); background: {{ slot20 }};"></span>
+              <span style="aspect-ratio: 1; border-radius: 5px; box-shadow: inset 0 1px 0 rgba(255,255,255,.14); background: {{ slot21 }};"></span>
+              <span style="aspect-ratio: 1; border-radius: 5px; box-shadow: inset 0 1px 0 rgba(255,255,255,.14); background: {{ slot22 }};"></span>
+        </div>
+        <div style="display: flex; gap: 8px 16px; flex-wrap: wrap; align-items: center; font-size: 13px; color: #D7DEF5;">
+          <span style="display: inline-flex; align-items: center; gap: 7px;"><span style="width: 11px; height: 11px; border-radius: 3px; background: linear-gradient(160deg, #FFFFFF, #CBD5E1); display: inline-block;"></span> Your sacks &#8212; <b style="font-family: 'Spline Sans Mono', monospace; color: #FFFFFF;">{{ yourSacks }}</b></span>
+          <span style="display: inline-flex; align-items: center; gap: 7px;"><span style="width: 11px; height: 11px; border-radius: 3px; background: linear-gradient(160deg, #4ADE80, #16A34A); display: inline-block;"></span> Neighborhood &amp; raffle &#8212; <b style="font-family: 'Spline Sans Mono', monospace; color: #FFFFFF;">{{ communitySacks }}</b></span>
+          <span style="font-family: 'Spline Sans Mono', monospace; font-weight: 600; color: #4ADE80; margin-left: auto;">{{ truckStatus }}</span>
+        </div>
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(200px, 100%), 1fr)); gap: 10px;">
+          <div style="background: rgba(255,255,255,.07); border: 1px solid rgba(255,255,255,.22); border-radius: 12px; padding: 12px 16px;">
+            <span style="font-size: 11.5px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; color: #FFFFFF;">Your sacks, delivered</span>
+            <div style="font-family: 'Spline Sans Mono', monospace; font-weight: 600; font-size: 22px; color: #FFFFFF; margin-top: 2px;">{{ yourCost }}</div>
+            <span style="display: block; font-size: 12px; color: #C9D2F2;">{{ perSackCount }}</span>
+          </div>
+          <div style="background: rgba(239,68,68,.10); border: 1px solid rgba(239,68,68,.38); border-radius: 12px; padding: 12px 16px;">
+            <span style="font-size: 11.5px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; color: #EF4444;">Single-pallet quotes</span>
+            <div style="font-family: 'Spline Sans Mono', monospace; font-weight: 600; font-size: 22px; color: #EF4444; margin-top: 2px; text-decoration: line-through; text-decoration-thickness: 2px; text-decoration-color: rgba(239,68,68,.6);">{{ natCost }}</div>
+            <span style="display: block; font-size: 12px; color: #F5B5B5;">what shipping pallets alone costs</span>
+          </div>
+          <div style="background: rgba(74,222,128,.10); border: 1px solid rgba(74,222,128,.32); border-radius: 12px; padding: 12px 16px;">
+            <span style="font-size: 11.5px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; color: #86EFAC;">Your per-sack price</span>
+            <div style="font-family: 'Spline Sans Mono', monospace; font-weight: 600; font-size: 22px; color: #4ADE80; margin-top: 2px;">{{ perSackPrice }}</div>
+            <span style="display: block; font-size: 12px; color: #A9E8BC;">drops with every pallet &#8212; $425 at a full truck</span>
+          </div>
+        </div>
+        <div style="font-size: 13.5px; color: #B9C3E8;">{{ truckNote }}</div>
+      </div>
+    </div>
+  </section>
+
   <!-- ===== Quote form ===== -->
   <section id="get-a-quote" data-screen-label="Get a quote" style="scroll-margin-top: 84px; background: #FFFFFF; padding: clamp(64px, 8vw, 110px) 24px;">
     <div style="max-width: 1240px; margin: 0 auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(min(320px, 100%), 1fr)); gap: clamp(32px, 5vw, 72px); align-items: start;">
@@ -296,67 +358,7 @@
   </section>
 
 
-  <!-- ===== Fill the truck (compact) ===== -->
-  <section id="fill-the-truck" data-screen-label="Fill the truck" style="scroll-margin-top: 84px; background: #FFFFFF; padding: clamp(32px, 4.5vw, 56px) 24px 0;">
-    <div style="max-width: 960px; margin: 0 auto;">
-      <div style="background: radial-gradient(700px 320px at 85% -10%, rgba(99,132,255,.35), transparent 60%), linear-gradient(150deg, #131A36 0%, #1C2650 55%, #27336B 100%); color: #FBF7EC; border-radius: 18px; box-shadow: 0 18px 44px rgba(17,20,28,.25); padding: clamp(20px, 3vw, 30px); display: flex; flex-direction: column; gap: 14px;">
-        <div style="display: flex; align-items: center; justify-content: space-between; gap: 10px 18px; flex-wrap: wrap;">
-          <b style="font-family: Archivo, sans-serif; font-size: clamp(18px, 2.2vw, 22px); color: #FFFFFF;">Fill the truck &#8212; watch the price drop</b>
-          <label style="display: flex; align-items: center; gap: 10px;">
-            <span style="font-weight: 700; font-size: 14px; color: #D7DEF5;">Sacks you need:</span>
-            <input type="number" min="1" max="200" value="{{ needSacks }}" onChange="{{ onNeedSacks }}" style="font-family: 'Spline Sans Mono', monospace; font-size: 17px; padding: 9px 12px; border: 1px solid rgba(255,255,255,.22); border-radius: 10px; background: rgba(255,255,255,.08); color: #FFFFFF; width: 80px; box-sizing: border-box;">
-          </label>
-        </div>
-        <div style="border: 1px solid rgba(255,255,255,.14); border-radius: 12px; background: rgba(7,10,24,.45); padding: 8px; display: grid; grid-template-columns: repeat(11, 1fr); gap: 5px;">
-              <span style="aspect-ratio: 1; border-radius: 5px; box-shadow: inset 0 1px 0 rgba(255,255,255,.14); background: {{ slot1 }};"></span>
-              <span style="aspect-ratio: 1; border-radius: 5px; box-shadow: inset 0 1px 0 rgba(255,255,255,.14); background: {{ slot2 }};"></span>
-              <span style="aspect-ratio: 1; border-radius: 5px; box-shadow: inset 0 1px 0 rgba(255,255,255,.14); background: {{ slot3 }};"></span>
-              <span style="aspect-ratio: 1; border-radius: 5px; box-shadow: inset 0 1px 0 rgba(255,255,255,.14); background: {{ slot4 }};"></span>
-              <span style="aspect-ratio: 1; border-radius: 5px; box-shadow: inset 0 1px 0 rgba(255,255,255,.14); background: {{ slot5 }};"></span>
-              <span style="aspect-ratio: 1; border-radius: 5px; box-shadow: inset 0 1px 0 rgba(255,255,255,.14); background: {{ slot6 }};"></span>
-              <span style="aspect-ratio: 1; border-radius: 5px; box-shadow: inset 0 1px 0 rgba(255,255,255,.14); background: {{ slot7 }};"></span>
-              <span style="aspect-ratio: 1; border-radius: 5px; box-shadow: inset 0 1px 0 rgba(255,255,255,.14); background: {{ slot8 }};"></span>
-              <span style="aspect-ratio: 1; border-radius: 5px; box-shadow: inset 0 1px 0 rgba(255,255,255,.14); background: {{ slot9 }};"></span>
-              <span style="aspect-ratio: 1; border-radius: 5px; box-shadow: inset 0 1px 0 rgba(255,255,255,.14); background: {{ slot10 }};"></span>
-              <span style="aspect-ratio: 1; border-radius: 5px; box-shadow: inset 0 1px 0 rgba(255,255,255,.14); background: {{ slot11 }};"></span>
-              <span style="aspect-ratio: 1; border-radius: 5px; box-shadow: inset 0 1px 0 rgba(255,255,255,.14); background: {{ slot12 }};"></span>
-              <span style="aspect-ratio: 1; border-radius: 5px; box-shadow: inset 0 1px 0 rgba(255,255,255,.14); background: {{ slot13 }};"></span>
-              <span style="aspect-ratio: 1; border-radius: 5px; box-shadow: inset 0 1px 0 rgba(255,255,255,.14); background: {{ slot14 }};"></span>
-              <span style="aspect-ratio: 1; border-radius: 5px; box-shadow: inset 0 1px 0 rgba(255,255,255,.14); background: {{ slot15 }};"></span>
-              <span style="aspect-ratio: 1; border-radius: 5px; box-shadow: inset 0 1px 0 rgba(255,255,255,.14); background: {{ slot16 }};"></span>
-              <span style="aspect-ratio: 1; border-radius: 5px; box-shadow: inset 0 1px 0 rgba(255,255,255,.14); background: {{ slot17 }};"></span>
-              <span style="aspect-ratio: 1; border-radius: 5px; box-shadow: inset 0 1px 0 rgba(255,255,255,.14); background: {{ slot18 }};"></span>
-              <span style="aspect-ratio: 1; border-radius: 5px; box-shadow: inset 0 1px 0 rgba(255,255,255,.14); background: {{ slot19 }};"></span>
-              <span style="aspect-ratio: 1; border-radius: 5px; box-shadow: inset 0 1px 0 rgba(255,255,255,.14); background: {{ slot20 }};"></span>
-              <span style="aspect-ratio: 1; border-radius: 5px; box-shadow: inset 0 1px 0 rgba(255,255,255,.14); background: {{ slot21 }};"></span>
-              <span style="aspect-ratio: 1; border-radius: 5px; box-shadow: inset 0 1px 0 rgba(255,255,255,.14); background: {{ slot22 }};"></span>
-        </div>
-        <div style="display: flex; gap: 8px 16px; flex-wrap: wrap; align-items: center; font-size: 13px; color: #D7DEF5;">
-          <span style="display: inline-flex; align-items: center; gap: 7px;"><span style="width: 11px; height: 11px; border-radius: 3px; background: linear-gradient(160deg, #FFFFFF, #CBD5E1); display: inline-block;"></span> Your sacks &#8212; <b style="font-family: 'Spline Sans Mono', monospace; color: #FFFFFF;">{{ yourSacks }}</b></span>
-          <span style="display: inline-flex; align-items: center; gap: 7px;"><span style="width: 11px; height: 11px; border-radius: 3px; background: linear-gradient(160deg, #4ADE80, #16A34A); display: inline-block;"></span> Neighborhood &amp; raffle &#8212; <b style="font-family: 'Spline Sans Mono', monospace; color: #FFFFFF;">{{ communitySacks }}</b></span>
-          <span style="font-family: 'Spline Sans Mono', monospace; font-weight: 600; color: #4ADE80; margin-left: auto;">{{ truckStatus }}</span>
-        </div>
-        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(200px, 100%), 1fr)); gap: 10px;">
-          <div style="background: rgba(255,255,255,.07); border: 1px solid rgba(255,255,255,.22); border-radius: 12px; padding: 12px 16px;">
-            <span style="font-size: 11.5px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; color: #FFFFFF;">Your sacks, delivered</span>
-            <div style="font-family: 'Spline Sans Mono', monospace; font-weight: 600; font-size: 22px; color: #FFFFFF; margin-top: 2px;">{{ yourCost }}</div>
-            <span style="display: block; font-size: 12px; color: #C9D2F2;">{{ perSackCount }}</span>
-          </div>
-          <div style="background: rgba(239,68,68,.10); border: 1px solid rgba(239,68,68,.38); border-radius: 12px; padding: 12px 16px;">
-            <span style="font-size: 11.5px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; color: #EF4444;">Single-pallet quotes</span>
-            <div style="font-family: 'Spline Sans Mono', monospace; font-weight: 600; font-size: 22px; color: #EF4444; margin-top: 2px; text-decoration: line-through; text-decoration-thickness: 2px; text-decoration-color: rgba(239,68,68,.6);">{{ natCost }}</div>
-            <span style="display: block; font-size: 12px; color: #F5B5B5;">what shipping pallets alone costs</span>
-          </div>
-          <div style="background: rgba(74,222,128,.10); border: 1px solid rgba(74,222,128,.32); border-radius: 12px; padding: 12px 16px;">
-            <span style="font-size: 11.5px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; color: #86EFAC;">Your per-sack price</span>
-            <div style="font-family: 'Spline Sans Mono', monospace; font-weight: 600; font-size: 22px; color: #4ADE80; margin-top: 2px;">{{ perSackPrice }}</div>
-            <span style="display: block; font-size: 12px; color: #A9E8BC;">drops with every pallet &#8212; $425 at a full truck</span>
-          </div>
-        </div>
-        <div style="font-size: 13.5px; color: #B9C3E8;">{{ truckNote }}</div>
-      </div>
-    </div>
-  </section>
+
 
   <!-- ===== Comparison: premium quality ===== -->
   <section id="premium-quality" data-screen-label="Why our mulch" style="scroll-margin-top: 84px; background: #FFFFFF; padding: clamp(32px, 5vw, 80px) 24px clamp(64px, 8vw, 110px);">
