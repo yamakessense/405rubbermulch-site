@@ -101,7 +101,7 @@
   </div>
 
   <!-- ===== Sticky header ===== -->
-  <header style="position: sticky; top: 0; z-index: 50; background: rgba(251,247,236,.92); -webkit-backdrop-filter: blur(8px); backdrop-filter: blur(8px); border-bottom: 1px solid #E3E0D6; transform: {{ headerShift }}; transition: transform .28s ease;">
+  <header style="position: sticky; top: 0; z-index: 50; background: rgba(255,255,255,.92); -webkit-backdrop-filter: blur(8px); backdrop-filter: blur(8px); border-bottom: 1px solid #E3E0D6; transform: {{ headerShift }}; transition: transform .28s ease;">
     <div style="max-width: 1240px; margin: 0 auto; padding: 0 24px; height: 72px; display: flex; align-items: center; justify-content: space-between; gap: 24px;">
       <a href="#top" style="display: flex; align-items: center; gap: 12px; text-decoration: none; color: #1C2230;">
         <img src="/img/logo-tire.png" alt="405 Rubber Mulch — Jameson's" style="width: 48px; height: 48px; object-fit: contain;">
@@ -128,7 +128,7 @@
       </button>
     </div>
     <sc-if value="{{ menuOpen }}" hint-placeholder-val="{{ false }}">
-      <div style="border-top: 1px solid #E3E0D6; background: #FBF7EC; padding: 12px 24px 22px; display: flex; flex-direction: column; gap: 2px;">
+      <div style="border-top: 1px solid #E3E0D6; background: #FFFFFF; padding: 12px 24px 22px; display: flex; flex-direction: column; gap: 2px;">
         <a href="/" onClick="{{ closeMenu }}" style="padding: 14px 4px; font-weight: 700; font-size: 17px; color: #1C2230; text-decoration: none; border-bottom: 1px solid #EFE6CE;">Home</a>
         <a href="/premium-quality/" onClick="{{ closeMenu }}" style="padding: 14px 4px; font-weight: 700; font-size: 17px; color: #1C2230; text-decoration: none; border-bottom: 1px solid #EFE6CE;">Why our mulch</a>
         <a href="/commercial-playgrounds/" onClick="{{ closeMenu }}" style="padding: 14px 4px; font-weight: 700; font-size: 17px; color: #1C2230; text-decoration: none; border-bottom: 1px solid #EFE6CE;">Schools &amp; daycares</a>
@@ -139,7 +139,7 @@
         <a href="#get-a-quote" onClick="{{ closeMenu }}" style="margin-top: 16px; background: #3B7349; color: #FBF7EC; font-weight: 700; font-size: 17px; text-decoration: none; padding: 14px 22px; border-radius: 999px; text-align: center;" style-active="transform: scale(0.97);">Get a quote</a>
       </div>
     </sc-if>
-    <div style="border-top: 1px solid #E3E0D6; background: #F4F1E8;">
+    <div style="border-top: 1px solid #E3E0D6; background: #FFFFFF;">
       <div style="max-width: 1240px; margin: 0 auto; padding: 6px 12px; display: flex; gap: 2px 4px; flex-wrap: wrap; align-items: center; font-size: 12.5px;">
         <span style="color: #818897; font-weight: 600;">Serving:</span>
         <a href="/oklahoma/" style="color: #3A4150; text-decoration: none; padding: 2px 5px; border-radius: 6px; font-weight: 600;" style-hover="background: #E3E0D6;">Oklahoma</a>
@@ -211,7 +211,9 @@
           </span>
           <label style="display: flex; align-items: center; gap: 10px;">
             <span style="font-weight: 700; font-size: 14px; color: #D7DEF5;">Sacks you need:</span>
-            <input type="number" min="1" max="200" value="{{ needSacks }}" onChange="{{ onNeedSacks }}" style="font-family: 'Spline Sans Mono', monospace; font-size: 17px; padding: 9px 12px; border: 1px solid rgba(255,255,255,.22); border-radius: 10px; background: rgba(255,255,255,.08); color: #FFFFFF; width: 80px; box-sizing: border-box;">
+            <button type="button" aria-label="Fewer sacks" onClick="{{ decSacks }}" style="width: 36px; height: 36px; border-radius: 50%; border: 1px solid rgba(255,255,255,.35); background: rgba(255,255,255,.1); color: #FFFFFF; font-size: 20px; font-weight: 700; cursor: pointer; line-height: 1; flex: none;" style-hover="background: rgba(255,255,255,.22);" style-active="transform: scale(0.94);">&#8722;</button>
+            <input type="number" min="1" max="200" value="{{ needSacks }}" onChange="{{ onNeedSacks }}" style="font-family: 'Spline Sans Mono', monospace; font-size: 17px; padding: 9px 12px; border: 1px solid rgba(255,255,255,.22); border-radius: 10px; background: rgba(255,255,255,.08); color: #FFFFFF; width: 74px; box-sizing: border-box; text-align: center;">
+            <button type="button" aria-label="More sacks" onClick="{{ incSacks }}" style="width: 36px; height: 36px; border-radius: 50%; border: 1px solid rgba(255,255,255,.35); background: rgba(255,255,255,.1); color: #FFFFFF; font-size: 20px; font-weight: 700; cursor: pointer; line-height: 1; flex: none;" style-hover="background: rgba(255,255,255,.22);" style-active="transform: scale(0.94);">+</button>
           </label>
         </div>
         <div style="border: 1px solid rgba(255,255,255,.14); border-radius: 12px; background: rgba(7,10,24,.45); padding: 8px; display: grid; grid-template-columns: repeat(11, 1fr); gap: 5px;">
@@ -244,17 +246,17 @@
           <span style="font-family: 'Spline Sans Mono', monospace; font-weight: 600; color: #4ADE80; margin-left: auto;">{{ truckStatus }}</span>
         </div>
         <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(200px, 100%), 1fr)); gap: 10px;">
-          <div style="background: rgba(255,255,255,.07); border: 1px solid rgba(255,255,255,.22); border-radius: 12px; padding: 12px 16px;">
+          <div onClick="{{ goQuote }}" role="link" tabIndex="0" style="background: rgba(255,255,255,.07); border: 1px solid rgba(255,255,255,.22); border-radius: 12px; padding: 12px 16px; cursor: pointer;" style-hover="border-color: rgba(255,255,255,.55); transform: translateY(-2px);">
             <span style="font-size: 11.5px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; color: #FFFFFF;">Your sacks, delivered</span>
             <div style="font-family: 'Spline Sans Mono', monospace; font-weight: 600; font-size: 22px; color: #FFFFFF; margin-top: 2px;">{{ yourCost }}</div>
             <span style="display: block; font-size: 12px; color: #C9D2F2;">{{ perSackCount }}</span>
           </div>
-          <div style="background: rgba(239,68,68,.10); border: 1px solid rgba(239,68,68,.38); border-radius: 12px; padding: 12px 16px;">
+          <div onClick="{{ goQuote }}" role="link" tabIndex="0" style="background: rgba(239,68,68,.10); border: 1px solid rgba(239,68,68,.38); border-radius: 12px; padding: 12px 16px; cursor: pointer;" style-hover="border-color: rgba(239,68,68,.7); transform: translateY(-2px);">
             <span style="font-size: 11.5px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; color: #EF4444;">Single-pallet quotes</span>
             <div style="font-family: 'Spline Sans Mono', monospace; font-weight: 600; font-size: 22px; color: #EF4444; margin-top: 2px; text-decoration: line-through; text-decoration-thickness: 2px; text-decoration-color: rgba(239,68,68,.6);">{{ natCost }}</div>
             <span style="display: block; font-size: 12px; color: #F5B5B5;">what shipping pallets alone costs</span>
           </div>
-          <div style="background: rgba(74,222,128,.10); border: 1px solid rgba(74,222,128,.32); border-radius: 12px; padding: 12px 16px;">
+          <div onClick="{{ goQuote }}" role="link" tabIndex="0" style="background: rgba(74,222,128,.10); border: 1px solid rgba(74,222,128,.32); border-radius: 12px; padding: 12px 16px; cursor: pointer;" style-hover="border-color: rgba(74,222,128,.65); transform: translateY(-2px);">
             <span style="font-size: 11.5px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; color: #86EFAC;">Your per-sack price</span>
             <div style="font-family: 'Spline Sans Mono', monospace; font-weight: 600; font-size: 22px; color: #4ADE80; margin-top: 2px;">{{ perSackPrice }}</div>
             <span style="display: block; font-size: 12px; color: #A9E8BC;">drops with every pallet &#8212; $425 at a full truck</span>
@@ -694,6 +696,9 @@ class Component extends DCLogic {
     return Object.assign(slots, {
       needSacks: this.state.needSacks,
       onNeedSacks: (e) => this.setState({ needSacks: e.target.value }),
+      decSacks: () => this.setState(s => ({ needSacks: String(Math.max(1, (parseInt(s.needSacks, 10) || 2) - 1)) })),
+      incSacks: () => this.setState(s => ({ needSacks: String(Math.min(200, (parseInt(s.needSacks, 10) || 0) + 1)) })),
+      goQuote: () => { const el = document.getElementById('get-a-quote'); if (el) el.scrollIntoView({ behavior: 'smooth' }); },
       yourSacks: n === 0 ? '—' : String(onTruck) + (n > 22 ? ' (+' + (n - 22) + ' more)' : ''),
       communitySacks: n === 0 ? '—' : String(community),
       yourCost, natCost, perSackCount, perSackPrice, truckStatus, truckNote,
