@@ -114,81 +114,81 @@
     </div>
   </header>
 
-  <section id="coverage-calculator" data-screen-label="Coverage calculator page" style="background: #F4F1E8; padding: clamp(56px, 7vw, 90px) 24px; flex: 1;">
+  <section id="coverage-calculator" data-screen-label="Coverage calculator page" style="background: radial-gradient(1100px 520px at 82% -12%, rgba(99,132,255,.28), transparent 62%), radial-gradient(900px 460px at 8% 112%, rgba(74,222,128,.14), transparent 60%), linear-gradient(150deg, #131A36 0%, #1C2650 55%, #27336B 100%); color: #FBF7EC; padding: clamp(56px, 7vw, 90px) 24px; flex: 1;">
     <div style="max-width: 1240px; margin: 0 auto;">
-      <div style="max-width: 680px; margin: 0 auto; text-align: center; display: flex; flex-direction: column; gap: 14px;">
-        <span style="color: #3B7349; font-weight: 700; font-size: 13px; letter-spacing: .12em; text-transform: uppercase;">Coverage calculator</span>
-        <h1 style="font-family: Archivo, sans-serif; font-weight: 800; letter-spacing: -0.022em; font-size: clamp(32px, 4.4vw, 50px); line-height: 1.06; margin: 0;">How many supersacks do you need?</h1>
-        <p style="color: #5C6473; font-size: 18px; margin: 0;">One 2,000-lb supersack covers about 300 sq ft at a 3-inch depth — 150 sq ft at 6 inches. Enter your area and depth; we'll do the math.</p>
+      <div style="max-width: 680px; margin: 0 auto; text-align: center; display: flex; flex-direction: column; gap: 14px; align-items: center;">
+        <span style="display: inline-flex; align-items: center; gap: 8px; background: rgba(255,255,255,.07); border: 1px solid rgba(255,255,255,.16); color: #C7D0F0; font-weight: 700; font-size: 12.5px; letter-spacing: .12em; text-transform: uppercase; padding: 7px 16px; border-radius: 999px;"><span style="width: 8px; height: 8px; border-radius: 50%; background: linear-gradient(160deg, #4ADE80, #16A34A); box-shadow: 0 0 10px rgba(74,222,128,.8);"></span>Coverage calculator</span>
+        <h1 style="font-family: Archivo, sans-serif; font-weight: 800; letter-spacing: -0.022em; font-size: clamp(32px, 4.4vw, 50px); line-height: 1.06; margin: 0; color: #FFFFFF;">How many supersacks do you need?</h1>
+        <p style="color: #B9C3E8; font-size: 18px; margin: 0;">One 2,000-lb supersack covers about 300 sq ft at a 3-inch depth — 150 sq ft at 6 inches. Enter your area and depth; we'll do the math.</p>
       </div>
 
-      <div style="max-width: 960px; margin: 44px auto 0; background: #FFFFFF; border: 1px solid #E3E0D6; border-radius: 14px; box-shadow: 0 8px 28px rgba(28,34,48,.08); display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); overflow: hidden;">
+      <div style="max-width: 960px; margin: 44px auto 0; background: rgba(255,255,255,.05); border: 1px solid rgba(255,255,255,.13); border-radius: 22px; box-shadow: 0 24px 60px rgba(5,8,20,.45); backdrop-filter: blur(14px); display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); overflow: hidden;">
         <div style="padding: clamp(28px, 4vw, 40px); display: flex; flex-direction: column; gap: 22px;">
           <label style="display: flex; flex-direction: column; gap: 8px;">
-            <span style="font-weight: 700; font-size: 15px;">Area to cover (sq ft)</span>
-            <input type="number" min="1" placeholder="e.g. 2500" value="{{ sqft }}" onChange="{{ onSqft }}" style="font-family: 'Spline Sans Mono', monospace; font-size: 20px; padding: 14px 16px; border: 1px solid #D6DAE2; border-radius: 10px; background: #FBF7EC; color: #1C2230; width: 100%; box-sizing: border-box;">
-            <span style="font-size: 13.5px; color: #818897;">Length &#215; width of the area, in feet. Don't know it? <a href="/get-a-quote/" style="color: #3B7349; font-weight: 600;">Send us the address</a> — we'll measure from satellite.</span>
+            <span style="font-weight: 700; font-size: 15px; color: #FFFFFF;">Area to cover (sq ft)</span>
+            <input type="number" min="1" placeholder="e.g. 2500" value="{{ sqft }}" onChange="{{ onSqft }}" style="font-family: 'Spline Sans Mono', monospace; font-size: 20px; padding: 14px 16px; border: 1px solid rgba(255,255,255,.22); border-radius: 12px; background: rgba(255,255,255,.08); color: #FFFFFF; width: 100%; box-sizing: border-box;">
+            <span style="font-size: 13.5px; color: #97A3D1;">Length &#215; width of the area, in feet. Don't know it? <a href="/get-a-quote/" style="color: #7FE0A0; font-weight: 600;">Send us the address</a> — we'll measure from satellite.</span>
           </label>
           <div style="display: flex; flex-direction: column; gap: 8px;">
-            <span style="font-weight: 700; font-size: 15px;">Depth</span>
+            <span style="font-weight: 700; font-size: 15px; color: #FFFFFF;">Depth</span>
             <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 10px;">
               <button onClick="{{ setDepth15 }}" style="font-family: 'Spline Sans Mono', monospace; font-weight: 600; font-size: 15px; padding: 12px 8px; border-radius: 10px; cursor: pointer; border: {{ depthBorder15 }}; background: {{ depthBg15 }}; color: {{ depthColor15 }};">1.5 in<span style="display: block; font-family: 'Public Sans', sans-serif; font-weight: 500; font-size: 11.5px; margin-top: 2px;">weed control</span></button>
               <button onClick="{{ setDepth3 }}" style="font-family: 'Spline Sans Mono', monospace; font-weight: 600; font-size: 15px; padding: 12px 8px; border-radius: 10px; cursor: pointer; border: {{ depthBorder3 }}; background: {{ depthBg3 }}; color: {{ depthColor3 }};">3 in<span style="display: block; font-family: 'Public Sans', sans-serif; font-weight: 500; font-size: 11.5px; margin-top: 2px;">landscape</span></button>
               <button onClick="{{ setDepth6 }}" style="font-family: 'Spline Sans Mono', monospace; font-weight: 600; font-size: 15px; padding: 12px 8px; border-radius: 10px; cursor: pointer; border: {{ depthBorder6 }}; background: {{ depthBg6 }}; color: {{ depthColor6 }};">6 in<span style="display: block; font-family: 'Public Sans', sans-serif; font-weight: 500; font-size: 11.5px; margin-top: 2px;">playground</span></button>
             </div>
             <label style="display: flex; align-items: center; gap: 10px; margin-top: 2px;">
-              <span style="font-weight: 600; font-size: 14px; color: #4C5462;">Or a custom depth:</span>
-              <input type="number" min="1" max="12" step="0.5" placeholder="e.g. 4" value="{{ customDepth }}" onChange="{{ onCustomDepth }}" style="font-family: 'Spline Sans Mono', monospace; font-size: 16px; padding: 9px 12px; border: 1px solid #D6DAE2; border-radius: 10px; background: #FBF7EC; color: #1C2230; width: 90px; box-sizing: border-box;">
-              <span style="font-weight: 600; font-size: 14px; color: #4C5462;">inches</span>
+              <span style="font-weight: 600; font-size: 14px; color: #D7DEF5;">Or a custom depth:</span>
+              <input type="number" min="1" max="12" step="0.5" placeholder="e.g. 4" value="{{ customDepth }}" onChange="{{ onCustomDepth }}" style="font-family: 'Spline Sans Mono', monospace; font-size: 16px; padding: 9px 12px; border: 1px solid rgba(255,255,255,.22); border-radius: 12px; background: rgba(255,255,255,.08); color: #FFFFFF; width: 90px; box-sizing: border-box;">
+              <span style="font-weight: 600; font-size: 14px; color: #D7DEF5;">inches</span>
             </label>
-            <span style="font-size: 13.5px; color: #818897;">Rubber needs just 1.5 in to control weeds — half the depth of wood mulch. Playgrounds need 6 in to meet fall-height standards.</span>
+            <span style="font-size: 13.5px; color: #97A3D1;">Rubber needs just 1.5 in to control weeds — half the depth of wood mulch. Playgrounds need 6 in to meet fall-height standards.</span>
           </div>
         </div>
 
-        <div style="background: #2F5E3A; color: #FBF7EC; padding: clamp(28px, 4vw, 40px); display: flex; flex-direction: column; justify-content: center; gap: 18px;">
+        <div style="background: rgba(7,10,24,.45); color: #FBF7EC; padding: clamp(28px, 4vw, 40px); display: flex; flex-direction: column; justify-content: center; gap: 18px;">
           <div>
-            <span style="font-size: 13px; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; color: #B9D5C0;">You'll need about</span>
+            <span style="font-size: 13px; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; color: #86EFAC;">You'll need about</span>
             <div style="display: flex; align-items: baseline; gap: 12px; margin-top: 4px;">
               <b style="font-family: 'Spline Sans Mono', monospace; font-size: clamp(44px, 5vw, 64px); line-height: 1; color: #FFFFFF;">{{ sacks }}</b>
               <span style="font-size: 19px; font-weight: 600;">supersacks</span>
             </div>
           </div>
-          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px 18px; font-size: 15px; border-top: 1px solid rgba(251,247,236,.25); padding-top: 16px;">
-            <span style="color: #B9D5C0;">Total weight</span><b style="font-family: 'Spline Sans Mono', monospace; text-align: right;">{{ totalWeight }}</b>
-            <span style="color: #B9D5C0;">Truckloads</span><b style="font-family: 'Spline Sans Mono', monospace; text-align: right;">{{ truckloads }}</b>
-            <span style="color: #B9D5C0;">Delivered price</span><b style="font-family: 'Spline Sans Mono', monospace; text-align: right;">{{ estPrice }}</b>
+          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px 18px; font-size: 15px; border-top: 1px solid rgba(255,255,255,.15); padding-top: 16px;">
+            <span style="color: #97A3D1;">Total weight</span><b style="font-family: 'Spline Sans Mono', monospace; text-align: right; color: #FFFFFF;">{{ totalWeight }}</b>
+            <span style="color: #97A3D1;">Truckloads</span><b style="font-family: 'Spline Sans Mono', monospace; text-align: right; color: #FFFFFF;">{{ truckloads }}</b>
+            <span style="color: #97A3D1;">Delivered price</span><b style="font-family: 'Spline Sans Mono', monospace; text-align: right; color: #4ADE80;">{{ estPrice }}</b>
           </div>
-          <span style="font-size: 13px; color: #B9D5C0;">$425 a sack (flat $9,350) applies at a full 22-sack truckload. Less than a full truckload? We'll quote your delivered price individually. Color-locked brown or red adds $115 a sack.</span>
+          <span style="font-size: 13px; color: #97A3D1;">$425 a sack (flat $9,350) applies at a full 22-sack truckload. Less than a full truckload? We'll quote your delivered price individually. Color-locked brown or red adds $115 a sack.</span>
           <a href="/get-a-quote/" style="align-self: flex-start; background: #D8403F; color: #FFFFFF; font-weight: 700; font-size: 16px; text-decoration: none; padding: 13px 26px; border-radius: 999px;" style-hover="background: #BE3534;" style-active="transform: scale(0.97);">Quote {{ sacks }} sacks delivered</a>
         </div>
       </div>
 
       <!-- Safety standards grid -->
-      <div style="max-width: 960px; margin: 28px auto 0; background: #FFFFFF; border: 1px solid #E3E0D6; border-radius: 14px; overflow: hidden;">
-        <div style="background: #1B2444; color: #FBF7EC; padding: 16px 24px; display: flex; align-items: center; gap: 10px;">
+      <div style="max-width: 960px; margin: 28px auto 0; background: rgba(255,255,255,.05); border: 1px solid rgba(255,255,255,.13); border-radius: 22px; backdrop-filter: blur(14px); overflow: hidden;">
+        <div style="background: rgba(7,10,24,.5); color: #FBF7EC; padding: 16px 24px; display: flex; align-items: center; gap: 10px; border-bottom: 1px solid rgba(255,255,255,.12);">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width: 18px; height: 18px; flex: none;"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"></path></svg>
           <b style="font-family: Archivo, sans-serif; font-size: 16px; letter-spacing: .02em;">National Playground Safety Standards (ASTM F1292)</b>
         </div>
         <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));">
-          <div style="padding: 22px 24px; border-right: 1px solid #E3E0D6; display: flex; flex-direction: column; gap: 6px;">
+          <div style="padding: 22px 24px; border-right: 1px solid rgba(255,255,255,.12); display: flex; flex-direction: column; gap: 6px;">
             <div style="display: flex; align-items: baseline; gap: 10px;">
-              <b style="font-family: 'Spline Sans Mono', monospace; font-size: 22px; color: #2F5E3A;">3-Inch Depth</b>
-              <span style="font-weight: 700; font-size: 14px; color: #3A4150;">Critical Fall Height up to 4 feet</span>
+              <b style="font-family: 'Spline Sans Mono', monospace; font-size: 22px; color: #4ADE80;">3-Inch Depth</b>
+              <span style="font-weight: 700; font-size: 14px; color: #FFFFFF;">Critical Fall Height up to 4 feet</span>
             </div>
-            <span style="color: #5C6473; font-size: 14.5px;">Perfect for low-to-the-ground equipment, nurseries, and standard landscaping.</span>
+            <span style="color: #B9C3E8; font-size: 14.5px;">Perfect for low-to-the-ground equipment, nurseries, and standard landscaping.</span>
           </div>
           <div style="padding: 22px 24px; display: flex; flex-direction: column; gap: 6px;">
             <div style="display: flex; align-items: baseline; gap: 10px;">
-              <b style="font-family: 'Spline Sans Mono', monospace; font-size: 22px; color: #2F5E3A;">6-Inch Depth</b>
-              <span style="font-weight: 700; font-size: 14px; color: #3A4150;">Critical Fall Height up to 10 feet</span>
+              <b style="font-family: 'Spline Sans Mono', monospace; font-size: 22px; color: #4ADE80;">6-Inch Depth</b>
+              <span style="font-weight: 700; font-size: 14px; color: #FFFFFF;">Critical Fall Height up to 10 feet</span>
             </div>
-            <span style="color: #5C6473; font-size: 14.5px;">The national commercial standard for school and daycare playground equipment. Taller equipment needs more depth — tell us the fall height and we'll size it for you.</span>
+            <span style="color: #B9C3E8; font-size: 14.5px;">The national commercial standard for school and daycare playground equipment. Taller equipment needs more depth — tell us the fall height and we'll size it for you.</span>
           </div>
         </div>
       </div>
 
       <!-- Liability disclaimer footnote -->
-      <p style="max-width: 960px; margin: 20px auto 0; font-size: 12.5px; line-height: 1.6; color: #818897;">Disclaimer: While 405 Rubber Mulch chunk nuggets are tested to meet standard ASTM F1292 impact-attenuation guidelines (providing up to a 10-foot critical fall height protection at a consolidated 6-inch depth), playground fall height requirements and mandatory safety depths can vary strictly by state, municipal code, and individual childcare licensing agencies. Final compliance and safety verification remain the sole responsibility of the buyer, the equipment manufacturer's specified fall height guidelines, and the local certified playground safety inspector (CPSI).</p>
+      <p style="max-width: 960px; margin: 20px auto 0; font-size: 12.5px; line-height: 1.6; color: #8E99C4;">Disclaimer: While 405 Rubber Mulch chunk nuggets are tested to meet standard ASTM F1292 impact-attenuation guidelines (providing up to a 10-foot critical fall height protection at a consolidated 6-inch depth), playground fall height requirements and mandatory safety depths can vary strictly by state, municipal code, and individual childcare licensing agencies. Final compliance and safety verification remain the sole responsibility of the buyer, the equipment manufacturer's specified fall height guidelines, and the local certified playground safety inspector (CPSI).</p>
     </div>
   </section>
 
@@ -237,9 +237,9 @@ class Component extends DCLogic {
     const depthBtn = (d) => {
       const active = depth === d && !this.state.customDepth;
       return {
-        border: active ? '2px solid #2F5E3A' : '1px solid #D6DAE2',
-        bg: active ? '#2F5E3A' : '#FFFFFF',
-        color: active ? '#FBF7EC' : '#3A4150',
+        border: active ? '1px solid rgba(74,222,128,.7)' : '1px solid rgba(255,255,255,.2)',
+        bg: active ? 'linear-gradient(160deg, #4ADE80, #16A34A)' : 'rgba(255,255,255,.07)',
+        color: active ? '#0B1220' : '#D7DEF5',
       };
     };
     const b15 = depthBtn(1.5), b3 = depthBtn(3), b6 = depthBtn(6);
