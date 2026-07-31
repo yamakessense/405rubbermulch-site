@@ -190,76 +190,76 @@
   </section>
 
   <!-- ===== Fill-the-truck widget ===== -->
-  <section id="fill-the-truck" data-screen-label="Fill the truck" style="scroll-margin-top: 84px; background: #2E3C77; color: #FBF7EC; padding: clamp(56px, 7vw, 100px) 24px;">
+  <section id="fill-the-truck" data-screen-label="Fill the truck" style="scroll-margin-top: 84px; background: radial-gradient(1100px 520px at 82% -12%, rgba(99,132,255,.28), transparent 62%), radial-gradient(900px 460px at 8% 112%, rgba(74,222,128,.14), transparent 60%), linear-gradient(150deg, #131A36 0%, #1C2650 55%, #27336B 100%); color: #FBF7EC; padding: clamp(56px, 7vw, 100px) 24px;">
     <div style="max-width: 1240px; margin: 0 auto;">
-      <div style="max-width: 720px; margin: 0 auto; text-align: center; display: flex; flex-direction: column; gap: 14px;">
-        <span style="color: #95A4D9; font-weight: 700; font-size: 13px; letter-spacing: .12em; text-transform: uppercase;">Fill the truck</span>
-        <h2 style="font-family: Archivo, sans-serif; font-weight: 800; letter-spacing: -0.022em; font-size: clamp(30px, 4vw, 44px); line-height: 1.08; margin: 0; color: #FFFFFF;">Your playground fills part of the flatbed. Your town fills the rest.</h2>
-        <p style="color: #C2CCEC; font-size: 17.5px; margin: 0;">Tell us how many sacks your playground needs, and watch the raffle and sponsorship sacks turn a partial load into full-truck pricing.</p>
+      <div style="max-width: 720px; margin: 0 auto; text-align: center; display: flex; flex-direction: column; gap: 14px; align-items: center;">
+        <span style="display: inline-flex; align-items: center; gap: 8px; background: rgba(255,255,255,.07); border: 1px solid rgba(255,255,255,.16); color: #C7D0F0; font-weight: 700; font-size: 12.5px; letter-spacing: .12em; text-transform: uppercase; padding: 7px 16px; border-radius: 999px;"><span style="width: 8px; height: 8px; border-radius: 50%; background: linear-gradient(160deg, #4ADE80, #16A34A); box-shadow: 0 0 10px rgba(74,222,128,.8);"></span>Fill the truck</span>
+        <h2 style="font-family: Archivo, sans-serif; font-weight: 800; letter-spacing: -0.022em; font-size: clamp(30px, 4vw, 44px); line-height: 1.08; margin: 0; color: #FFFFFF;">Your playground fills part of the flatbed. <span style="background: linear-gradient(90deg, #4ADE80, #FDE047); -webkit-background-clip: text; background-clip: text; color: transparent;">Your town fills the rest.</span></h2>
+        <p style="color: #B9C3E8; font-size: 17.5px; margin: 0;">Tell us how many sacks your playground needs, and watch the raffle and sponsorship sacks turn a partial load into full-truck pricing.</p>
       </div>
 
-      <div style="max-width: 960px; margin: 44px auto 0; background: #FFFFFF; color: #1C2230; border-radius: 14px; box-shadow: 0 16px 40px rgba(17,20,28,.3); overflow: hidden;">
-        <div style="padding: clamp(26px, 4vw, 38px); display: flex; flex-direction: column; gap: 24px;">
+      <div style="max-width: 960px; margin: 44px auto 0; background: rgba(255,255,255,.05); border: 1px solid rgba(255,255,255,.13); color: #FBF7EC; border-radius: 22px; box-shadow: 0 24px 60px rgba(5,8,20,.45); backdrop-filter: blur(14px); overflow: hidden;">
+        <div style="padding: clamp(26px, 4vw, 40px); display: flex; flex-direction: column; gap: 26px;">
           <div style="display: flex; align-items: center; gap: 16px; flex-wrap: wrap;">
             <label style="display: flex; align-items: center; gap: 12px;">
-              <span style="font-weight: 700; font-size: 16px;">Sacks your playground needs:</span>
-              <input type="number" min="1" max="200" value="{{ needSacks }}" onChange="{{ onNeedSacks }}" style="font-family: 'Spline Sans Mono', monospace; font-size: 20px; padding: 12px 14px; border: 1px solid #D6DAE2; border-radius: 10px; background: #FBF7EC; color: #1C2230; width: 92px; box-sizing: border-box;">
+              <span style="font-weight: 700; font-size: 16px; color: #FFFFFF;">Sacks your playground needs:</span>
+              <input type="number" min="1" max="200" value="{{ needSacks }}" onChange="{{ onNeedSacks }}" style="font-family: 'Spline Sans Mono', monospace; font-size: 20px; padding: 12px 14px; border: 1px solid rgba(255,255,255,.22); border-radius: 12px; background: rgba(255,255,255,.08); color: #FFFFFF; width: 92px; box-sizing: border-box;">
             </label>
-            <span style="font-size: 13.5px; color: #818897;">Not sure? <a href="/coverage-calculator/" style="color: #3B7349; font-weight: 600;">Use the coverage calculator</a> — one sack covers 150 sq ft at 6" playground depth, 300 sq ft at 3" for flowerbeds.</span>
+            <span style="font-size: 13.5px; color: #97A3D1;">Not sure? <a href="/coverage-calculator/" style="color: #7FE0A0; font-weight: 600;">Use the coverage calculator</a> — one sack covers 150 sq ft at 6" playground depth, 300 sq ft at 3" for flowerbeds.</span>
           </div>
 
           <!-- Flatbed visual: 22 pallet slots -->
-          <div style="display: flex; flex-direction: column; gap: 10px;">
+          <div style="display: flex; flex-direction: column; gap: 12px;">
             <div style="display: flex; align-items: center; justify-content: space-between; gap: 12px; flex-wrap: wrap;">
-              <b style="font-family: Archivo, sans-serif; font-size: 16px;">The flatbed &#8212; 22 pallet slots</b>
-              <span style="font-family: 'Spline Sans Mono', monospace; font-weight: 600; font-size: 15px; color: #2F5E3A;">{{ truckStatus }}</span>
+              <b style="font-family: Archivo, sans-serif; font-size: 16px; color: #FFFFFF;">The flatbed &#8212; 22 pallet slots</b>
+              <span style="font-family: 'Spline Sans Mono', monospace; font-weight: 600; font-size: 15px; color: #4ADE80;">{{ truckStatus }}</span>
             </div>
-            <div style="border: 2px solid #8A6D3B; border-radius: 10px; background: #C9A96A; padding: 10px; display: grid; grid-template-columns: repeat(11, 1fr); gap: 6px;">
-              <span title="Pallet 1" style="aspect-ratio: 1; border-radius: 5px; background: {{ slot1 }};"></span>
-              <span title="Pallet 2" style="aspect-ratio: 1; border-radius: 5px; background: {{ slot2 }};"></span>
-              <span title="Pallet 3" style="aspect-ratio: 1; border-radius: 5px; background: {{ slot3 }};"></span>
-              <span title="Pallet 4" style="aspect-ratio: 1; border-radius: 5px; background: {{ slot4 }};"></span>
-              <span title="Pallet 5" style="aspect-ratio: 1; border-radius: 5px; background: {{ slot5 }};"></span>
-              <span title="Pallet 6" style="aspect-ratio: 1; border-radius: 5px; background: {{ slot6 }};"></span>
-              <span title="Pallet 7" style="aspect-ratio: 1; border-radius: 5px; background: {{ slot7 }};"></span>
-              <span title="Pallet 8" style="aspect-ratio: 1; border-radius: 5px; background: {{ slot8 }};"></span>
-              <span title="Pallet 9" style="aspect-ratio: 1; border-radius: 5px; background: {{ slot9 }};"></span>
-              <span title="Pallet 10" style="aspect-ratio: 1; border-radius: 5px; background: {{ slot10 }};"></span>
-              <span title="Pallet 11" style="aspect-ratio: 1; border-radius: 5px; background: {{ slot11 }};"></span>
-              <span title="Pallet 12" style="aspect-ratio: 1; border-radius: 5px; background: {{ slot12 }};"></span>
-              <span title="Pallet 13" style="aspect-ratio: 1; border-radius: 5px; background: {{ slot13 }};"></span>
-              <span title="Pallet 14" style="aspect-ratio: 1; border-radius: 5px; background: {{ slot14 }};"></span>
-              <span title="Pallet 15" style="aspect-ratio: 1; border-radius: 5px; background: {{ slot15 }};"></span>
-              <span title="Pallet 16" style="aspect-ratio: 1; border-radius: 5px; background: {{ slot16 }};"></span>
-              <span title="Pallet 17" style="aspect-ratio: 1; border-radius: 5px; background: {{ slot17 }};"></span>
-              <span title="Pallet 18" style="aspect-ratio: 1; border-radius: 5px; background: {{ slot18 }};"></span>
-              <span title="Pallet 19" style="aspect-ratio: 1; border-radius: 5px; background: {{ slot19 }};"></span>
-              <span title="Pallet 20" style="aspect-ratio: 1; border-radius: 5px; background: {{ slot20 }};"></span>
-              <span title="Pallet 21" style="aspect-ratio: 1; border-radius: 5px; background: {{ slot21 }};"></span>
-              <span title="Pallet 22" style="aspect-ratio: 1; border-radius: 5px; background: {{ slot22 }};"></span>
+            <div style="border: 1px solid rgba(255,255,255,.14); border-radius: 16px; background: rgba(7,10,24,.45); padding: 12px; display: grid; grid-template-columns: repeat(11, 1fr); gap: 7px;">
+              <span title="Pallet 1" style="aspect-ratio: 1; border-radius: 7px; box-shadow: inset 0 1px 0 rgba(255,255,255,.16), 0 2px 6px rgba(0,0,0,.25); background: {{ slot1 }};"></span>
+              <span title="Pallet 2" style="aspect-ratio: 1; border-radius: 7px; box-shadow: inset 0 1px 0 rgba(255,255,255,.16), 0 2px 6px rgba(0,0,0,.25); background: {{ slot2 }};"></span>
+              <span title="Pallet 3" style="aspect-ratio: 1; border-radius: 7px; box-shadow: inset 0 1px 0 rgba(255,255,255,.16), 0 2px 6px rgba(0,0,0,.25); background: {{ slot3 }};"></span>
+              <span title="Pallet 4" style="aspect-ratio: 1; border-radius: 7px; box-shadow: inset 0 1px 0 rgba(255,255,255,.16), 0 2px 6px rgba(0,0,0,.25); background: {{ slot4 }};"></span>
+              <span title="Pallet 5" style="aspect-ratio: 1; border-radius: 7px; box-shadow: inset 0 1px 0 rgba(255,255,255,.16), 0 2px 6px rgba(0,0,0,.25); background: {{ slot5 }};"></span>
+              <span title="Pallet 6" style="aspect-ratio: 1; border-radius: 7px; box-shadow: inset 0 1px 0 rgba(255,255,255,.16), 0 2px 6px rgba(0,0,0,.25); background: {{ slot6 }};"></span>
+              <span title="Pallet 7" style="aspect-ratio: 1; border-radius: 7px; box-shadow: inset 0 1px 0 rgba(255,255,255,.16), 0 2px 6px rgba(0,0,0,.25); background: {{ slot7 }};"></span>
+              <span title="Pallet 8" style="aspect-ratio: 1; border-radius: 7px; box-shadow: inset 0 1px 0 rgba(255,255,255,.16), 0 2px 6px rgba(0,0,0,.25); background: {{ slot8 }};"></span>
+              <span title="Pallet 9" style="aspect-ratio: 1; border-radius: 7px; box-shadow: inset 0 1px 0 rgba(255,255,255,.16), 0 2px 6px rgba(0,0,0,.25); background: {{ slot9 }};"></span>
+              <span title="Pallet 10" style="aspect-ratio: 1; border-radius: 7px; box-shadow: inset 0 1px 0 rgba(255,255,255,.16), 0 2px 6px rgba(0,0,0,.25); background: {{ slot10 }};"></span>
+              <span title="Pallet 11" style="aspect-ratio: 1; border-radius: 7px; box-shadow: inset 0 1px 0 rgba(255,255,255,.16), 0 2px 6px rgba(0,0,0,.25); background: {{ slot11 }};"></span>
+              <span title="Pallet 12" style="aspect-ratio: 1; border-radius: 7px; box-shadow: inset 0 1px 0 rgba(255,255,255,.16), 0 2px 6px rgba(0,0,0,.25); background: {{ slot12 }};"></span>
+              <span title="Pallet 13" style="aspect-ratio: 1; border-radius: 7px; box-shadow: inset 0 1px 0 rgba(255,255,255,.16), 0 2px 6px rgba(0,0,0,.25); background: {{ slot13 }};"></span>
+              <span title="Pallet 14" style="aspect-ratio: 1; border-radius: 7px; box-shadow: inset 0 1px 0 rgba(255,255,255,.16), 0 2px 6px rgba(0,0,0,.25); background: {{ slot14 }};"></span>
+              <span title="Pallet 15" style="aspect-ratio: 1; border-radius: 7px; box-shadow: inset 0 1px 0 rgba(255,255,255,.16), 0 2px 6px rgba(0,0,0,.25); background: {{ slot15 }};"></span>
+              <span title="Pallet 16" style="aspect-ratio: 1; border-radius: 7px; box-shadow: inset 0 1px 0 rgba(255,255,255,.16), 0 2px 6px rgba(0,0,0,.25); background: {{ slot16 }};"></span>
+              <span title="Pallet 17" style="aspect-ratio: 1; border-radius: 7px; box-shadow: inset 0 1px 0 rgba(255,255,255,.16), 0 2px 6px rgba(0,0,0,.25); background: {{ slot17 }};"></span>
+              <span title="Pallet 18" style="aspect-ratio: 1; border-radius: 7px; box-shadow: inset 0 1px 0 rgba(255,255,255,.16), 0 2px 6px rgba(0,0,0,.25); background: {{ slot18 }};"></span>
+              <span title="Pallet 19" style="aspect-ratio: 1; border-radius: 7px; box-shadow: inset 0 1px 0 rgba(255,255,255,.16), 0 2px 6px rgba(0,0,0,.25); background: {{ slot19 }};"></span>
+              <span title="Pallet 20" style="aspect-ratio: 1; border-radius: 7px; box-shadow: inset 0 1px 0 rgba(255,255,255,.16), 0 2px 6px rgba(0,0,0,.25); background: {{ slot20 }};"></span>
+              <span title="Pallet 21" style="aspect-ratio: 1; border-radius: 7px; box-shadow: inset 0 1px 0 rgba(255,255,255,.16), 0 2px 6px rgba(0,0,0,.25); background: {{ slot21 }};"></span>
+              <span title="Pallet 22" style="aspect-ratio: 1; border-radius: 7px; box-shadow: inset 0 1px 0 rgba(255,255,255,.16), 0 2px 6px rgba(0,0,0,.25); background: {{ slot22 }};"></span>
             </div>
-            <div style="display: flex; gap: 20px; flex-wrap: wrap; font-size: 14px; color: #3A4150;">
-              <span style="display: flex; align-items: center; gap: 8px;"><span style="width: 14px; height: 14px; border-radius: 4px; background: #2F5E3A; display: inline-block;"></span> Your playground &#8212; <b style="font-family: 'Spline Sans Mono', monospace;">{{ yourSacks }}</b></span>
-              <span style="display: flex; align-items: center; gap: 8px;"><span style="width: 14px; height: 14px; border-radius: 4px; background: #E8B54A; display: inline-block;"></span> Raffle &amp; sponsor sacks &#8212; <b style="font-family: 'Spline Sans Mono', monospace;">{{ communitySacks }}</b></span>
+            <div style="display: flex; gap: 12px; flex-wrap: wrap; font-size: 14px; color: #D7DEF5;">
+              <span style="display: inline-flex; align-items: center; gap: 8px; background: rgba(255,255,255,.07); border: 1px solid rgba(255,255,255,.14); padding: 7px 14px; border-radius: 999px;"><span style="width: 12px; height: 12px; border-radius: 4px; background: linear-gradient(160deg, #4ADE80, #16A34A); display: inline-block;"></span> Your playground &#8212; <b style="font-family: 'Spline Sans Mono', monospace; color: #FFFFFF;">{{ yourSacks }}</b></span>
+              <span style="display: inline-flex; align-items: center; gap: 8px; background: rgba(255,255,255,.07); border: 1px solid rgba(255,255,255,.14); padding: 7px 14px; border-radius: 999px;"><span style="width: 12px; height: 12px; border-radius: 4px; background: linear-gradient(160deg, #FDE047, #F59E0B); display: inline-block;"></span> Raffle &amp; sponsor sacks &#8212; <b style="font-family: 'Spline Sans Mono', monospace; color: #FFFFFF;">{{ communitySacks }}</b></span>
             </div>
           </div>
 
           <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 14px;">
-            <div style="background: #F2F7F3; border: 1px solid #CDE0D2; border-radius: 12px; padding: 18px 20px;">
-              <span style="font-size: 13px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; color: #2F5E3A;">Your sacks at truckload rate</span>
-              <div style="font-family: 'Spline Sans Mono', monospace; font-weight: 600; font-size: 28px; color: #2F5E3A; margin-top: 4px;">{{ yourCost }}</div>
+            <div style="background: rgba(74,222,128,.10); border: 1px solid rgba(74,222,128,.32); border-radius: 16px; padding: 18px 20px;">
+              <span style="font-size: 12.5px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; color: #86EFAC;">Your sacks at truckload rate</span>
+              <div style="font-family: 'Spline Sans Mono', monospace; font-weight: 600; font-size: 28px; color: #4ADE80; margin-top: 4px;">{{ yourCost }}</div>
             </div>
-            <div style="background: #FBEAE9; border: 1px solid #F0C7C5; border-radius: 12px; padding: 18px 20px;">
-              <span style="font-size: 13px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; color: #A02C2B;">Same sacks, single-pallet quotes</span>
-              <div style="font-family: 'Spline Sans Mono', monospace; font-weight: 600; font-size: 28px; color: #A02C2B; margin-top: 4px;">{{ natCost }}</div>
+            <div style="background: rgba(251,113,133,.09); border: 1px solid rgba(251,113,133,.32); border-radius: 16px; padding: 18px 20px;">
+              <span style="font-size: 12.5px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; color: #FDA4AF;">Same sacks, single-pallet quotes</span>
+              <div style="font-family: 'Spline Sans Mono', monospace; font-weight: 600; font-size: 28px; color: #FB7185; margin-top: 4px; text-decoration: line-through; text-decoration-thickness: 2px; text-decoration-color: rgba(251,113,133,.55);">{{ natCost }}</div>
             </div>
-            <div style="background: #F4F1E8; border: 1px solid #E3E0D6; border-radius: 12px; padding: 18px 20px;">
-              <span style="font-size: 13px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; color: #5C6473;">Your town keeps</span>
-              <div style="font-family: 'Spline Sans Mono', monospace; font-weight: 600; font-size: 28px; color: #1C2230; margin-top: 4px;">{{ savings }}</div>
+            <div style="background: rgba(253,224,71,.08); border: 1px solid rgba(253,224,71,.3); border-radius: 16px; padding: 18px 20px;">
+              <span style="font-size: 12.5px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; color: #FDE047;">Your town keeps</span>
+              <div style="font-family: 'Spline Sans Mono', monospace; font-weight: 600; font-size: 28px; color: #FFFFFF; margin-top: 4px;">{{ savings }}</div>
             </div>
           </div>
 
-          <div style="background: #FBF7EC; border: 1px solid #E3E0D6; border-radius: 12px; padding: 16px 20px; font-size: 15px; color: #3A4150;">{{ truckNote }}</div>
+          <div style="background: rgba(255,255,255,.06); border: 1px solid rgba(255,255,255,.12); border-left: 3px solid #4ADE80; border-radius: 12px; padding: 16px 20px; font-size: 15px; color: #D7DEF5;">{{ truckNote }}</div>
         </div>
       </div>
     </div>
@@ -540,10 +540,10 @@ class Component extends DCLogic {
     const onTruck = Math.min(n, 22);
     const community = n === 0 ? 0 : Math.max(0, 22 - n);
 
-    // 22 pallet slots: green = your playground, amber = raffle/sponsor sacks, grey = empty state
+    // 22 pallet slots: green = your playground, amber = raffle/sponsor sacks, dim = empty state
     const slots = {};
     for (let i = 1; i <= 22; i++) {
-      slots['slot' + i] = n === 0 ? '#DDD8C9' : (i <= onTruck ? '#2F5E3A' : '#E8B54A');
+      slots['slot' + i] = n === 0 ? 'rgba(255,255,255,.08)' : (i <= onTruck ? 'linear-gradient(160deg, #4ADE80, #16A34A)' : 'linear-gradient(160deg, #FDE047, #F59E0B)');
     }
 
     const money = (v) => '$' + v.toLocaleString();
