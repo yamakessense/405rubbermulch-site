@@ -742,6 +742,12 @@ class Component extends DCLogic {
         if (this.state.submitting) return;
         const endpoint = this.props.formspreeEndpoint ?? '';
         const form = e.target;
+        const fireConversion = () => {
+          if (typeof window !== 'undefined' && typeof window.gtag === 'function') {
+            window.gtag('event', 'conversion', { 'send_to': 'AW-18336005673/AaJ_CMze69McEKn8pKdE' });
+            window.gtag('event', 'generate_lead', { event_category: 'quote_form', event_label: 'homepage' });
+          }
+        };
         if (endpoint) {
           this.setState({ submitting: true });
           try {
@@ -751,15 +757,13 @@ class Component extends DCLogic {
               headers: { 'Accept': 'application/json' },
             });
           } catch (err) { /* still show success; Formspree also emails on their end */ }
-          if (typeof window.gtag === 'function') {
-            window.gtag('event', 'conversion', { 'send_to': 'AW-18336005673/AaJ_CMze69McEKn8pKdE' });
-            window.gtag('event', 'generate_lead', { event_category: 'quote_form', event_label: 'homepage' });
-          }
+          fireConversion();
           this.setState({ submitted: true, submitting: false });
         } else {
           const fd = new FormData(form);
           const body = ['Name: ' + (fd.get('name') || ''), 'Contact: ' + (fd.get('contact') || ''), 'Project type: ' + (fd.get('type') || ''), 'ZIP: ' + (fd.get('zip') || ''), 'Square footage / address: ' + (fd.get('sqft') || ''), 'Notes: ' + (fd.get('notes') || '')].join('\n');
           window.location.href = 'mailto:b2b@discountokc.com?subject=' + encodeURIComponent('Quote request — 405 Rubber Mulch') + '&body=' + encodeURIComponent(body);
+          fireConversion();
           this.setState({ submitted: true, usedMailto: true });
         }
       },
