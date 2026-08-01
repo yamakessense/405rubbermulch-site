@@ -28,7 +28,14 @@ After that, publishing an update = commit + push to `main`, then Hostinger auto-
 2. Copy the exported files over these (replace `index.html`, add new pages like `thank-you/`, etc.).
 3. `git add -A && git commit -m "…" && git push`
 
-## Conversion tracking note
-The new Google Ads conversion (AW) tag belongs on the **thank-you page** that the visitor reaches
-after a Formspree submission. Set the Formspree form's `_next` to the thank-you URL so the tag
-actually fires on lead completion (the tag can't fire if Formspree keeps the user off-site).
+## Conversion tracking (how it works — don't break this)
+- Every page's `<head>` runs `gtag('config', 'AW-18336005673')`. This must stay on **all** pages:
+  it's what captures the Google Ads click ID (gclid) into the `_gcl_aw` cookie when an ad lands
+  anywhere on the site. Without it, later conversions can't be attributed and never show in Ads.
+- The quote forms (homepage, `get-a-quote/`, `fundraiser/`) submit to Formspree via fetch (AJAX),
+  then redirect to **`/thank-you/`**, which fires the conversion event
+  (`AW-18336005673/AaJ_CMze69McEKn8pKdE`) on page load. The forms also carry
+  `action`/`method`/`_next` attributes so a plain no-JS submission posts to Formspree and lands on
+  the same thank-you page (note: Formspree honors `_next` on paid plans).
+- To verify: open `/thank-you/` in a browser with Google Tag Assistant — the conversion fires on
+  every load. `/thank-you/` is `noindex` and unlinked, so real traffic only reaches it via a form.
