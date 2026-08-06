@@ -40,6 +40,7 @@
     gtag('config', 'GT-WB72BHMG');
     gtag('config', 'G-F6P1TCFK29');
     gtag('config', 'AW-18336005673');
+    gtag('config', 'AW-998556622');
   </script>
   <script type="application/ld+json">
   {
@@ -743,9 +744,15 @@ class Component extends DCLogic {
         if (this.state.submitting) return;
         const endpoint = this.props.formspreeEndpoint ?? '';
         const form = e.target;
+        // One id per submission, carried to /thank-you/ so the purchase
+        // conversion there is deduped across refreshes and back-navigation.
+        const tid = 'q' + Date.now().toString(36) + Math.random().toString(36).slice(2, 8);
+        const next = form.querySelector('input[name="_next"]');
+        if (next) next.value = next.value.split('&tid=')[0] + '&tid=' + tid;
         const fireConversion = () => {
           if (typeof window !== 'undefined' && typeof window.gtag === 'function') {
             window.gtag('event', 'conversion', { 'send_to': 'AW-18336005673/AaJ_CMze69McEKn8pKdE' });
+            window.gtag('event', 'conversion', { 'send_to': 'AW-998556622/DwixCPrwjN0cEM6Hk9wD', 'transaction_id': tid });
             window.gtag('event', 'generate_lead', { event_category: 'quote_form', event_label: 'homepage' });
           }
         };
@@ -758,7 +765,7 @@ class Component extends DCLogic {
               headers: { 'Accept': 'application/json' },
             });
           } catch (err) { /* still continue; Formspree also emails on their end */ }
-          window.location.href = '/thank-you/?from=homepage';
+          window.location.href = '/thank-you/?from=homepage&tid=' + tid;
         } else {
           const fd = new FormData(form);
           const body = ['Name: ' + (fd.get('name') || ''), 'Contact: ' + (fd.get('contact') || ''), 'Project type: ' + (fd.get('type') || ''), 'ZIP: ' + (fd.get('zip') || ''), 'Square footage / address: ' + (fd.get('sqft') || ''), 'Notes: ' + (fd.get('notes') || '')].join('\n');

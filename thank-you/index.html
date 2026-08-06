@@ -17,6 +17,7 @@
   gtag('config', 'GT-WB72BHMG');
   gtag('config', 'G-F6P1TCFK29');
   gtag('config', 'AW-18336005673');
+  gtag('config', 'AW-998556622');
   // Google Ads lead conversion — fires on every load of this page. The only
   // way to reach it is a quote-form submission (it is noindex + unlinked).
   gtag('event', 'conversion', { 'send_to': 'AW-18336005673/AaJ_CMze69McEKn8pKdE' });
@@ -24,6 +25,27 @@
     event_category: 'quote_form',
     event_label: new URLSearchParams(location.search).get('from') || 'unknown'
   });
+</script>
+<!-- Event snippet for Purchase conversion page -->
+<script>
+  // transaction_id keeps one submission from being counted twice: the forms mint
+  // an id and hand it over as ?tid=, so a refresh or a back-button return to this
+  // page replays the same id. Links without ?tid= (old bookmarks, the Formspree
+  // fallback redirect) fall back to a per-tab id held in sessionStorage.
+  (function () {
+    var newId = function () { return 'q' + Date.now().toString(36) + Math.random().toString(36).slice(2, 8); };
+    var tid = new URLSearchParams(location.search).get('tid');
+    if (!tid) {
+      try {
+        tid = sessionStorage.getItem('rm_tid') || newId();
+        sessionStorage.setItem('rm_tid', tid);
+      } catch (e) { tid = newId(); }
+    }
+    gtag('event', 'conversion', {
+      'send_to': 'AW-998556622/DwixCPrwjN0cEM6Hk9wD',
+      'transaction_id': tid
+    });
+  })();
 </script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@700;800&family=Public+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
