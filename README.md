@@ -29,13 +29,22 @@ After that, publishing an update = commit + push to `main`, then Hostinger auto-
 3. `git add -A && git commit -m "…" && git push`
 
 ## Conversion tracking (how it works — don't break this)
-- Every page's `<head>` runs `gtag('config', 'AW-18336005673')`. This must stay on **all** pages:
-  it's what captures the Google Ads click ID (gclid) into the `_gcl_aw` cookie when an ad lands
-  anywhere on the site. Without it, later conversions can't be attributed and never show in Ads.
+- Every page's `<head>` runs `gtag('config', 'AW-18336005673')` **and**
+  `gtag('config', 'AW-998556622')`. Both must stay on **all** pages: that's what captures the
+  Google Ads click ID (gclid) into the `_gcl_aw` cookie when an ad lands anywhere on the site.
+  Without it, later conversions can't be attributed and never show in Ads.
+- There is **one** `gtag.js` loader per page (`?id=GT-WB72BHMG`) and every account rides on it as
+  an extra `config` line. When Google's setup screen hands you a fresh snippet for a new account,
+  take only the `config` command from it — adding a second loader would double-load the library.
 - The quote forms (homepage, `get-a-quote/`, `fundraiser/`) submit to Formspree via fetch (AJAX),
-  then redirect to **`/thank-you/`**, which fires the conversion event
-  (`AW-18336005673/AaJ_CMze69McEKn8pKdE`) on page load. The forms also carry
-  `action`/`method`/`_next` attributes so a plain no-JS submission posts to Formspree and lands on
-  the same thank-you page (note: Formspree honors `_next` on paid plans).
-- To verify: open `/thank-you/` in a browser with Google Tag Assistant — the conversion fires on
+  then redirect to **`/thank-you/`**, which fires both conversion events on page load:
+  `AW-18336005673/AaJ_CMze69McEKn8pKdE` (lead) and `AW-998556622/DwixCPrwjN0cEM6Hk9wD` (purchase).
+  The forms also carry `action`/`method`/`_next` attributes so a plain no-JS submission posts to
+  Formspree and lands on the same thank-you page (note: Formspree honors `_next` on paid plans).
+- `transaction_id` dedupe: each form mints an id at submit time and puts it on both the JS redirect
+  and the `_next` fallback URL (`/thank-you/?from=…&tid=…`); `/thank-you/` reads it back from
+  `?tid=`. A refresh or back-navigation replays the same id, so Google counts one conversion. If
+  you add another form, mint a `tid` the same way — without it the page falls back to a per-tab
+  sessionStorage id, which is weaker.
+- To verify: open `/thank-you/` in a browser with Google Tag Assistant — both conversions fire on
   every load. `/thank-you/` is `noindex` and unlinked, so real traffic only reaches it via a form.
