@@ -30,17 +30,36 @@ HELMET_RE = re.compile(r"([ \t]*)<helmet(\s[^>]*)?>(.*?)</helmet>\s*?\n", re.S |
 TAG_OPEN_RE = re.compile(r"<([a-zA-Z][a-zA-Z0-9-]*)((?:[^>\"']|\"[^\"]*\"|'[^']*')*)>", re.S)
 
 
-def split_children(fragment):
-    """Split a fragment into its top-level elements, preserving source text.
+class HelmetParseError(Exception):
+    """Raised when the helmet holds something this script would not carry over."""
 
-    Helmet children are always flat (title, meta, link, script, style), so a
-    same-name close tag is unambiguously the matching one.
+
+def split_children(fragment):
+    """Split a fragment into its top-level nodes, preserving source text exactly.
+
+    Lossless by construction: every non-whitespace character must end up inside
+    a returned node, or this raises. Silently dropping a stray comment is the
+    one failure mode that would not show up in any downstream check, so the
+    script refuses to guess. Helmet children are always flat (title, meta, link,
+    script, style), so a same-name close tag is unambiguously the matching one.
     """
-    out, i = [], 0
-    while i < len(fragment):
-        m = TAG_OPEN_RE.search(fragment, i)
+    out, i, n = [], 0, len(fragment)
+    while i < n:
+        if fragment[i].isspace():
+            i += 1
+            continue
+        if fragment.startswith("<!--", i):
+            end = fragment.find("-->", i)
+            if end == -1:
+                raise HelmetParseError("unterminated comment in <helmet>")
+            out.append(fragment[i:end + 3])
+            i = end + 3
+            continue
+        m = TAG_OPEN_RE.match(fragment, i)
         if not m:
-            break
+            stray = fragment[i:i + 60].replace("\n", " ")
+            raise HelmetParseError(
+                "unrecognised content in <helmet>, refusing to drop it: %r" % stray)
         name = m.group(1).lower()
         if name in VOID or m.group(2).rstrip().endswith("/"):
             out.append(fragment[m.start():m.end()])
@@ -48,14 +67,14 @@ def split_children(fragment):
             continue
         close = re.compile(r"</%s\s*>" % re.escape(name), re.I).search(fragment, m.end())
         if not close:
-            raise SystemExit("unclosed <%s> in helmet" % name)
+            raise HelmetParseError("unclosed <%s> in <helmet>" % name)
         out.append(fragment[m.start():close.end()])
         i = close.end()
     return out
 
 
 def key(tag):
-    """Identity used for de-duplication: the tag with whitespace collapsed."""
+    """Identity used for de-duplication: the node with whitespace collapsed."""
     return re.sub(r"\s+", " ", tag).strip()
 
 
@@ -111,7 +130,11 @@ def main():
     for path in targets(args.root):
         rel = os.path.relpath(path, args.root)
         src = open(path, encoding="utf-8").read()
-        new, n = hoist(src, rel)
+        try:
+            new, n = hoist(src, rel)
+        except HelmetParseError as e:
+            print("ERROR %s: %s" % (rel, e), file=sys.stderr)
+            return 2
         if new == src:
             continue
         pending += 1
