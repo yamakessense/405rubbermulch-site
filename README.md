@@ -26,7 +26,34 @@ After that, publishing an update = commit + push to `main`, then Hostinger auto-
 ## Updating content from Claude Design
 1. Export/deploy the latest draft out of Claude Design.
 2. Copy the exported files over these (replace `index.html`, add new pages like `thank-you/`, etc.).
-3. `git add -A && git commit -m "…" && git push`
+3. **Re-apply the static `<head>` SEO tags** — see below. A fresh export puts them back inside
+   `<helmet>`, which undoes the fix.
+4. `git add -A && git commit -m "…" && git push`
+
+## SEO tags must live in the real `<head>` (don't break this)
+Claude Design exports put `<title>`, `<meta name="description">`, `<meta name="robots">`, the
+canonical link, the OG/Twitter tags and the JSON-LD inside `<helmet>` — an element in the `<body>`
+whose contents `support.js` copies into `<head>` **at runtime, with JavaScript**. Bingbot does not
+run JavaScript for its SEO checks, so to Bing those tags simply do not exist; Bing Webmaster Tools
+reported "Meta Description tag missing" site-wide because of this.
+
+So on every page the four crawler-critical tags are kept **directly in `<head>`**, not in
+`<helmet>`:
+
+```html
+<title>…</title>
+<meta name="description" content="…">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<link rel="canonical" href="https://405rubbermulch.com/…">
+```
+
+Keep each tag in exactly one place. Leaving a copy in `<helmet>` too makes `support.js` append a
+second one at runtime, which is its own SEO problem (duplicate description / title).
+
+Still JS-injected and therefore invisible to non-rendering crawlers: the OG and Twitter card tags
+(so link previews on Facebook, LinkedIn and X may come up blank) and the LocalBusiness/FAQ JSON-LD.
+The page body is client-rendered too, so a non-rendering crawler sees no copy at all. Fixing that
+means pre-rendering the pages to static HTML — a bigger change, not yet done.
 
 ## Conversion tracking (how it works — don't break this)
 - Every page's `<head>` runs `gtag('config', 'AW-18336005673')`. This must stay on **all** pages:
