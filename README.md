@@ -26,34 +26,37 @@ After that, publishing an update = commit + push to `main`, then Hostinger auto-
 ## Updating content from Claude Design
 1. Export/deploy the latest draft out of Claude Design.
 2. Copy the exported files over these (replace `index.html`, add new pages like `thank-you/`, etc.).
-3. **Re-apply the static `<head>` SEO tags** — see below. A fresh export puts them back inside
-   `<helmet>`, which undoes the fix.
+3. **Run `python3 tools/build-seo.py`** — see below. A fresh export re-buries the SEO tags in
+   `<helmet>`; this puts them back in `<head>`. It is idempotent, so running it twice is harmless.
 4. `git add -A && git commit -m "…" && git push`
 
 ## SEO tags must live in the real `<head>` (don't break this)
-Claude Design exports put `<title>`, `<meta name="description">`, `<meta name="robots">`, the
-canonical link, the OG/Twitter tags and the JSON-LD inside `<helmet>` — an element in the `<body>`
-whose contents `support.js` copies into `<head>` **at runtime, with JavaScript**. Bingbot does not
-run JavaScript for its SEO checks, so to Bing those tags simply do not exist; Bing Webmaster Tools
-reported "Meta Description tag missing" site-wide because of this.
+Claude Design exports put every head-level tag — `<title>`, the meta description, canonical,
+OG/Twitter, the JSON-LD, gtag, the font links — inside `<helmet>`, an element that sits in the
+**`<body>`**. `support.js` copies its children into `<head>` **at runtime, with JavaScript**.
 
-So on every page the four crawler-critical tags are kept **directly in `<head>`**, not in
-`<helmet>`:
+Googlebot renders JS and sees them. **Bingbot does not**, and neither does any social scraper
+(Facebook, LinkedIn, X). To Bing the `<head>` held nothing but charset, viewport and favicons —
+which is why Bing Webmaster Tools reported "Meta Description tag missing" site-wide.
 
-```html
-<title>…</title>
-<meta name="description" content="…">
-<meta name="robots" content="index, follow, max-image-preview:large">
-<link rel="canonical" href="https://405rubbermulch.com/…">
+`tools/build-seo.py` fixes this by moving the tags out of `<helmet>` and into `<head>`:
+
+```
+python3 tools/build-seo.py            # rewrite the pages in place
+python3 tools/build-seo.py --check    # exit 1 if any page still needs it — use before deploying
 ```
 
-Keep each tag in exactly one place. Leaving a copy in `<helmet>` too makes `support.js` append a
-second one at runtime, which is its own SEO problem (duplicate description / title).
+Tags are **moved, not copied**. `support.js` appends helmet children to `<head>` without checking
+what is already there, so a tag left in both places would render twice — trading a missing
+description for a duplicate one. The script de-duplicates against the existing `<head>` (the
+favicons appear in both) and deletes the emptied `<helmet>` wrapper. Pages with no `<helmet>` are
+left alone.
 
-Still JS-injected and therefore invisible to non-rendering crawlers: the OG and Twitter card tags
-(so link previews on Facebook, LinkedIn and X may come up blank) and the LocalBusiness/FAQ JSON-LD.
-The page body is client-rendered too, so a non-rendering crawler sees no copy at all. Fixing that
-means pre-rendering the pages to static HTML — a bigger change, not yet done.
+### Still outstanding: the page body is client-rendered
+`<x-dc>` is a template full of `{{ }}` bindings that React turns into the real page in the browser.
+A crawler that doesn't run JS still sees no body copy at all — so Bing indexes these pages on their
+head tags alone. Fixing that means pre-rendering each page to static HTML at build time, which is a
+real change to the export workflow and has not been done.
 
 ## Conversion tracking (how it works — don't break this)
 - Every page's `<head>` runs `gtag('config', 'AW-18336005673')`. This must stay on **all** pages:

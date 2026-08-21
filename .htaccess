@@ -1,3 +1,7 @@
+# Build tooling lives in the repo but Hostinger deploys the repo contents into
+# public_html, so keep it off the public surface.
+RedirectMatch 404 ^/tools/
+
 # 301 redirects from old area-code landing pages to current state pages
 # (old site used one page per phone area code; consolidated into 4 state pages)
 
