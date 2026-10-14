@@ -413,6 +413,19 @@ class Component extends DCLogic {
         if (this.state.submitting) return;
         const endpoint = this.props.formspreeEndpoint ?? '';
         const form = e.target;
+        // Catch mistyped email domains before the lead is lost. A Sept 2026 lead typed
+        // "heritageba.church.com" for "heritageba.church" and the quote bounced 3 times.
+        const emailField = form.querySelector('input[name=email]');
+        const emailDomain = ((emailField ? emailField.value : '').split('@')[1] || '').trim().toLowerCase();
+        const emailLooksWrong =
+          /[.](church|org|net|edu|gov|us|k12[.][a-z]{2}[.]us)[.]com$/.test(emailDomain) ||
+          /[.](con|cmo|comm|ocm|vom|xom|co[.]com)$/.test(emailDomain) ||
+          /^(gmial|gmai|gamil|gnail|gmail[.]co|yaho|yahooo|yhoo|hotmial|hotmai|outlok|iclod)[.]/.test(emailDomain) ||
+          emailDomain === 'gmail.co' || emailDomain === 'yahoo.co';
+        if (emailLooksWrong && !window.confirm('Please double-check your email: "' + emailField.value + '". If it is mistyped we cannot send your quote. Press OK to send anyway, or Cancel to fix it.')) {
+          emailField.focus();
+          return;
+        }
         const fireConversion = () => {
           if (typeof window !== 'undefined' && typeof window.gtag === 'function') {
             window.gtag('event', 'conversion', { 'send_to': 'AW-18336005673/AaJ_CMze69McEKn8pKdE' });
