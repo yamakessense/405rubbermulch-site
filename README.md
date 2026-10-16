@@ -3,9 +3,14 @@
 Source for the live site at **https://405rubbermulch.com**, deployed to Hostinger.
 
 ## Repo structure (important)
-Every site file lives at the **repository root** — `index.html`, `.htaccess`, `img/`, and the
-state/section folders (`arkansas/`, `kansas/`, `missouri/`, `oklahoma/`,
-`commercial-playgrounds/`, `coverage-calculator/`, `get-a-quote/`, `premium-quality/`, `terms/`).
+Every site file lives at the **repository root** — `index.html`, `support.js`, `.htaccess`,
+`robots.txt`, `sitemap.xml`, `favicon.ico`, the IndexNow key file (`96f1c2389c0f4235b603e3557763fb27.txt`),
+`img/`, and the state/section folders (`arkansas/`, `kansas/`, `missouri/`, `oklahoma/`, `about/`,
+`commercial-playgrounds/`, `coverage-calculator/`, `fundraiser/`, `get-a-quote/`, `premium-quality/`,
+`terms/`, `thank-you/`).
+
+`tools/` holds build scripts only. It gets deployed along with everything else, so `.htaccess`
+returns 404 for `/tools/`. Keep that rule.
 
 **Why this matters:** Hostinger deploys the repo *contents* into `public_html/`. Keeping files at
 the root means they land as `public_html/index.html`, `public_html/arkansas/index.html`, etc. —
