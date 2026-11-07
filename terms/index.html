@@ -36,15 +36,20 @@
   gtag('config', 'AW-18336005673/VxaCCN6jzuEcEKn8pKdE', {
     'phone_conversion_number': '(405) 206-8111',
     'phone_conversion_callback': function (formatted, digits) {
+      var tel = 'tel:+1' + String(digits).replace(/\D/g, '').slice(-10);
       var swap = function () {
-        var w = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT), n;
+        var root = document.getElementById('dc-root') || document.getElementById('dc-static');
+        if (!root) return;
+        var w = document.createTreeWalker(root, NodeFilter.SHOW_TEXT), n;
         while ((n = w.nextNode())) if (n.nodeValue.indexOf('(405) 206-8111') > -1) n.nodeValue = n.nodeValue.split('(405) 206-8111').join(formatted);
-        document.querySelectorAll('a[href^="tel:"]').forEach(function (a) { if (a.getAttribute('href').replace(/\D/g, '').slice(-10) === '4052068111') a.setAttribute('href', 'tel:+1' + String(digits).replace(/\D/g, '').slice(-10)); });
+        root.querySelectorAll('a[href^="tel:"]').forEach(function (a) { var h = a.getAttribute('href'); if (h !== tel && h.replace(/\D/g, '').slice(-10) === '4052068111') a.setAttribute('href', tel); });
       };
-      swap();
-      var mo = new MutationObserver(swap);
-      mo.observe(document.body, { childList: true, subtree: true, characterData: true });
-      setTimeout(function () { mo.disconnect(); }, 15000);
+      var start = function () {
+        swap();
+        // React can mount new phone links later (menus, re-renders): keep watching.
+        new MutationObserver(swap).observe(document.body, { childList: true, subtree: true, characterData: true, attributes: true, attributeFilter: ['href'] });
+      };
+      if (document.body) start(); else document.addEventListener('DOMContentLoaded', start);
     }
   });
   </script>
@@ -64,7 +69,7 @@
 <style>
     body { margin: 0; background: #FBF7EC; }
   </style>
-<!--dc-static-head--><style>.dc-js #dc-static{display:none!important}</style><script>document.documentElement.classList.add('dc-js');(function(){var n=0,t=setInterval(function(){var r=document.getElementById('dc-root'),s=document.getElementById('dc-static');if((r&&r.firstElementChild&&s)||++n>300){clearInterval(t);if(r&&r.firstElementChild&&s)s.remove();}},100);})();</script><!--/dc-static-head-->
+<!--dc-static-head--><style>.dc-js #dc-static{display:none!important}</style><script>document.documentElement.classList.add('dc-js');(function(){var n=0,t=setInterval(function(){var r=document.getElementById('dc-root'),s=document.getElementById('dc-static');if(r&&r.innerText.trim().length>50){clearInterval(t);if(s)s.remove();}else if(++n>80){clearInterval(t);document.documentElement.classList.remove('dc-js');}},100);})();</script><!--/dc-static-head-->
 </head>
 <body>
 <!--dc-static--><div id="dc-static"><div class="sc-host" data-sc-name="Root"><div data-dc-tpl="0" style="font-family: &quot;Public Sans&quot;, system-ui, sans-serif; color: rgb(28, 34, 48); background: rgb(251, 247, 236); font-size: 16px; line-height: 1.6; min-height: 100vh; display: flex; flex-direction: column;">

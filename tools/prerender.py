@@ -35,8 +35,12 @@ HEAD_SNIPPET = (
     HEAD_START
     + "<style>.dc-js #dc-static{display:none!important}</style>"
     + "<script>document.documentElement.classList.add('dc-js');"
+    # Remove the copy once React has rendered real content. If that never happens
+    # (support.js or React failed to load), un-hide the copy after 8 s so the
+    # visitor still gets a readable page instead of a blank one.
     + "(function(){var n=0,t=setInterval(function(){var r=document.getElementById('dc-root'),s=document.getElementById('dc-static');"
-    + "if((r&&r.firstElementChild&&s)||++n>300){clearInterval(t);if(r&&r.firstElementChild&&s)s.remove();}},100);})();</script>"
+    + "if(r&&r.innerText.trim().length>50){clearInterval(t);if(s)s.remove();}"
+    + "else if(++n>80){clearInterval(t);document.documentElement.classList.remove('dc-js');}},100);})();</script>"
     + HEAD_END
 )
 

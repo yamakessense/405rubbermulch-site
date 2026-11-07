@@ -61,7 +61,8 @@ left alone.
 `<x-dc>` is a template full of `{{ }}` bindings that React turns into the real page in the browser.
 A crawler that doesn't run JS still sees no body copy at all — so Bing indexes these pages on their
 head tags alone. `tools/prerender.py` now bakes a static copy of the rendered body ahead of `<x-dc>`, hidden for
-JS visitors and removed once React renders. The raw `<x-dc>` template (with its `{{ }}`) still
+JS visitors and removed once React renders; if React never renders (blocked script), it is
+un-hidden after 8 s so the page isn't blank. The raw `<x-dc>` template (with its `{{ }}`) still
 follows it in the file because support.js needs it, so non-JS crawlers read the real copy first
 but can still see template text after it.
 
@@ -71,16 +72,17 @@ but can still see template text after it.
   anywhere on the site. Without it, later conversions can't be attributed and never show in Ads.
 - The quote forms (homepage, `get-a-quote/`, `fundraiser/`) submit to Formspree via fetch (AJAX),
   then redirect to **`/thank-you/`**, which fires the conversion event
-  (`AW-18336005673/AaJ_CMze69McEKn8pKdE`) on page load. The forms also carry
+  (`AW-18336005673/AaJ_CMze69McEKn8pKdE`) only when it finds the one-time `ec_ud` marker the
+  form leaves after Formspree answers OK. Refreshes, direct visits and failed submits don't count. The forms also carry
   `action`/`method`/`_next` attributes so a plain no-JS submission posts to Formspree and lands on
   the same thank-you page (note: Formspree honors `_next` on paid plans).
-- **Enhanced conversions:** each quote form saves the visitor's email and phone to
-  `sessionStorage` (`ec_ud`) right before redirecting. `/thank-you/` reads it, calls
+- **Enhanced conversions:** after Formspree confirms a submission, each quote form saves the
+  visitor's email and phone to `sessionStorage` (`ec_ud`). `/thank-you/` reads it, calls
   `gtag('set', 'user_data', …)` (Google hashes it), fires the conversion, and deletes the key.
 - **Website call conversion:** every page except `/thank-you/` configures
   `AW-18336005673/VxaCCN6jzuEcEKn8pKdE` with `phone_conversion_number: '(405) 206-8111'`.
   A `phone_conversion_callback` swaps the number (text and `tel:` links) for Google's
-  forwarding number on ad visits, re-applying for 15 s as React renders. Keep the number on the
+  forwarding number on ad visits, re-applying (via MutationObserver, scoped to `#dc-root`/`#dc-static`) as React renders. Keep the number on the
   page written exactly `(405) 206-8111`.
-- To verify: open `/thank-you/` in a browser with Google Tag Assistant — the conversion fires on
-  every load. `/thank-you/` is `noindex` and unlinked, so real traffic only reaches it via a form.
+- To verify: submit a real quote with Google Tag Assistant open; opening `/thank-you/` directly
+  correctly fires nothing. `/thank-you/` is `noindex` and unlinked, so real traffic only reaches it via a form.

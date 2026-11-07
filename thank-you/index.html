@@ -18,28 +18,27 @@
   gtag('config', 'GT-WB72BHMG');
   gtag('config', 'G-F6P1TCFK29');
   gtag('config', 'AW-18336005673');
-  // Enhanced conversions: the quote form stashes the visitor's email and phone
-  // in sessionStorage right before redirecting here. Hand them to the Google tag
-  // (it hashes them before sending), then delete them from the browser.
-  try {
-    var _ud = JSON.parse(sessionStorage.getItem('ec_ud') || 'null');
-    sessionStorage.removeItem('ec_ud');
-    if (_ud) {
-      var _d = String(_ud.p || '').replace(/\D/g, '');
-      if (_d.length === 11 && _d.charAt(0) === '1') _d = _d.slice(1);
-      var _user = {};
-      if (_ud.e && _ud.e.indexOf('@') > 0) _user.email = String(_ud.e).trim().toLowerCase();
-      if (_d.length === 10) _user.phone_number = '+1' + _d;
-      if (_user.email || _user.phone_number) gtag('set', 'user_data', _user);
-    }
-  } catch (_) {}
-  // Google Ads lead conversion — fires on every load of this page. The only
-  // way to reach it is a quote-form submission (it is noindex + unlinked).
-  gtag('event', 'conversion', { 'send_to': 'AW-18336005673/AaJ_CMze69McEKn8pKdE' });
-  gtag('event', 'generate_lead', {
-    event_category: 'quote_form',
-    event_label: new URLSearchParams(location.search).get('from') || 'unknown'
-  });
+  // Count the lead only once, and only after a confirmed form submission: the
+  // quote form leaves a one-time 'ec_ud' marker (email + phone) in sessionStorage
+  // after Formspree answers OK. Refreshes and direct visits find no marker.
+  // Email/phone go to the Google tag for enhanced conversions (Google hashes
+  // them), then the marker is deleted.
+  (function () {
+    var _ud = null;
+    try { _ud = JSON.parse(sessionStorage.getItem('ec_ud') || 'null'); sessionStorage.removeItem('ec_ud'); } catch (_) {}
+    if (!_ud) return;
+    var _d = String(_ud.p || '').replace(/\D/g, '');
+    if (_d.length === 11 && _d.charAt(0) === '1') _d = _d.slice(1);
+    var _user = {};
+    if (_ud.e && String(_ud.e).indexOf('@') > 0) _user.email = String(_ud.e).trim().toLowerCase();
+    if (_d.length === 10) _user.phone_number = '+1' + _d;
+    if (_user.email || _user.phone_number) gtag('set', 'user_data', _user);
+    gtag('event', 'conversion', { 'send_to': 'AW-18336005673/AaJ_CMze69McEKn8pKdE' });
+    gtag('event', 'generate_lead', {
+      event_category: 'quote_form',
+      event_label: new URLSearchParams(location.search).get('from') || 'unknown'
+    });
+  })();
 </script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@700;800&family=Public+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
