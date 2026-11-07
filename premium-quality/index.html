@@ -57,19 +57,113 @@
   });
   </script>
 <script type="application/ld+json">
-  { "@context": "https://schema.org", "@graph": [
-    { "@type": "BreadcrumbList", "itemListElement": [
-      { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://405rubbermulch.com/" },
-      { "@type": "ListItem", "position": 2, "name": "Why Our Mulch", "item": "https://405rubbermulch.com/premium-quality/" }
-    ] },
-    { "@type": "Product", "name": "Semi-Truck Tire Chunk Nugget Rubber Mulch",
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://405rubbermulch.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Why Our Mulch",
+          "item": "https://405rubbermulch.com/premium-quality/"
+        }
+      ]
+    },
+    {
+      "@type": "Product",
+      "name": "Semi-Truck Tire Chunk Nugget Rubber Mulch",
       "image": "https://405rubbermulch.com/img/our-nuggets.png",
       "description": "Heavy chunk-nugget rubber mulch cut exclusively from semi-truck tires — 99%+ metal-free, magnet-extracted and sampled, with a 12-year color-lock warranty on brown and red.",
-      "brand": { "@type": "Brand", "name": "405 Rubber Mulch" },
-      "offers": { "@type": "Offer", "price": "425", "priceCurrency": "USD", "availability": "https://schema.org/InStock",
-        "description": "$425 per 2,000-lb supersack, delivered, at a full 22-sack truckload." } }
-  ] }
-  </script>
+      "brand": {
+        "@type": "Brand",
+        "name": "405 Rubber Mulch"
+      },
+      "offers": [
+        {
+          "@type": "Offer",
+          "name": "Full truckload, black or blue: 22 supersacks (44,000 lb), delivered",
+          "price": "9350",
+          "priceCurrency": "USD",
+          "availability": "https://schema.org/InStock",
+          "priceSpecification": {
+            "@type": "UnitPriceSpecification",
+            "price": "425",
+            "priceCurrency": "USD",
+            "unitText": "per 2,000-lb supersack at a full 22-sack truckload, delivered"
+          },
+          "eligibleQuantity": {
+            "@type": "QuantitativeValue",
+            "value": 22,
+            "unitText": "supersacks"
+          },
+          "areaServed": [
+            {
+              "@type": "State",
+              "name": "Oklahoma"
+            },
+            {
+              "@type": "State",
+              "name": "Kansas"
+            },
+            {
+              "@type": "State",
+              "name": "Missouri"
+            },
+            {
+              "@type": "State",
+              "name": "Arkansas"
+            }
+          ]
+        },
+        {
+          "@type": "Offer",
+          "name": "Full truckload, brown or red: 22 supersacks (44,000 lb), delivered",
+          "price": "11880",
+          "priceCurrency": "USD",
+          "availability": "https://schema.org/InStock",
+          "priceSpecification": {
+            "@type": "UnitPriceSpecification",
+            "price": "540",
+            "priceCurrency": "USD",
+            "unitText": "per 2,000-lb supersack at a full 22-sack truckload, delivered"
+          },
+          "eligibleQuantity": {
+            "@type": "QuantitativeValue",
+            "value": 22,
+            "unitText": "supersacks"
+          },
+          "areaServed": [
+            {
+              "@type": "State",
+              "name": "Oklahoma"
+            },
+            {
+              "@type": "State",
+              "name": "Kansas"
+            },
+            {
+              "@type": "State",
+              "name": "Missouri"
+            },
+            {
+              "@type": "State",
+              "name": "Arkansas"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
+</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@600;700;800&family=Public+Sans:wght@400;500;600;700&family=Spline+Sans+Mono:wght@500;600&display=swap" rel="stylesheet">
 <style>

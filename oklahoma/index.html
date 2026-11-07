@@ -58,27 +58,77 @@
   });
   </script>
 <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "LocalBusiness",
-    "name": "405 Rubber Mulch",
-    "description": "Bulk IPEMA-certified rubber mulch delivered across Oklahoma. We help schools, parks and towns evaluate surfacing for DEQ recycled-tire market development projects.",
-    "url": "https://405rubbermulch.com/oklahoma/",
-    "image": "https://405rubbermulch.com/img/playground-rubber-mulch.jpg",
-    "telephone": "+14052068111",
-    "parentOrganization": { "@type": "Organization", "name": "Jameson's Discount Home Improvement" },
-    "address": { "@type": "PostalAddress", "addressLocality": "Oklahoma City", "addressRegion": "OK", "addressCountry": "US" },
-    "priceRange": "$$",
-    "areaServed": { "@type": "State", "name": "Oklahoma" },
-    "offers": {
+{
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "name": "405 Rubber Mulch",
+  "description": "Bulk IPEMA-certified rubber mulch delivered across Oklahoma. We help schools, parks and towns evaluate surfacing for DEQ recycled-tire market development projects.",
+  "url": "https://405rubbermulch.com/oklahoma/",
+  "image": "https://405rubbermulch.com/img/playground-rubber-mulch.jpg",
+  "telephone": "+14052068111",
+  "parentOrganization": {
+    "@type": "Organization",
+    "name": "Jameson's Discount Home Improvement"
+  },
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Oklahoma City",
+    "addressRegion": "OK",
+    "addressCountry": "US"
+  },
+  "priceRange": "$$",
+  "areaServed": {
+    "@type": "State",
+    "name": "Oklahoma"
+  },
+  "offers": [
+    {
       "@type": "Offer",
-      "price": "425",
+      "name": "Full truckload, black or blue: 22 supersacks (44,000 lb), delivered",
+      "price": "9350",
       "priceCurrency": "USD",
-      "description": "$425 per 2,000-lb supersack at a full truckload, delivered. Sliding scale by quantity; every price shown is the delivered price.",
-      "areaServed": { "@type": "State", "name": "Oklahoma" }
+      "availability": "https://schema.org/InStock",
+      "priceSpecification": {
+        "@type": "UnitPriceSpecification",
+        "price": "425",
+        "priceCurrency": "USD",
+        "unitText": "per 2,000-lb supersack at a full 22-sack truckload, delivered"
+      },
+      "eligibleQuantity": {
+        "@type": "QuantitativeValue",
+        "value": 22,
+        "unitText": "supersacks"
+      },
+      "areaServed": {
+        "@type": "State",
+        "name": "Oklahoma"
+      }
+    },
+    {
+      "@type": "Offer",
+      "name": "Full truckload, brown or red: 22 supersacks (44,000 lb), delivered",
+      "price": "11880",
+      "priceCurrency": "USD",
+      "availability": "https://schema.org/InStock",
+      "priceSpecification": {
+        "@type": "UnitPriceSpecification",
+        "price": "540",
+        "priceCurrency": "USD",
+        "unitText": "per 2,000-lb supersack at a full 22-sack truckload, delivered"
+      },
+      "eligibleQuantity": {
+        "@type": "QuantitativeValue",
+        "value": 22,
+        "unitText": "supersacks"
+      },
+      "areaServed": {
+        "@type": "State",
+        "name": "Oklahoma"
+      }
     }
-  }
-  </script>
+  ]
+}
+</script>
 <script type="application/ld+json">
   { "@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [
       { "@type": "Question", "name": "Do you deliver rubber mulch in Oklahoma?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. We deliver bulk and truckload IPEMA-certified rubber mulch across Oklahoma at one delivered price. Send your square footage or an address and we'll size the load and quote it." } },
