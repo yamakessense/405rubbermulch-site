@@ -33,7 +33,24 @@
     gtag('js', new Date());
     gtag('config', 'GT-WB72BHMG');
     gtag('config', 'G-F6P1TCFK29');
-    gtag('config', 'AW-18336005673');
+  gtag('config', 'AW-18336005673');
+  // Google Ads website call conversion: swaps (405) 206-8111 for a Google
+  // forwarding number for ad visitors. The page body renders after this runs,
+  // so the callback re-applies the swap as React adds text.
+  gtag('config', 'AW-18336005673/VxaCCN6jzuEcEKn8pKdE', {
+    'phone_conversion_number': '(405) 206-8111',
+    'phone_conversion_callback': function (formatted, digits) {
+      var swap = function () {
+        var w = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT), n;
+        while ((n = w.nextNode())) if (n.nodeValue.indexOf('(405) 206-8111') > -1) n.nodeValue = n.nodeValue.split('(405) 206-8111').join(formatted);
+        document.querySelectorAll('a[href^="tel:"]').forEach(function (a) { if (a.getAttribute('href').replace(/\D/g, '').slice(-10) === '4052068111') a.setAttribute('href', 'tel:+1' + String(digits).replace(/\D/g, '').slice(-10)); });
+      };
+      swap();
+      var mo = new MutationObserver(swap);
+      mo.observe(document.body, { childList: true, subtree: true, characterData: true });
+      setTimeout(function () { mo.disconnect(); }, 15000);
+    }
+  });
   </script>
 <script type="application/ld+json">
   {
@@ -80,8 +97,220 @@
 <style>
     body { margin: 0; background: #FBF7EC; }
   </style>
+<!--dc-static-head--><style>.dc-js #dc-static{display:none!important}</style><script>document.documentElement.classList.add('dc-js');(function(){var n=0,t=setInterval(function(){var r=document.getElementById('dc-root'),s=document.getElementById('dc-static');if((r&&r.firstElementChild&&s)||++n>300){clearInterval(t);if(r&&r.firstElementChild&&s)s.remove();}},100);})();</script><!--/dc-static-head-->
 </head>
 <body>
+<!--dc-static--><div id="dc-static"><div class="sc-host" data-sc-name="Root"><div data-dc-tpl="0" style="font-family: &quot;Public Sans&quot;, system-ui, sans-serif; color: rgb(28, 34, 48); background: rgb(251, 247, 236); font-size: 16px; line-height: 1.6; min-height: 100vh; display: flex; flex-direction: column;">
+
+  <header data-dc-tpl="1" style="position: sticky; top: 0px; z-index: 50; background: rgba(255, 255, 255, 0.92); backdrop-filter: blur(8px); border-bottom: 1px solid rgb(227, 224, 214); transform: none; transition: transform 0.28s;">
+    <div data-dc-tpl="2" style="max-width: 1240px; margin: 0px auto; padding: 0px 24px; height: 72px; display: flex; align-items: center; justify-content: space-between; gap: 24px;">
+      <a data-dc-tpl="3" href="/" style="display: flex; align-items: center; gap: 12px; text-decoration: none; color: rgb(28, 34, 48);">
+        <img data-dc-tpl="4" src="/img/logo-tire.png" alt="405 Rubber Mulch — Jameson's" style="width: 48px; height: 48px; object-fit: contain;">
+        <span data-dc-tpl="5" style="display: flex; flex-direction: column; line-height: 1.1;">
+          <b data-dc-tpl="6" style="font-family: Archivo, sans-serif; font-weight: 800; font-size: 17px; letter-spacing: -0.02em; white-space: nowrap;">405 Rubber Mulch</b>
+          <span data-dc-tpl="7" style="font-size: 12px; color: rgb(92, 100, 115);">Bulk &amp; truckload delivery</span>
+        </span>
+      </a>
+      <nav data-dc-tpl="8" style="display: flex; align-items: center; gap: 22px; font-weight: 600; font-size: 15px;">
+        <a data-dc-tpl="9" href="/premium-quality/" class="scp0" style="color: rgb(58, 65, 80); text-decoration: none;">Why our mulch</a>
+        <a data-dc-tpl="10" href="/commercial-playgrounds/" class="scp0" style="color: rgb(58, 65, 80); text-decoration: none;">Schools &amp; daycares</a>
+        <a data-dc-tpl="11" href="/fundraiser/" class="scp0" style="color: rgb(58, 65, 80); text-decoration: none;">Fundraising</a>
+        <a data-dc-tpl="12" href="/coverage-calculator/" class="scp0" style="color: rgb(58, 65, 80); text-decoration: none;">Calculator</a>
+        <a data-dc-tpl="13" href="/about/" class="scp0" style="color: rgb(58, 65, 80); text-decoration: none;">About</a>
+        <a data-dc-tpl="14" href="/get-a-quote/" class="scp1 scp2" style="background: rgb(59, 115, 73); color: rgb(251, 247, 236); font-weight: 700; text-decoration: none; padding: 11px 22px; border-radius: 999px; box-shadow: rgba(47, 94, 58, 0.35) 0px 2px 8px;">Get a quote</a>
+      </nav>
+    </div>
+    <div data-dc-tpl="15" style="border-top: 1px solid rgb(227, 224, 214); background: rgb(255, 255, 255);">
+      <div data-dc-tpl="16" style="max-width: 1240px; margin: 0px auto; padding: 6px 12px; display: flex; gap: 2px 4px; flex-wrap: wrap; align-items: center; font-size: 12.5px;">
+        <span data-dc-tpl="17" style="color: rgb(129, 136, 151); font-weight: 600;">Serving:</span>
+        <span data-dc-tpl="18" style="background: rgb(47, 94, 58); color: rgb(251, 247, 236); padding: 2px 5px; border-radius: 6px; font-weight: 700;">Oklahoma</span>
+        <a data-dc-tpl="19" href="/kansas/" class="scp3" style="color: rgb(58, 65, 80); text-decoration: none; padding: 2px 5px; border-radius: 6px; font-weight: 600;">Kansas</a>
+        <a data-dc-tpl="20" href="/missouri/" class="scp3" style="color: rgb(58, 65, 80); text-decoration: none; padding: 2px 5px; border-radius: 6px; font-weight: 600;">Missouri</a>
+        <a data-dc-tpl="21" href="/arkansas/" class="scp3" style="color: rgb(58, 65, 80); text-decoration: none; padding: 2px 5px; border-radius: 6px; font-weight: 600;">Arkansas</a>
+      </div>
+    </div>
+  </header>
+
+  <main data-dc-tpl="22" data-screen-label="Oklahoma state page" style="flex: 1 1 0%;">
+    <section data-dc-tpl="23" style="background: rgb(27, 36, 68); color: rgb(251, 247, 236); padding: clamp(48px, 6vw, 80px) 24px;">
+      <div data-dc-tpl="24" style="max-width: 720px; margin: 0px auto; display: flex; flex-direction: column; gap: 16px;">
+        <span data-dc-tpl="25" style="color: rgb(149, 164, 217); font-weight: 700; font-size: 13px; letter-spacing: 0.12em; text-transform: uppercase;">Serving Oklahoma schools, parks &amp; municipalities</span>
+        <h1 data-dc-tpl="26" style="font-family: Archivo, sans-serif; font-weight: 800; letter-spacing: -0.022em; font-size: clamp(30px, 4.2vw, 46px); line-height: 1.08; margin: 0px; color: rgb(255, 255, 255);">Bulk rubber mulch delivery across Oklahoma</h1>
+        <p data-dc-tpl="27" style="color: rgb(194, 204, 236); font-size: 18px; margin: 0px;">IPEMA-certified playground and landscape rubber mulch, delivered by the load. We help Oklahoma organizations spec and source surfacing that supports DEQ's recycled-tire market goals.</p>
+        <div data-dc-tpl="28" style="display: flex; gap: 14px; flex-wrap: wrap; margin-top: 6px;">
+          <a data-dc-tpl="29" href="/get-a-quote/" class="scp4 scp2" style="background: rgb(216, 64, 63); color: rgb(255, 255, 255); font-weight: 700; font-size: 16px; text-decoration: none; padding: 14px 26px; border-radius: 999px;">Request a delivered quote</a>
+          <a data-dc-tpl="30" href="tel:+14052068111" class="scp5" style="background: rgba(251, 247, 236, 0.12); border: 1px solid rgba(251, 247, 236, 0.45); color: rgb(251, 247, 236); font-weight: 700; font-size: 16px; text-decoration: none; padding: 14px 26px; border-radius: 999px;">Call (405) 206-8111</a>
+        </div>
+      </div>
+    </section>
+
+    <section data-dc-tpl="31" style="background: rgb(255, 255, 255); padding: clamp(48px, 6vw, 72px) 24px;">
+      <div data-dc-tpl="32" style="max-width: 1240px; margin: 0px auto;">
+        <h2 data-dc-tpl="33" style="font-family: Archivo, sans-serif; font-weight: 800; letter-spacing: -0.02em; font-size: clamp(24px, 3vw, 32px); margin: 0px 0px 14px;">Bulk savings, delivered</h2>
+        <p data-dc-tpl="34" style="color: rgb(58, 65, 80); font-size: 17.5px; max-width: 70ch; margin: 0px 0px 24px;">We deliver IPEMA-certified rubber mulch by the load across Oklahoma. Tell us your square footage or send an address and we'll measure it, spec the supersacks for your depth, and quote a single delivered number — no surprise freight.</p>
+        <div data-dc-tpl="35" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 16px;">
+          <div data-dc-tpl="36" style="background: rgb(244, 241, 232); border: 1px solid rgb(227, 224, 214); border-radius: 14px; padding: 20px; text-align: center;">
+            <b data-dc-tpl="37" style="display: block; font-family: &quot;Spline Sans Mono&quot;, monospace; font-size: 26px; color: rgb(47, 94, 58);">$425</b>
+            <span data-dc-tpl="38" style="font-size: 13.5px; color: rgb(92, 100, 115);">per supersack at a full truckload, delivered</span>
+          </div>
+          <div data-dc-tpl="39" style="background: rgb(244, 241, 232); border: 1px solid rgb(227, 224, 214); border-radius: 14px; padding: 20px; text-align: center;">
+            <b data-dc-tpl="40" style="display: block; font-family: &quot;Spline Sans Mono&quot;, monospace; font-size: 26px; color: rgb(47, 94, 58);">~150 sq ft</b>
+            <span data-dc-tpl="41" style="font-size: 13.5px; color: rgb(92, 100, 115);">covered per sack at 6-in depth</span>
+          </div>
+          <div data-dc-tpl="42" style="background: rgb(244, 241, 232); border: 1px solid rgb(227, 224, 214); border-radius: 14px; padding: 20px; text-align: center;">
+            <b data-dc-tpl="43" style="display: block; font-family: &quot;Spline Sans Mono&quot;, monospace; font-size: 26px; color: rgb(47, 94, 58);">Net 30</b>
+            <span data-dc-tpl="44" style="font-size: 13.5px; color: rgb(92, 100, 115);">for schools &amp; municipalities</span>
+          </div>
+        </div>
+        <p data-dc-tpl="45" style="font-size: 13.5px; color: rgb(129, 136, 151); margin: 16px 0px 0px;">One 2,000-lb supersack is about 3 cubic yards — roughly 150 sq ft at 6 in, 300 sq ft at 3 in, or 450 sq ft at 2 in.</p>
+      </div>
+    </section>
+
+    <section data-dc-tpl="46" style="background: rgb(244, 241, 232); padding: clamp(48px, 6vw, 72px) 24px;">
+      <div data-dc-tpl="47" style="max-width: 1240px; margin: 0px auto;">
+        <span data-dc-tpl="48" style="color: rgb(59, 115, 73); font-weight: 700; font-size: 13px; letter-spacing: 0.12em; text-transform: uppercase;">Discount roots · Truckload math</span>
+        <h2 data-dc-tpl="49" style="font-family: Archivo, sans-serif; font-weight: 800; letter-spacing: -0.02em; font-size: clamp(24px, 3vw, 32px); margin: 10px 0px 14px;">Why our delivered price beats everyone else's</h2>
+        <p data-dc-tpl="50" style="color: rgb(58, 65, 80); font-size: 17px; max-width: 72ch; margin: 0px 0px 12px;">405 Rubber Mulch grew out of Jameson's Discount Home Improvement in Oklahoma City, and the model is pure discount retail: buy in bulk, move it cheap, pass the savings on. We run full flatbeds — 22 supersacks, 44,000 lbs — because a full truck is the cheapest way to move rubber across Oklahoma. At a full load it's $425 a sack delivered, and on smaller orders every sack you add pulls your per-sack price down. No showroom, no sales crew, no installer markup — you unload it yourself and keep the difference.</p>
+        <p data-dc-tpl="51" style="color: rgb(58, 65, 80); font-size: 17px; max-width: 72ch; margin: 0px 0px 24px;">And here's the number to anchor on: <b data-dc-tpl="52" style="color: rgb(28, 34, 48);">what wood mulch costs you every single year.</b> Wood looks cheap the season you buy it — then it fades by August, floats off in the first gully-washer, and has to be re-bought and re-spread next spring. Rubber costs more on day one and then just about nothing for a decade. It doesn't float, doesn't wash away, doesn't rot, and holds its color. Most beds pay back the difference in a few seasons of skipped wood mulch.</p>
+        <div data-dc-tpl="53" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 16px;">
+          <div data-dc-tpl="54" style="background: rgb(255, 255, 255); border: 1px solid rgb(227, 224, 214); border-radius: 14px; padding: 20px 24px;">
+            <b data-dc-tpl="55" style="display: block; font-family: Archivo, sans-serif; font-size: 17px; color: rgb(160, 44, 43); margin-bottom: 8px;">Wood mulch, year after year</b>
+            <div data-dc-tpl="56" style="display: flex; flex-direction: column; gap: 7px; font-size: 15px; color: rgb(76, 84, 98);">
+              <span data-dc-tpl="57">✗ &nbsp;Re-buy and re-spread every spring</span>
+              <span data-dc-tpl="58">✗ &nbsp;Floats and washes out in heavy rain</span>
+              <span data-dc-tpl="59">✗ &nbsp;Fades by late summer, feeds termites</span>
+            </div>
+          </div>
+          <div data-dc-tpl="60" style="background: rgb(255, 255, 255); border: 2px solid rgb(59, 115, 73); border-radius: 14px; padding: 20px 24px;">
+            <b data-dc-tpl="61" style="display: block; font-family: Archivo, sans-serif; font-size: 17px; color: rgb(47, 94, 58); margin-bottom: 8px;">Rubber mulch, once</b>
+            <div data-dc-tpl="62" style="display: flex; flex-direction: column; gap: 7px; font-size: 15px; color: rgb(42, 49, 66);">
+              <span data-dc-tpl="63">✓ &nbsp;Install once — no annual topping off</span>
+              <span data-dc-tpl="64">✓ &nbsp;Won't float or blow away — stays put in storms</span>
+              <span data-dc-tpl="65">✓ &nbsp;Holds color for years; no rot, no termites</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section data-dc-tpl="66" style="background: rgb(255, 255, 255); padding: clamp(48px, 6vw, 72px) 24px;">
+      <div data-dc-tpl="67" style="max-width: 1240px; margin: 0px auto;">
+        <span data-dc-tpl="68" style="color: rgb(59, 115, 73); font-weight: 700; font-size: 13px; letter-spacing: 0.12em; text-transform: uppercase;">The DIY unload</span>
+        <h2 data-dc-tpl="69" style="font-family: Archivo, sans-serif; font-weight: 800; letter-spacing: -0.02em; font-size: clamp(24px, 3vw, 32px); margin: 10px 0px 14px;">Meet the truck, grab a wheelbarrow.</h2>
+        <p data-dc-tpl="70" style="color: rgb(58, 65, 80); font-size: 17px; max-width: 72ch; margin: 0px 0px 24px;">This is the part that keeps the price down — and it's easier than it sounds. Oklahoma crews do it the same way every time:</p>
+        <div data-dc-tpl="71" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 16px;">
+          <div data-dc-tpl="72" style="background: rgb(244, 241, 232); border: 1px solid rgb(227, 224, 214); border-radius: 14px; padding: 20px 22px;">
+            <b data-dc-tpl="73" style="display: block; font-family: &quot;Spline Sans Mono&quot;, monospace; font-size: 14px; color: rgb(59, 115, 73); margin-bottom: 6px;">Step 1</b>
+            <b data-dc-tpl="74" style="display: block; font-family: Archivo, sans-serif; font-size: 16.5px; margin-bottom: 6px;">Meet the truck</b>
+            <span data-dc-tpl="75" style="font-size: 14.5px; color: rgb(76, 84, 98);">Pallets come off the flatbed with tractor forks, a skid steer, or a forklift. Somebody in town has one — they always do.</span>
+          </div>
+          <div data-dc-tpl="76" style="background: rgb(244, 241, 232); border: 1px solid rgb(227, 224, 214); border-radius: 14px; padding: 20px 22px;">
+            <b data-dc-tpl="77" style="display: block; font-family: &quot;Spline Sans Mono&quot;, monospace; font-size: 14px; color: rgb(59, 115, 73); margin-bottom: 6px;">Step 2</b>
+            <b data-dc-tpl="78" style="display: block; font-family: Archivo, sans-serif; font-size: 16.5px; margin-bottom: 6px;">Put a tarp down</b>
+            <span data-dc-tpl="79" style="font-size: 14.5px; color: rgb(76, 84, 98);">Stage each 2,000-lb supersack next to the bed or playground it's headed for, tarp underneath to keep the grass clean.</span>
+          </div>
+          <div data-dc-tpl="80" style="background: rgb(244, 241, 232); border: 1px solid rgb(227, 224, 214); border-radius: 14px; padding: 20px 22px;">
+            <b data-dc-tpl="81" style="display: block; font-family: &quot;Spline Sans Mono&quot;, monospace; font-size: 14px; color: rgb(59, 115, 73); margin-bottom: 6px;">Step 3</b>
+            <b data-dc-tpl="82" style="display: block; font-family: Archivo, sans-serif; font-size: 16.5px; margin-bottom: 6px;">Slice the sack open</b>
+            <span data-dc-tpl="83" style="font-size: 14.5px; color: rgb(76, 84, 98);">One cut and the mulch pours out onto the tarp — clean nuggets, no wire, no dust cloud.</span>
+          </div>
+          <div data-dc-tpl="84" style="background: rgb(244, 241, 232); border: 1px solid rgb(227, 224, 214); border-radius: 14px; padding: 20px 22px;">
+            <b data-dc-tpl="85" style="display: block; font-family: &quot;Spline Sans Mono&quot;, monospace; font-size: 14px; color: rgb(59, 115, 73); margin-bottom: 6px;">Step 4</b>
+            <b data-dc-tpl="86" style="display: block; font-family: Archivo, sans-serif; font-size: 16.5px; margin-bottom: 6px;">Wheelbarrow &amp; rake</b>
+            <span data-dc-tpl="87" style="font-size: 14.5px; color: rgb(76, 84, 98);">A handful of volunteers with wheelbarrows and rakes spread a whole playground in an afternoon. Then it's done — for years.</span>
+          </div>
+        </div>
+        <div data-dc-tpl="88" style="display: flex; gap: 14px; flex-wrap: wrap; margin-top: 24px;">
+          <a data-dc-tpl="89" href="/get-a-quote/" class="scp4 scp2" style="background: rgb(216, 64, 63); color: rgb(255, 255, 255); font-weight: 700; font-size: 16px; text-decoration: none; padding: 13px 26px; border-radius: 999px; box-shadow: rgba(216, 64, 63, 0.35) 0px 4px 14px;">Get a delivered quote</a>
+          <a data-dc-tpl="90" href="/get-a-quote/#fill-the-truck" class="scp6" style="background: rgb(255, 255, 255); border: 1.5px solid rgb(59, 115, 73); color: rgb(47, 94, 58); font-weight: 700; font-size: 16px; text-decoration: none; padding: 13px 26px; border-radius: 999px;">Splitting a truck? See how towns do it</a>
+        </div>
+      </div>
+    </section>
+
+    <section data-dc-tpl="91" style="background: rgb(244, 241, 232); padding: clamp(48px, 6vw, 72px) 24px;">
+      <div data-dc-tpl="92" style="max-width: 1240px; margin: 0px auto;">
+        <h2 data-dc-tpl="93" style="font-family: Archivo, sans-serif; font-weight: 800; letter-spacing: -0.02em; font-size: clamp(24px, 3vw, 32px); margin: 0px 0px 14px;">Oklahoma DEQ &amp; recycled-tire funding</h2>
+        <p data-dc-tpl="94" style="color: rgb(58, 65, 80); font-size: 17.5px; max-width: 74ch; margin: 0px 0px 20px;">The Oklahoma Department of Environmental Quality (DEQ) runs the Used Tire Recycling Program and supports market development for recycled tire materials in uses like playgrounds and trails. DEQ's community funding is structured around its Funding Opportunities for Communities program, with grants generally available to units of government, tribal entities, components of the Oklahoma State System of Higher Education, and qualifying sole-source nonprofits.</p>
+
+        <div data-dc-tpl="95" style="background: rgb(255, 255, 255); border: 1px solid rgb(227, 224, 214); border-radius: 14px; padding: clamp(24px, 3vw, 32px);">
+          <h3 data-dc-tpl="96" style="font-family: Archivo, sans-serif; font-weight: 700; font-size: 19px; margin: 0px 0px 14px;">What to know</h3>
+          <div data-dc-tpl="97" style="display: flex; flex-direction: column; gap: 0px;">
+            <span data-dc-tpl="98" style="display: flex; gap: 10px; padding: 10px 0px; border-bottom: 1px solid rgb(227, 224, 214); font-size: 15.5px; color: rgb(58, 65, 80);"><svg data-dc-tpl="99" viewBox="0 0 24 24" fill="none" stroke="#3B7349" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" style="width: 16px; height: 16px; flex: 0 0 auto; margin-top: 4px;"><path data-dc-tpl="100" d="M20 6 9 17l-5-5"></path></svg> DEQ encourages recycled-tire end uses such as playground surfacing and trails as part of its tire program mission.</span>
+            <span data-dc-tpl="101" style="display: flex; gap: 10px; padding: 10px 0px; border-bottom: 1px solid rgb(227, 224, 214); font-size: 15.5px; color: rgb(58, 65, 80);"><svg data-dc-tpl="102" viewBox="0 0 24 24" fill="none" stroke="#3B7349" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" style="width: 16px; height: 16px; flex: 0 0 auto; margin-top: 4px;"><path data-dc-tpl="103" d="M20 6 9 17l-5-5"></path></svg> Community grants generally run from $1,000 to $50,000, with reimbursement structures that vary by grant track.</span>
+            <span data-dc-tpl="104" style="display: flex; gap: 10px; padding: 10px 0px; border-bottom: 1px solid rgb(227, 224, 214); font-size: 15.5px; color: rgb(58, 65, 80);"><svg data-dc-tpl="105" viewBox="0 0 24 24" fill="none" stroke="#3B7349" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" style="width: 16px; height: 16px; flex: 0 0 auto; margin-top: 4px;"><path data-dc-tpl="106" d="M20 6 9 17l-5-5"></path></svg> Eligible applicants include units of government, tribal entities, higher-education components, and certain sole-source nonprofits.</span>
+            <span data-dc-tpl="107" style="display: flex; gap: 10px; padding: 10px 0px; font-size: 15.5px; color: rgb(58, 65, 80);"><svg data-dc-tpl="108" viewBox="0 0 24 24" fill="none" stroke="#3B7349" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" style="width: 16px; height: 16px; flex: 0 0 auto; margin-top: 4px;"><path data-dc-tpl="109" d="M20 6 9 17l-5-5"></path></svg> Funding is limited and not guaranteed, and depends on monies available in the Used Tire Recycling Indemnity Fund.</span>
+          </div>
+          <a data-dc-tpl="110" href="https://oklahoma.gov/deq/divisions/land-protection/sust-materials-management/funding-opportunities/funding-opportunities-for-communities.html" target="_blank" rel="noopener" style="display: inline-block; margin-top: 16px; color: rgb(46, 60, 119); font-weight: 700; font-size: 15px;">Official program: Oklahoma DEQ — Used Tire Recycling Program &amp; Recycling Tire Market Development →</a>
+          <p data-dc-tpl="111" style="font-size: 13px; color: rgb(129, 136, 151); margin: 12px 0px 0px;">Verify current eligibility and deadlines with Oklahoma DEQ. Programs, deadlines, dollar amounts and eligibility change; always confirm current details on the official state page before applying.</p>
+        </div>
+
+        <h3 data-dc-tpl="112" style="font-family: Archivo, sans-serif; font-weight: 700; font-size: 19px; margin: 24px 0px 8px;">How we help</h3>
+        <p data-dc-tpl="113" style="color: rgb(58, 65, 80); font-size: 16px; max-width: 74ch; margin: 0px;">Grant tracks and reimbursement rules change year to year. We're not the grant office, but we'll give you a clean delivered quote and product spec sheet you can drop straight into an application or a board packet. Tell us your square footage or send an address and we'll size it.</p>
+      </div>
+    </section>
+
+    <section data-dc-tpl="114" style="background: rgb(255, 255, 255); padding: clamp(48px, 6vw, 72px) 24px;">
+      <div data-dc-tpl="115" style="max-width: 74ch; margin: 0px auto;">
+        <h2 data-dc-tpl="116" style="font-family: Archivo, sans-serif; font-weight: 800; letter-spacing: -0.02em; font-size: clamp(24px, 3vw, 32px); margin: 0px 0px 14px;">Why rubber mulch for playgrounds</h2>
+        <p data-dc-tpl="117" style="color: rgb(58, 65, 80); font-size: 16.5px; margin: 0px 0px 18px;">IPEMA-certified rubber mulch provides consistent fall-height protection, doesn't compact or decompose like wood fiber, won't blow or float away as easily, and doesn't need yearly topping off. For schools, parks and daycares it means a safer surface and far less maintenance over its life — which is exactly why state tire programs encourage it as a recycled-tire end use.</p>
+        <h3 data-dc-tpl="118" style="font-family: Archivo, sans-serif; font-weight: 700; font-size: 19px; margin: 0px 0px 8px;">What we deliver</h3>
+        <p data-dc-tpl="119" style="color: rgb(58, 65, 80); font-size: 16.5px; margin: 0px;">Unpainted black chunk-nugget rubber mulch in 2,000-lb supersacks, delivered to your site on the truck and set down for unloading with bucket forks, a forklift, or rented equipment. Need a specific color or depth spec for an application? Tell us and we'll put it in writing on your quote.</p>
+      </div>
+    </section>
+
+    <section data-dc-tpl="120" style="background: rgb(244, 241, 232); padding: clamp(48px, 6vw, 72px) 24px;">
+      <div data-dc-tpl="121" style="max-width: 1240px; margin: 0px auto;">
+        <h2 data-dc-tpl="122" style="font-family: Archivo, sans-serif; font-weight: 800; letter-spacing: -0.02em; font-size: clamp(22px, 3vw, 28px); margin: 0px 0px 8px;">We also deliver in these states</h2>
+        <p data-dc-tpl="123" style="color: rgb(58, 65, 80); font-size: 16px; margin: 0px 0px 20px;">405 Rubber Mulch runs flatbed loads across the region. Pick your state for local grant info and delivered pricing:</p>
+        <div data-dc-tpl="124" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 14px;">
+          <a data-dc-tpl="125" href="/kansas/" class="scp7" style="background: rgb(255, 255, 255); border: 1px solid rgb(227, 224, 214); border-radius: 12px; padding: 18px 20px; text-decoration: none; display: flex; flex-direction: column; gap: 4px;">
+            <span data-dc-tpl="126" style="font-family: Archivo, sans-serif; font-weight: 800; font-size: 18px; color: rgb(28, 34, 48);">Kansas</span>
+            <span data-dc-tpl="127" style="font-size: 13px; color: rgb(92, 100, 115);">KDHE</span>
+            <span data-dc-tpl="128" style="font-size: 14px; font-weight: 700; color: rgb(59, 115, 73); margin-top: 4px;">View →</span>
+          </a>
+          <a data-dc-tpl="129" href="/missouri/" class="scp7" style="background: rgb(255, 255, 255); border: 1px solid rgb(227, 224, 214); border-radius: 12px; padding: 18px 20px; text-decoration: none; display: flex; flex-direction: column; gap: 4px;">
+            <span data-dc-tpl="130" style="font-family: Archivo, sans-serif; font-weight: 800; font-size: 18px; color: rgb(28, 34, 48);">Missouri</span>
+            <span data-dc-tpl="131" style="font-size: 13px; color: rgb(92, 100, 115);">Missouri DNR</span>
+            <span data-dc-tpl="132" style="font-size: 14px; font-weight: 700; color: rgb(59, 115, 73); margin-top: 4px;">View →</span>
+          </a>
+          <a data-dc-tpl="133" href="/arkansas/" class="scp7" style="background: rgb(255, 255, 255); border: 1px solid rgb(227, 224, 214); border-radius: 12px; padding: 18px 20px; text-decoration: none; display: flex; flex-direction: column; gap: 4px;">
+            <span data-dc-tpl="134" style="font-family: Archivo, sans-serif; font-weight: 800; font-size: 18px; color: rgb(28, 34, 48);">Arkansas</span>
+            <span data-dc-tpl="135" style="font-size: 13px; color: rgb(92, 100, 115);">Arkansas DEQ</span>
+            <span data-dc-tpl="136" style="font-size: 14px; font-weight: 700; color: rgb(59, 115, 73); margin-top: 4px;">View →</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section data-dc-tpl="137" style="background: rgb(27, 36, 68); padding: clamp(48px, 6vw, 72px) 24px; text-align: center;">
+      <div data-dc-tpl="138" style="max-width: 640px; margin: 0px auto;">
+        <h2 data-dc-tpl="139" style="font-family: Archivo, sans-serif; font-weight: 800; font-size: clamp(24px, 3vw, 32px); margin: 0px 0px 12px; color: rgb(255, 255, 255);">Get a delivered price for your Oklahoma project</h2>
+        <p data-dc-tpl="140" style="color: rgb(194, 204, 236); font-size: 17px; margin: 0px 0px 22px;">Send your square footage or just an address — we'll measure from satellite imagery and quote one delivered number. Schools and towns get Net 30.</p>
+        <div data-dc-tpl="141" style="display: flex; gap: 14px; flex-wrap: wrap; justify-content: center;">
+          <a data-dc-tpl="142" href="/get-a-quote/" class="scp4" style="background: rgb(216, 64, 63); color: rgb(255, 255, 255); font-weight: 700; font-size: 16px; text-decoration: none; padding: 14px 26px; border-radius: 999px;">Request a delivered quote</a>
+          <a data-dc-tpl="143" href="tel:+14052068111" class="scp5" style="background: rgba(251, 247, 236, 0.12); border: 1px solid rgba(251, 247, 236, 0.45); color: rgb(251, 247, 236); font-weight: 700; font-size: 16px; text-decoration: none; padding: 14px 26px; border-radius: 999px;">Call (405) 206-8111</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <div data-dc-tpl="144" style="height: 0px;"></div>
+  <div data-dc-tpl="145" style="display: none; position: fixed; bottom: 0px; left: 0px; right: 0px; z-index: 60; background: rgba(251, 247, 236, 0.96); backdrop-filter: blur(8px); border-top: 1px solid rgb(227, 224, 214); padding: 10px 14px calc(10px + env(safe-area-inset-bottom)); gap: 10px;">
+    <a data-dc-tpl="146" href="tel:+14052068111" style="flex: 1 1 0%; display: flex; align-items: center; justify-content: center; gap: 8px; min-height: 48px; background: rgb(255, 255, 255); border: 1.5px solid rgb(46, 60, 119); color: rgb(46, 60, 119); font-weight: 700; font-size: 16px; text-decoration: none; border-radius: 999px;"><svg data-dc-tpl="147" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width: 18px; height: 18px;"><path data-dc-tpl="148" d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>Call now</a>
+    <a data-dc-tpl="149" href="/get-a-quote/" style="flex: 1.2 1 0%; display: flex; align-items: center; justify-content: center; min-height: 48px; background: rgb(216, 64, 63); color: rgb(255, 255, 255); font-weight: 700; font-size: 16px; text-decoration: none; border-radius: 999px; box-shadow: rgba(216, 64, 63, 0.35) 0px 4px 14px;">Get a quote</a>
+  </div>
+  <footer data-dc-tpl="150" style="background: rgb(27, 36, 68); color: rgb(194, 204, 236); padding: 32px 24px; font-size: 14px; border-top: 1px solid rgba(194, 204, 236, 0.15);">
+    <div data-dc-tpl="151" style="max-width: 1240px; margin: 0px auto; display: flex; justify-content: space-between; gap: 16px; flex-wrap: wrap; align-items: center;">
+      <span data-dc-tpl="152">© 2026 405 Rubber Mulch — a Jameson's Discount Home Improvement company · Oklahoma City, OK · (405) 206-8111 · <a data-dc-tpl="153" href="/terms/#cookies" style="color: inherit; text-decoration: underline;">We use cookies for analytics</a></span>
+      <nav data-dc-tpl="154" style="display: flex; gap: 22px; flex-wrap: wrap;">
+        <a data-dc-tpl="155" href="/oklahoma/" class="scp8" style="color: rgb(194, 204, 236); text-decoration: none;">Oklahoma</a>
+        <a data-dc-tpl="156" href="/kansas/" class="scp8" style="color: rgb(194, 204, 236); text-decoration: none;">Kansas</a>
+        <a data-dc-tpl="157" href="/missouri/" class="scp8" style="color: rgb(194, 204, 236); text-decoration: none;">Missouri</a>
+        <a data-dc-tpl="158" href="/arkansas/" class="scp8" style="color: rgb(194, 204, 236); text-decoration: none;">Arkansas</a>
+        <a data-dc-tpl="159" href="/terms/" class="scp8" style="color: rgb(194, 204, 236); text-decoration: none;">Terms &amp; policies</a>
+      </nav>
+    </div>
+  </footer></div></div></div><!--/dc-static-->
 <x-dc>
 
 <div style="font-family: 'Public Sans', system-ui, sans-serif; color: #1C2230; background: #FBF7EC; font-size: 16px; line-height: 1.6; min-height: 100vh; display: flex; flex-direction: column;">

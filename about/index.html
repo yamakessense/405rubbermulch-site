@@ -32,7 +32,24 @@
     gtag('js', new Date());
     gtag('config', 'GT-WB72BHMG');
     gtag('config', 'G-F6P1TCFK29');
-    gtag('config', 'AW-18336005673');
+  gtag('config', 'AW-18336005673');
+  // Google Ads website call conversion: swaps (405) 206-8111 for a Google
+  // forwarding number for ad visitors. The page body renders after this runs,
+  // so the callback re-applies the swap as React adds text.
+  gtag('config', 'AW-18336005673/VxaCCN6jzuEcEKn8pKdE', {
+    'phone_conversion_number': '(405) 206-8111',
+    'phone_conversion_callback': function (formatted, digits) {
+      var swap = function () {
+        var w = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT), n;
+        while ((n = w.nextNode())) if (n.nodeValue.indexOf('(405) 206-8111') > -1) n.nodeValue = n.nodeValue.split('(405) 206-8111').join(formatted);
+        document.querySelectorAll('a[href^="tel:"]').forEach(function (a) { if (a.getAttribute('href').replace(/\D/g, '').slice(-10) === '4052068111') a.setAttribute('href', 'tel:+1' + String(digits).replace(/\D/g, '').slice(-10)); });
+      };
+      swap();
+      var mo = new MutationObserver(swap);
+      mo.observe(document.body, { childList: true, subtree: true, characterData: true });
+      setTimeout(function () { mo.disconnect(); }, 15000);
+    }
+  });
   </script>
 <script type="application/ld+json">
   { "@context": "https://schema.org", "@graph": [
@@ -80,8 +97,246 @@
     html { scroll-behavior: smooth; }
     body { margin: 0; background: #FBF7EC; }
   </style>
+<!--dc-static-head--><style>.dc-js #dc-static{display:none!important}</style><script>document.documentElement.classList.add('dc-js');(function(){var n=0,t=setInterval(function(){var r=document.getElementById('dc-root'),s=document.getElementById('dc-static');if((r&&r.firstElementChild&&s)||++n>300){clearInterval(t);if(r&&r.firstElementChild&&s)s.remove();}},100);})();</script><!--/dc-static-head-->
 </head>
 <body>
+<!--dc-static--><div id="dc-static"><div class="sc-host" data-sc-name="Root"><div data-dc-tpl="0" style="font-family: &quot;Public Sans&quot;, system-ui, sans-serif; color: rgb(28, 34, 48); background: rgb(251, 247, 236); font-size: 16px; line-height: 1.55;">
+
+  <div data-dc-tpl="1" style="background: rgb(27, 36, 68); color: rgb(251, 247, 236); font-size: 13.5px;">
+    <div data-dc-tpl="2" style="max-width: 1240px; margin: 0px auto; padding: 8px 24px; display: flex; align-items: center; justify-content: space-between; gap: 16px; flex-wrap: wrap;">
+      <span data-dc-tpl="3" style="font-weight: 600;">Truckload delivery across <a data-dc-tpl="4" href="/oklahoma/" class="scp0" style="color: rgb(251, 247, 236); text-decoration: underline;">OK</a> · <a data-dc-tpl="5" href="/arkansas/" class="scp0" style="color: rgb(251, 247, 236); text-decoration: underline;">AR</a> · <a data-dc-tpl="6" href="/kansas/" class="scp0" style="color: rgb(251, 247, 236); text-decoration: underline;">KS</a> · <a data-dc-tpl="7" href="/missouri/" class="scp0" style="color: rgb(251, 247, 236); text-decoration: underline;">MO</a></span>
+      <a data-dc-tpl="8" href="tel:+14052068111" style="color: rgb(194, 204, 236); text-decoration: none; font-weight: 700;">(405) 206-8111</a>
+    </div>
+  </div>
+
+  <header data-dc-tpl="9" style="position: sticky; top: 0px; z-index: 50; background: rgba(255, 255, 255, 0.92); backdrop-filter: blur(8px); border-bottom: 1px solid rgb(227, 224, 214); transform: none; transition: transform 0.28s;">
+    <div data-dc-tpl="10" style="max-width: 1240px; margin: 0px auto; padding: 0px 24px; height: 72px; display: flex; align-items: center; justify-content: space-between; gap: 24px;">
+      <a data-dc-tpl="11" href="/" style="display: flex; align-items: center; gap: 12px; text-decoration: none; color: rgb(28, 34, 48);">
+        <img data-dc-tpl="12" src="/img/logo-tire.png" alt="405 Rubber Mulch — Jameson's" style="width: 48px; height: 48px; object-fit: contain;">
+        <span data-dc-tpl="13" style="display: flex; flex-direction: column; line-height: 1.1;">
+          <b data-dc-tpl="14" style="font-family: Archivo, sans-serif; font-weight: 800; font-size: 17px; letter-spacing: -0.02em; white-space: nowrap;">405 Rubber Mulch</b>
+          <span data-dc-tpl="15" style="font-size: 12px; color: rgb(92, 100, 115);">Bulk &amp; truckload delivery</span>
+        </span>
+      </a>
+      <nav data-dc-tpl="16" style="display: flex; align-items: center; gap: 22px; font-weight: 600; font-size: 15px;">
+        <a data-dc-tpl="17" href="/premium-quality/" class="scp1" style="color: rgb(58, 65, 80); text-decoration: none;">Why our mulch</a>
+        <a data-dc-tpl="18" href="/commercial-playgrounds/" class="scp1" style="color: rgb(58, 65, 80); text-decoration: none;">Schools &amp; daycares</a>
+        <a data-dc-tpl="19" href="/fundraiser/" class="scp1" style="color: rgb(58, 65, 80); text-decoration: none;">Fundraising</a>
+        <a data-dc-tpl="20" href="/coverage-calculator/" class="scp1" style="color: rgb(58, 65, 80); text-decoration: none;">Calculator</a>
+        <a data-dc-tpl="21" href="/about/" class="scp1" style="color: rgb(58, 65, 80); text-decoration: none;">About</a>
+        <a data-dc-tpl="22" href="/get-a-quote/" class="scp2 scp3" style="background: rgb(59, 115, 73); color: rgb(251, 247, 236); font-weight: 700; text-decoration: none; padding: 11px 22px; border-radius: 999px; box-shadow: rgba(47, 94, 58, 0.35) 0px 2px 8px;">Get a quote</a>
+      </nav>
+      <button data-dc-tpl="23" aria-label="Menu" style="display: none; align-items: center; justify-content: center; background: rgb(255, 255, 255); border: 1px solid rgb(227, 224, 214); border-radius: 10px; width: 44px; height: 44px; cursor: pointer; color: rgb(28, 34, 48);">
+        
+          <svg data-dc-tpl="25" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" style="width: 22px; height: 22px;"><path data-dc-tpl="26" d="M4 6h16"></path><path data-dc-tpl="27" d="M4 12h16"></path><path data-dc-tpl="28" d="M4 18h16"></path></svg>
+        
+        
+      </button>
+    </div>
+    
+    <div data-dc-tpl="43" style="border-top: 1px solid rgb(227, 224, 214); background: rgb(255, 255, 255);">
+      <div data-dc-tpl="44" style="max-width: 1240px; margin: 0px auto; padding: 6px 12px; display: flex; gap: 2px 4px; flex-wrap: wrap; align-items: center; font-size: 12.5px;">
+        <span data-dc-tpl="45" style="color: rgb(129, 136, 151); font-weight: 600;">Serving:</span>
+        <a data-dc-tpl="46" href="/oklahoma/" class="scp4" style="color: rgb(58, 65, 80); text-decoration: none; padding: 2px 5px; border-radius: 6px; font-weight: 600;">Oklahoma</a>
+        <a data-dc-tpl="47" href="/arkansas/" class="scp4" style="color: rgb(58, 65, 80); text-decoration: none; padding: 2px 5px; border-radius: 6px; font-weight: 600;">Arkansas</a>
+        <a data-dc-tpl="48" href="/kansas/" class="scp4" style="color: rgb(58, 65, 80); text-decoration: none; padding: 2px 5px; border-radius: 6px; font-weight: 600;">Kansas</a>
+        <a data-dc-tpl="49" href="/missouri/" class="scp4" style="color: rgb(58, 65, 80); text-decoration: none; padding: 2px 5px; border-radius: 6px; font-weight: 600;">Missouri</a>
+      </div>
+    </div>
+  </header>
+
+  
+  <section data-dc-tpl="50" data-screen-label="About hero" style="background: rgb(27, 36, 68); color: rgb(251, 247, 236); padding: clamp(56px, 7vw, 100px) 24px;">
+    <div data-dc-tpl="51" style="max-width: 1240px; margin: 0px auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(min(320px, 100%), 1fr)); gap: clamp(32px, 5vw, 64px); align-items: center;">
+      <div data-dc-tpl="52" style="display: flex; flex-direction: column; gap: 18px;">
+        <span data-dc-tpl="53" style="color: rgb(149, 164, 217); font-weight: 700; font-size: 13px; letter-spacing: 0.12em; text-transform: uppercase;">About 405 Rubber Mulch</span>
+        <h1 data-dc-tpl="54" style="font-family: Archivo, sans-serif; font-weight: 800; letter-spacing: -0.022em; font-size: clamp(32px, 4.4vw, 50px); line-height: 1.06; margin: 0px; color: rgb(255, 255, 255);">From a home improvement warehouse to a truckload at a time.</h1>
+        <p data-dc-tpl="55" style="color: rgb(194, 204, 236); font-size: 17.5px; margin: 0px;">405 Rubber Mulch grew out of Jameson's Discount Home Improvement Warehouse in Oklahoma City. We'd been selling rubber mulch by the bag and by the pallet for years when schools, cities, and landscaping contractors started asking the same question: <b data-dc-tpl="56" style="color: rgb(255, 255, 255);">"Can you just deliver a truckload?"</b></p>
+        <p data-dc-tpl="57" style="color: rgb(194, 204, 236); font-size: 17.5px; margin: 0px;">So we built on and scaled the wholesale arm regionally across four states as 405 Rubber Mulch — a dedicated flatbed delivery operation built for one job: getting bulk, certified rubber mulch right to your town, school, business, or church, wherever the project is. You unload direct, spread it out, and save a ton of money — none of the guesswork that usually comes with commercial playground surfacing.</p>
+        <div data-dc-tpl="58" style="display: flex; gap: 14px; flex-wrap: wrap; margin-top: 6px;">
+          <a data-dc-tpl="59" href="/get-a-quote/" class="scp5 scp3" style="background: rgb(216, 64, 63); color: rgb(255, 255, 255); font-weight: 700; font-size: 16.5px; text-decoration: none; padding: 14px 28px; border-radius: 999px; box-shadow: rgba(216, 64, 63, 0.4) 0px 4px 14px;">Order now</a>
+          <a data-dc-tpl="60" href="tel:+14052068111" class="scp6 scp3" style="background: rgba(251, 247, 236, 0.12); border: 1px solid rgba(251, 247, 236, 0.45); color: rgb(251, 247, 236); font-weight: 700; font-size: 16.5px; text-decoration: none; padding: 14px 28px; border-radius: 999px;">Call (405) 206-8111</a>
+        </div>
+      </div>
+      <div data-dc-tpl="61" style="display: flex; flex-direction: column; gap: 16px;">
+        <img data-dc-tpl="62" src="/img/landscape-rubber-mulch.jpg" alt="Black rubber mulch installed in a residential landscape bed" style="width: 100%; border-radius: 14px; aspect-ratio: 4 / 3; object-fit: cover; box-shadow: rgba(17, 20, 28, 0.35) 0px 16px 40px;">
+        <div data-dc-tpl="63" style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 14px; text-align: center;">
+          <div data-dc-tpl="64" style="background: rgba(251, 247, 236, 0.08); border: 1px solid rgba(251, 247, 236, 0.18); border-radius: 14px; padding: 16px 10px;">
+            <b data-dc-tpl="65" style="display: block; font-family: &quot;Spline Sans Mono&quot;, monospace; font-size: clamp(20px, 2.2vw, 26px); color: rgb(255, 255, 255);">Millions</b>
+            <span data-dc-tpl="66" style="font-size: 13px; color: rgb(194, 204, 236);">of lbs of tires diverted</span>
+          </div>
+          <div data-dc-tpl="67" style="background: rgba(251, 247, 236, 0.08); border: 1px solid rgba(251, 247, 236, 0.18); border-radius: 14px; padding: 16px 10px;">
+            <b data-dc-tpl="68" style="display: block; font-family: &quot;Spline Sans Mono&quot;, monospace; font-size: clamp(20px, 2.2vw, 26px); color: rgb(255, 255, 255);">4 states</b>
+            <span data-dc-tpl="69" style="font-size: 13px; color: rgb(194, 204, 236);">OK · AR · KS · MO</span>
+          </div>
+          <div data-dc-tpl="70" style="background: rgba(251, 247, 236, 0.08); border: 1px solid rgba(251, 247, 236, 0.18); border-radius: 14px; padding: 16px 10px;">
+            <b data-dc-tpl="71" style="display: block; font-family: &quot;Spline Sans Mono&quot;, monospace; font-size: clamp(20px, 2.2vw, 26px); color: rgb(255, 255, 255);">$425</b>
+            <span data-dc-tpl="72" style="font-size: 13px; color: rgb(194, 204, 236);">per supersack, delivered</span>
+          </div>
+        </div>
+        <span data-dc-tpl="73" style="font-size: 13.5px; color: rgb(149, 164, 217); text-align: center;">Every truckload keeps old tires from becoming mosquito-haven fire hazards — and puts them to good use.</span>
+      </div>
+    </div>
+  </section>
+
+  
+  <section data-dc-tpl="74" data-screen-label="Why our mulch stays black" style="background: rgb(255, 255, 255); padding: clamp(56px, 7vw, 100px) 24px;">
+    <div data-dc-tpl="75" style="max-width: 1240px; margin: 0px auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(min(320px, 100%), 1fr)); gap: clamp(32px, 5vw, 64px); align-items: center;">
+      <img data-dc-tpl="76" src="/img/unpainted-black-playground.jpg" alt="Neighborhood playground surfaced with unpainted black rubber mulch inside a bordered bed" style="width: 100%; border-radius: 14px; aspect-ratio: 4 / 3; object-fit: cover; box-shadow: rgba(28, 34, 48, 0.12) 0px 8px 28px;">
+      <div data-dc-tpl="77" style="display: flex; flex-direction: column; gap: 16px;">
+        <span data-dc-tpl="78" style="color: rgb(59, 115, 73); font-weight: 700; font-size: 13px; letter-spacing: 0.12em; text-transform: uppercase;">No paint. No fade.</span>
+        <h2 data-dc-tpl="79" style="font-family: Archivo, sans-serif; font-weight: 800; letter-spacing: -0.022em; font-size: clamp(30px, 4vw, 44px); line-height: 1.08; margin: 0px;">Why our unpainted black stays black.</h2>
+        <p data-dc-tpl="80" style="color: rgb(92, 100, 115); font-size: 17px; margin: 0px;">Our rubber is cut exclusively from <b data-dc-tpl="81" style="color: rgb(28, 34, 48);">semi-truck tires, not passenger tires</b>. When passenger tires get recycled, their painted and coated whitewalls end up mixed into the rubber stream — that paint is where a lot of "black" rubber mulch actually gets its color. It's also what fades, chalks, and rubs off onto hands, shoes, and clothes over time.</p>
+        <p data-dc-tpl="82" style="color: rgb(92, 100, 115); font-size: 17px; margin: 0px;">Semi-truck tires don't have whitewalls. There's no paint to begin with — <b data-dc-tpl="83" style="color: rgb(28, 34, 48);">the black is the rubber itself</b>. Our mulch doesn't fade in the sun, doesn't bleed color in the rain, and looks the same five years in as it did the day it was installed. That's why unpainted black is our most popular color.</p>
+        <div data-dc-tpl="84" style="background: rgb(244, 241, 232); border: 1px solid rgb(227, 224, 214); border-radius: 14px; padding: 18px 22px; display: flex; gap: 14px; align-items: flex-start;">
+          <svg data-dc-tpl="85" viewBox="0 0 24 24" fill="none" stroke="#3B7349" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width: 24px; height: 24px; flex: 0 0 auto; margin-top: 2px;"><path data-dc-tpl="86" d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"></path><path data-dc-tpl="87" d="m9 12 2 2 4-4"></path></svg>
+          <span data-dc-tpl="88" style="font-size: 15px; color: rgb(58, 65, 80);">Every supersack we ship — 2,000 lb, palletized, ready to come off the truck with a forklift or tractor forks — is <b data-dc-tpl="89">tested to ASTM F1292</b> impact-attenuation standards, meeting <b data-dc-tpl="90">IPEMA guidance</b> for playground fall-height protection at the depths schools and municipalities are required to install.</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  
+  <section data-dc-tpl="91" data-screen-label="Who we work with" style="background: rgb(255, 255, 255); padding: clamp(56px, 7vw, 100px) 24px;">
+    <div data-dc-tpl="92" style="max-width: 1240px; margin: 0px auto;">
+      <div data-dc-tpl="93" style="max-width: 720px; margin: 0px auto; text-align: center; display: flex; flex-direction: column; gap: 14px;">
+        <span data-dc-tpl="94" style="color: rgb(59, 115, 73); font-weight: 700; font-size: 13px; letter-spacing: 0.12em; text-transform: uppercase;">Who we work with</span>
+        <h2 data-dc-tpl="95" style="font-family: Archivo, sans-serif; font-weight: 800; letter-spacing: -0.022em; font-size: clamp(30px, 4vw, 44px); line-height: 1.08; margin: 0px;">If a flatbed can reach it, we can mulch it.</h2>
+        <p data-dc-tpl="96" style="color: rgb(92, 100, 115); font-size: 18px; margin: 0px;">Think of the mulch as a commodity — one that's just hard to get to you. Once a truck is coming, everyone in town wants a supersack. Someone you know can meet the truck and pull pallets; make it a community day, and sell or donate whatever's left to the town flowerbeds.</p>
+      </div>
+      <div data-dc-tpl="97" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 20px; margin-top: 44px;">
+        <div data-dc-tpl="98" style="background: rgb(244, 241, 232); border: 1px solid rgb(227, 224, 214); border-radius: 14px; padding: 22px 24px; display: flex; flex-direction: column; gap: 8px;">
+          <b data-dc-tpl="99" style="font-family: Archivo, sans-serif; font-size: 17px;">School districts &amp; daycares</b>
+          <span data-dc-tpl="100" style="color: rgb(76, 84, 98); font-size: 14.5px;">Upgrading playground surfacing to meet fall-height codes, with PO and bid paperwork welcome.</span>
+        </div>
+        <div data-dc-tpl="101" style="background: rgb(244, 241, 232); border: 1px solid rgb(227, 224, 214); border-radius: 14px; padding: 22px 24px; display: flex; flex-direction: column; gap: 8px;">
+          <b data-dc-tpl="102" style="font-family: Archivo, sans-serif; font-size: 17px;">Cities &amp; parks departments</b>
+          <span data-dc-tpl="103" style="color: rgb(76, 84, 98); font-size: 14.5px;">Municipal playgrounds and public spaces surfaced at truckload pricing instead of contractor markups.</span>
+        </div>
+        <div data-dc-tpl="104" style="background: rgb(244, 241, 232); border: 1px solid rgb(227, 224, 214); border-radius: 14px; padding: 22px 24px; display: flex; flex-direction: column; gap: 8px;">
+          <b data-dc-tpl="105" style="font-family: Archivo, sans-serif; font-size: 17px;">Churches, HOAs &amp; community playgrounds</b>
+          <span data-dc-tpl="106" style="color: rgb(76, 84, 98); font-size: 14.5px;">Congregations and neighborhoods that split a load, meet the truck, and spread it together.</span>
+        </div>
+        <div data-dc-tpl="107" style="background: rgb(244, 241, 232); border: 1px solid rgb(227, 224, 214); border-radius: 14px; padding: 22px 24px; display: flex; flex-direction: column; gap: 8px;">
+          <b data-dc-tpl="108" style="font-family: Archivo, sans-serif; font-size: 17px;">Landscaping contractors</b>
+          <span data-dc-tpl="109" style="color: rgb(76, 84, 98); font-size: 14.5px;">Bulk material for commercial jobs, delivered to the site palletized and ready to stage.</span>
+        </div>
+        <div data-dc-tpl="110" style="background: rgb(244, 241, 232); border: 1px solid rgb(227, 224, 214); border-radius: 14px; padding: 22px 24px; display: flex; flex-direction: column; gap: 8px;">
+          <b data-dc-tpl="111" style="font-family: Archivo, sans-serif; font-size: 17px;">Small towns running a fundraiser</b>
+          <span data-dc-tpl="112" style="color: rgb(76, 84, 98); font-size: 14.5px;">Volunteers mulch a local yard or business frontage, and the sponsorship donations fund the playground. <a data-dc-tpl="113" href="/fundraiser/" style="color: rgb(59, 115, 73); font-weight: 700;">See how it works →</a></span>
+        </div>
+        <div data-dc-tpl="114" style="background: rgb(244, 241, 232); border: 1px solid rgb(227, 224, 214); border-radius: 14px; padding: 22px 24px; display: flex; flex-direction: column; gap: 8px;">
+          <b data-dc-tpl="115" style="font-family: Archivo, sans-serif; font-size: 17px;">Neighbors who go in together</b>
+          <span data-dc-tpl="116" style="color: rgb(76, 84, 98); font-size: 14.5px;">Businesses have split truckloads. Churches have split loads. A full flatbed rarely leaves town with mulch to spare.</span>
+        </div>
+      </div>
+
+      <div data-dc-tpl="117" style="max-width: 960px; margin: 40px auto 0px; background: rgb(27, 36, 68); color: rgb(251, 247, 236); border-radius: 14px; padding: clamp(24px, 3.5vw, 34px); display: flex; gap: 20px; align-items: center; flex-wrap: wrap;">
+        <div data-dc-tpl="118" style="flex: 1 1 0%; min-width: 260px;">
+          <b data-dc-tpl="119" style="font-family: Archivo, sans-serif; font-size: 20px; color: rgb(255, 255, 255);">$425 per supersack, delivered — full truckload pricing.</b>
+          <p data-dc-tpl="120" style="margin: 6px 0px 0px; color: rgb(194, 204, 236); font-size: 15px;">No quote required to know what it costs. Call or order direct, and we'll deliver by flatbed straight to the site.</p>
+        </div>
+        <div data-dc-tpl="121" style="display: flex; gap: 12px; flex-wrap: wrap;">
+          <a data-dc-tpl="122" href="tel:+14052068111" class="scp6" style="background: rgba(251, 247, 236, 0.12); border: 1px solid rgba(251, 247, 236, 0.45); color: rgb(251, 247, 236); font-weight: 700; font-size: 16px; text-decoration: none; padding: 13px 26px; border-radius: 999px;">(405) 206-8111</a>
+          <a data-dc-tpl="123" href="/get-a-quote/" class="scp5 scp3" style="background: rgb(216, 64, 63); color: rgb(255, 255, 255); font-weight: 700; font-size: 16px; text-decoration: none; padding: 13px 26px; border-radius: 999px; box-shadow: rgba(216, 64, 63, 0.35) 0px 4px 14px;">Order now</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  
+  <section data-dc-tpl="124" data-screen-label="FAQ" style="scroll-margin-top: 84px; background: rgb(255, 255, 255); padding: clamp(56px, 7vw, 100px) 24px;">
+    <div data-dc-tpl="125" style="max-width: 860px; margin: 0px auto; display: flex; flex-direction: column; gap: 14px;">
+      <span data-dc-tpl="126" style="color: rgb(59, 115, 73); font-weight: 700; font-size: 13px; letter-spacing: 0.12em; text-transform: uppercase; text-align: center;">FAQ</span>
+      <h2 data-dc-tpl="127" style="font-family: Archivo, sans-serif; font-weight: 800; letter-spacing: -0.022em; font-size: clamp(30px, 4vw, 44px); line-height: 1.08; margin: 0px 0px 22px; text-align: center;">Questions people ask us.</h2>
+
+      <div data-dc-tpl="128" style="border: 1px solid rgb(227, 224, 214); border-radius: 14px; overflow: hidden;">
+        <div data-dc-tpl="129" style="padding: 22px 26px; border-bottom: 1px solid rgb(239, 230, 206);">
+          <b data-dc-tpl="130" style="font-family: Archivo, sans-serif; font-size: 17.5px; display: block;">How do I get rubber mulch to help fundraise for our playground?</b>
+          <p data-dc-tpl="131" style="margin: 8px 0px 0px; color: rgb(92, 100, 115); font-size: 15.5px;">Order supersacks at $425 each, delivered at truckload pricing — a full truck covers roughly 3,300 sq ft at 6" playground depth. Run a raffle or sponsorship drive, and the proceeds go to your playground fund.</p>
+        </div>
+        <div data-dc-tpl="132" style="padding: 22px 26px; border-bottom: 1px solid rgb(239, 230, 206);">
+          <b data-dc-tpl="133" style="font-family: Archivo, sans-serif; font-size: 17.5px; display: block;">Why is your delivered price so much lower than other suppliers?</b>
+          <p data-dc-tpl="134" style="margin: 8px 0px 0px; color: rgb(92, 100, 115); font-size: 15.5px;">Because we deliver full truckloads instead of single pallets. A lone supersack is too heavy to ship economically at any price — that's why national suppliers often quote $1,000 or more delivered for it. We fill a full truckload (22 supersacks) by combining your playground's order with your town's raffle or sponsorship sacks, which is what gets everyone down to $425 delivered instead of paying a single-pallet freight penalty. And ordering less than a full truck never triggers a “7-pallet penalty” here — partial-load pricing scales honestly, and your per-sack price drops with every sack you add.</p>
+        </div>
+        <div data-dc-tpl="135" style="padding: 22px 26px; border-bottom: 1px solid rgb(239, 230, 206);">
+          <b data-dc-tpl="136" style="font-family: Archivo, sans-serif; font-size: 17.5px; display: block;">Can 405 Rubber Mulch help pay for our playground remodel?</b>
+          <p data-dc-tpl="137" style="margin: 8px 0px 0px; color: rgb(92, 100, 115); font-size: 15.5px;">Yes — flat delivered pricing plus a raffle or sponsorship plan. Many small towns fund their whole remodel this way, without a grant or a bond issue.</p>
+        </div>
+        <div data-dc-tpl="138" style="padding: 22px 26px; border-bottom: 1px solid rgb(239, 230, 206);">
+          <b data-dc-tpl="139" style="font-family: Archivo, sans-serif; font-size: 17.5px; display: block;">What are good sponsorship ideas for a playground fundraiser?</b>
+          <p data-dc-tpl="140" style="margin: 8px 0px 0px; color: rgb(92, 100, 115); font-size: 15.5px;">A mulch raffle, or flowerbed sponsorships where volunteers mulch a local yard or business frontage in exchange for a donation to the playground fund. Businesses get a sponsor sign at the new playground.</p>
+        </div>
+        <div data-dc-tpl="141" style="padding: 22px 26px; border-bottom: 1px solid rgb(239, 230, 206);">
+          <b data-dc-tpl="142" style="font-family: Archivo, sans-serif; font-size: 17.5px; display: block;">How much does playground rubber mulch cost, delivered?</b>
+          <p data-dc-tpl="143" style="margin: 8px 0px 0px; color: rgb(92, 100, 115); font-size: 15.5px;">$425 per 2,000-lb supersack, delivered, at full truckload pricing. A full 22-sack truck is $9,350 flat.</p>
+        </div>
+        <div data-dc-tpl="144" style="padding: 22px 26px; border-bottom: 1px solid rgb(239, 230, 206);">
+          <b data-dc-tpl="145" style="font-family: Archivo, sans-serif; font-size: 17.5px; display: block;">Do I need a quote to order?</b>
+          <p data-dc-tpl="146" style="margin: 8px 0px 0px; color: rgb(92, 100, 115); font-size: 15.5px;">No — $425 per supersack delivered is the price at a full truckload. Call <a data-dc-tpl="147" href="tel:+14052068111" style="color: rgb(46, 60, 119); font-weight: 700;">(405) 206-8111</a> or order direct.</p>
+        </div>
+        <div data-dc-tpl="148" style="padding: 22px 26px; border-bottom: 1px solid rgb(239, 230, 206);">
+          <b data-dc-tpl="149" style="font-family: Archivo, sans-serif; font-size: 17.5px; display: block;">How do small, rural towns afford a full playground remodel?</b>
+          <p data-dc-tpl="150" style="margin: 8px 0px 0px; color: rgb(92, 100, 115); font-size: 15.5px;">A local raffle or sponsorship drive instead of a grant or bond — the remodel gets funded through community involvement, and the fundraiser itself is what fills the truck to unlock $425 pricing.</p>
+        </div>
+        <div data-dc-tpl="151" style="padding: 22px 26px; border-bottom: 1px solid rgb(239, 230, 206);">
+          <b data-dc-tpl="152" style="font-family: Archivo, sans-serif; font-size: 17.5px; display: block;">Can I pay online?</b>
+          <p data-dc-tpl="153" style="margin: 8px 0px 0px; color: rgb(92, 100, 115); font-size: 15.5px;">We can arrange payment when we confirm your order. We'll be in close communication before scheduling delivery — covering payment, timing, and what you'll need on site to unload the truck.</p>
+        </div>
+        <div data-dc-tpl="154" style="padding: 22px 26px; border-bottom: 1px solid rgb(239, 230, 206);">
+          <b data-dc-tpl="155" style="font-family: Archivo, sans-serif; font-size: 17.5px; display: block;">How long does it take to receive the truck?</b>
+          <p data-dc-tpl="156" style="margin: 8px 0px 0px; color: rgb(92, 100, 115); font-size: 15.5px;">Normally we deliver in less than five days. At peak season it can take a little longer, but we process orders diligently in the order they're received.</p>
+        </div>
+        <div data-dc-tpl="157" style="padding: 22px 26px; border-bottom: 1px solid rgb(239, 230, 206);">
+          <b data-dc-tpl="158" style="font-family: Archivo, sans-serif; font-size: 17.5px; display: block;">Do you sell playground border or underlayment?</b>
+          <p data-dc-tpl="159" style="margin: 8px 0px 0px; color: rgb(92, 100, 115); font-size: 15.5px;">No — we sell stripped-down-priced, bulk, playground-certified mulch. Anything else we could sell you wouldn't be true to our roots of saving our customers money.</p>
+        </div>
+        <div data-dc-tpl="160" style="padding: 22px 26px; border-bottom: 1px solid rgb(239, 230, 206);">
+          <b data-dc-tpl="161" style="font-family: Archivo, sans-serif; font-size: 17.5px; display: block;">Is rubber mulch bad for the environment?</b>
+          <p data-dc-tpl="162" style="margin: 8px 0px 0px; color: rgb(92, 100, 115); font-size: 15.5px;">We don't believe so. Every truckload keeps tires out of mosquito-breeding, fire-hazard dump sites — in fact, a lot of our mulch is produced from cleaning up illegal tire dumps. We've been in the circular economy for over 10 years: refurbished and repaired discount products, high-quality recycled Vision Quality paint, and a closeout, DIY-and-save approach.</p>
+        </div>
+        <div data-dc-tpl="163" style="padding: 22px 26px; border-bottom: 1px solid rgb(239, 230, 206);">
+          <b data-dc-tpl="164" style="font-family: Archivo, sans-serif; font-size: 17.5px; display: block;">What if I only need a few bags?</b>
+          <p data-dc-tpl="165" style="margin: 8px 0px 0px; color: rgb(92, 100, 115); font-size: 15.5px;">If you're local to the OKC metro, stop by either Jameson's store — we're open six days a week. If you're out of range and only need a small amount, we'll show you the math on when it makes sense and when it doesn't for us to supply it. We're famously bad salespeople — we want to save you money, and we want you happy with your purchase.</p>
+        </div>
+        <div data-dc-tpl="166" style="padding: 22px 26px; border-bottom: 1px solid rgb(239, 230, 206);">
+          <b data-dc-tpl="167" style="font-family: Archivo, sans-serif; font-size: 17.5px; display: block;">How long does it take to get a quote?</b>
+          <p data-dc-tpl="168" style="margin: 8px 0px 0px; color: rgb(92, 100, 115); font-size: 15.5px;">Not long at all — usually the same day. Heads up: some K-12 and organization-managed inboxes filter our personally sent quotes to spam or block them at the server level. If you're concerned about receiving it, consider which email address you use — or email us directly at <a data-dc-tpl="169" href="mailto:b2b@discountokc.com" style="color: rgb(46, 60, 119); font-weight: 700;">b2b@discountokc.com</a>.</p>
+        </div>
+        <div data-dc-tpl="170" style="padding: 22px 26px; border-bottom: 1px solid rgb(239, 230, 206);">
+          <b data-dc-tpl="171" style="font-family: Archivo, sans-serif; font-size: 17.5px; display: block;">Is this the same mulch schools and municipalities are required to use?</b>
+          <p data-dc-tpl="172" style="margin: 8px 0px 0px; color: rgb(92, 100, 115); font-size: 15.5px;">Yes — all of our mulch is playground certified. One thing that matters just as much: depth. Certified mulch installed too shallow won't protect the fall height, so tell us your equipment and we'll spec the right depth with your quote.</p>
+        </div>
+        <div data-dc-tpl="173" style="padding: 22px 26px; border-bottom: 1px solid rgb(239, 230, 206);">
+          <b data-dc-tpl="174" style="font-family: Archivo, sans-serif; font-size: 17.5px; display: block;">Is all rubber mulch certified?</b>
+          <p data-dc-tpl="175" style="margin: 8px 0px 0px; color: rgb(92, 100, 115); font-size: 15.5px;">Not even close. The equipment to extract the steel and remanufacture tires into certified-safe mulch takes millions of dollars of infrastructure, plus ongoing certification and quality control — and most tire processors don't pursue it. Their tire shred may pass for mulch, but it isn't certified safe. We can't stress this enough: proceed with caution before putting uncertified shred on a playground — you shift all the liability onto yourself.</p>
+        </div>
+        <div data-dc-tpl="176" style="padding: 22px 26px;">
+          <b data-dc-tpl="177" style="font-family: Archivo, sans-serif; font-size: 17.5px; display: block;">Can we mix and match colors?</b>
+          <p data-dc-tpl="178" style="margin: 8px 0px 0px; color: rgb(92, 100, 115); font-size: 15.5px;">Yes — we build the truck however you like. Unpainted black is standard; painted brown and red run an additional $115 a sack. Black for the playground, brown for the flowerbeds, red for the ball fields — your call.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div data-dc-tpl="179" style="height: 0px;"></div>
+  <div data-dc-tpl="180" style="display: none; position: fixed; bottom: 0px; left: 0px; right: 0px; z-index: 60; background: rgba(251, 247, 236, 0.96); backdrop-filter: blur(8px); border-top: 1px solid rgb(227, 224, 214); padding: 10px 14px calc(10px + env(safe-area-inset-bottom)); gap: 10px;">
+    <a data-dc-tpl="181" href="tel:+14052068111" style="flex: 1 1 0%; display: flex; align-items: center; justify-content: center; gap: 8px; min-height: 48px; background: rgb(255, 255, 255); border: 1.5px solid rgb(46, 60, 119); color: rgb(46, 60, 119); font-weight: 700; font-size: 16px; text-decoration: none; border-radius: 999px;">Call now</a>
+    <a data-dc-tpl="182" href="/get-a-quote/" style="flex: 1.2 1 0%; display: flex; align-items: center; justify-content: center; min-height: 48px; background: rgb(216, 64, 63); color: rgb(255, 255, 255); font-weight: 700; font-size: 16px; text-decoration: none; border-radius: 999px; box-shadow: rgba(216, 64, 63, 0.35) 0px 4px 14px;">Get a quote</a>
+  </div>
+  <footer data-dc-tpl="183" style="background: rgb(27, 36, 68); color: rgb(194, 204, 236); padding: 32px 24px; font-size: 14px;">
+    <div data-dc-tpl="184" style="max-width: 1240px; margin: 0px auto; display: flex; justify-content: space-between; gap: 16px; flex-wrap: wrap; align-items: center;">
+      <span data-dc-tpl="185">© 2026 405 Rubber Mulch · Part of Jameson's Discount Home Improvement, OKC · <a data-dc-tpl="186" href="/terms/#cookies" style="color: inherit; text-decoration: underline;">We use cookies for analytics</a></span>
+      <nav data-dc-tpl="187" style="display: flex; gap: 22px; flex-wrap: wrap;">
+        <a data-dc-tpl="188" href="/" class="scp7" style="color: rgb(194, 204, 236); text-decoration: none;">Home</a>
+        <a data-dc-tpl="189" href="/fundraiser/" class="scp7" style="color: rgb(194, 204, 236); text-decoration: none;">Fundraising</a>
+        <a data-dc-tpl="190" href="/premium-quality/" class="scp7" style="color: rgb(194, 204, 236); text-decoration: none;">Why our mulch</a>
+        <a data-dc-tpl="191" href="/commercial-playgrounds/" class="scp7" style="color: rgb(194, 204, 236); text-decoration: none;">Schools &amp; daycares</a>
+        <a data-dc-tpl="192" href="/coverage-calculator/" class="scp7" style="color: rgb(194, 204, 236); text-decoration: none;">Calculator</a>
+        <a data-dc-tpl="193" href="/terms/" class="scp7" style="color: rgb(194, 204, 236); text-decoration: none;">Terms &amp; policies</a>
+      </nav>
+    </div>
+  </footer></div></div></div><!--/dc-static-->
 <x-dc>
 
 <div style="font-family: 'Public Sans', system-ui, sans-serif; color: #1C2230; background: #FBF7EC; font-size: 16px; line-height: 1.55;">

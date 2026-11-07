@@ -29,7 +29,24 @@
     gtag('js', new Date());
     gtag('config', 'GT-WB72BHMG');
     gtag('config', 'G-F6P1TCFK29');
-    gtag('config', 'AW-18336005673');
+  gtag('config', 'AW-18336005673');
+  // Google Ads website call conversion: swaps (405) 206-8111 for a Google
+  // forwarding number for ad visitors. The page body renders after this runs,
+  // so the callback re-applies the swap as React adds text.
+  gtag('config', 'AW-18336005673/VxaCCN6jzuEcEKn8pKdE', {
+    'phone_conversion_number': '(405) 206-8111',
+    'phone_conversion_callback': function (formatted, digits) {
+      var swap = function () {
+        var w = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT), n;
+        while ((n = w.nextNode())) if (n.nodeValue.indexOf('(405) 206-8111') > -1) n.nodeValue = n.nodeValue.split('(405) 206-8111').join(formatted);
+        document.querySelectorAll('a[href^="tel:"]').forEach(function (a) { if (a.getAttribute('href').replace(/\D/g, '').slice(-10) === '4052068111') a.setAttribute('href', 'tel:+1' + String(digits).replace(/\D/g, '').slice(-10)); });
+      };
+      swap();
+      var mo = new MutationObserver(swap);
+      mo.observe(document.body, { childList: true, subtree: true, characterData: true });
+      setTimeout(function () { mo.disconnect(); }, 15000);
+    }
+  });
   </script>
 <script type="application/ld+json">
   { "@context": "https://schema.org", "@graph": [
@@ -47,8 +64,101 @@
 <style>
     body { margin: 0; background: #FBF7EC; }
   </style>
+<!--dc-static-head--><style>.dc-js #dc-static{display:none!important}</style><script>document.documentElement.classList.add('dc-js');(function(){var n=0,t=setInterval(function(){var r=document.getElementById('dc-root'),s=document.getElementById('dc-static');if((r&&r.firstElementChild&&s)||++n>300){clearInterval(t);if(r&&r.firstElementChild&&s)s.remove();}},100);})();</script><!--/dc-static-head-->
 </head>
 <body>
+<!--dc-static--><div id="dc-static"><div class="sc-host" data-sc-name="Root"><div data-dc-tpl="0" style="font-family: &quot;Public Sans&quot;, system-ui, sans-serif; color: rgb(28, 34, 48); background: rgb(251, 247, 236); font-size: 16px; line-height: 1.6; min-height: 100vh; display: flex; flex-direction: column;">
+
+  <header data-dc-tpl="1" style="position: sticky; top: 0px; z-index: 50; background: rgba(255, 255, 255, 0.92); backdrop-filter: blur(8px); border-bottom: 1px solid rgb(227, 224, 214); transform: none; transition: transform 0.28s;">
+    <div data-dc-tpl="2" style="max-width: 1240px; margin: 0px auto; padding: 0px 24px; height: 72px; display: flex; align-items: center; justify-content: space-between; gap: 24px;">
+      <a data-dc-tpl="3" href="/" style="display: flex; align-items: center; gap: 12px; text-decoration: none; color: rgb(28, 34, 48);">
+        <img data-dc-tpl="4" src="/img/logo-tire.png" alt="405 Rubber Mulch — Jameson's" style="width: 48px; height: 48px; object-fit: contain;">
+        <span data-dc-tpl="5" style="display: flex; flex-direction: column; line-height: 1.1;">
+          <b data-dc-tpl="6" style="font-family: Archivo, sans-serif; font-weight: 800; font-size: 17px; letter-spacing: -0.02em; white-space: nowrap;">405 Rubber Mulch</b>
+          <span data-dc-tpl="7" style="font-size: 12px; color: rgb(92, 100, 115);">Bulk &amp; truckload delivery</span>
+        </span>
+      </a>
+      <nav data-dc-tpl="8" style="display: flex; align-items: center; gap: 22px; font-weight: 600; font-size: 15px;">
+        <a data-dc-tpl="9" href="/premium-quality/" class="scp0" style="color: rgb(58, 65, 80); text-decoration: none;">Why our mulch</a>
+        <a data-dc-tpl="10" href="/commercial-playgrounds/" class="scp0" style="color: rgb(58, 65, 80); text-decoration: none;">Schools &amp; daycares</a>
+        <a data-dc-tpl="11" href="/fundraiser/" class="scp0" style="color: rgb(58, 65, 80); text-decoration: none;">Fundraising</a>
+        <a data-dc-tpl="12" href="/coverage-calculator/" class="scp0" style="color: rgb(58, 65, 80); text-decoration: none;">Calculator</a>
+        <a data-dc-tpl="13" href="/about/" class="scp0" style="color: rgb(58, 65, 80); text-decoration: none;">About</a>
+        <a data-dc-tpl="14" href="/get-a-quote/" class="scp1 scp2" style="background: rgb(59, 115, 73); color: rgb(251, 247, 236); font-weight: 700; text-decoration: none; padding: 11px 22px; border-radius: 999px; box-shadow: rgba(47, 94, 58, 0.35) 0px 2px 8px;">Get a quote</a>
+      </nav>
+    </div>
+    <div data-dc-tpl="15" style="border-top: 1px solid rgb(227, 224, 214); background: rgb(255, 255, 255);">
+      <div data-dc-tpl="16" style="max-width: 1240px; margin: 0px auto; padding: 6px 12px; display: flex; gap: 2px 4px; flex-wrap: wrap; align-items: center; font-size: 12.5px;">
+        <span data-dc-tpl="17" style="color: rgb(129, 136, 151); font-weight: 600;">Serving:</span>
+        <a data-dc-tpl="18" href="/oklahoma/" class="scp3" style="color: rgb(58, 65, 80); text-decoration: none; padding: 2px 5px; border-radius: 6px; font-weight: 600;">Oklahoma</a>
+        <a data-dc-tpl="19" href="/arkansas/" class="scp3" style="color: rgb(58, 65, 80); text-decoration: none; padding: 2px 5px; border-radius: 6px; font-weight: 600;">Arkansas</a>
+        <a data-dc-tpl="20" href="/kansas/" class="scp3" style="color: rgb(58, 65, 80); text-decoration: none; padding: 2px 5px; border-radius: 6px; font-weight: 600;">Kansas</a>
+        <a data-dc-tpl="21" href="/missouri/" class="scp3" style="color: rgb(58, 65, 80); text-decoration: none; padding: 2px 5px; border-radius: 6px; font-weight: 600;">Missouri</a>
+      </div>
+    </div>
+  </header>
+
+  <main data-dc-tpl="22" data-screen-label="Terms &amp; policies page" style="flex: 1 1 0%; padding: clamp(48px, 6vw, 80px) 24px;">
+    <div data-dc-tpl="23" style="max-width: 760px; margin: 0px auto; display: flex; flex-direction: column; gap: 36px;">
+      <div data-dc-tpl="24">
+        <span data-dc-tpl="25" style="color: rgb(59, 115, 73); font-weight: 700; font-size: 13px; letter-spacing: 0.12em; text-transform: uppercase;">Terms &amp; policies</span>
+        <h1 data-dc-tpl="26" style="font-family: Archivo, sans-serif; font-weight: 800; letter-spacing: -0.022em; font-size: clamp(30px, 4vw, 42px); line-height: 1.08; margin: 8px 0px 0px;">The fine print, in plain English.</h1>
+      </div>
+
+      <div data-dc-tpl="27" style="display: flex; flex-direction: column; gap: 10px;">
+        <h2 data-dc-tpl="28" style="font-family: Archivo, sans-serif; font-weight: 700; font-size: 21px; margin: 0px;">Quotes &amp; pricing</h2>
+        <p data-dc-tpl="29" style="color: rgb(58, 65, 80); margin: 0px;">Delivered prices are estimates based on the square footage, depth and color you provide. Final pricing is confirmed in writing before delivery. Prices can change with material and freight costs until your order is confirmed.</p>
+      </div>
+
+      <div data-dc-tpl="30" style="display: flex; flex-direction: column; gap: 10px;">
+        <h2 data-dc-tpl="31" style="font-family: Archivo, sans-serif; font-weight: 700; font-size: 21px; margin: 0px;">Delivery</h2>
+        <p data-dc-tpl="32" style="color: rgb(58, 65, 80); margin: 0px;">Supersacks are delivered on a flatbed truck on a pallet to your site. You're responsible for unloading with bucket forks, a forklift or rented equipment, and for safe truck access to the drop point.</p>
+      </div>
+
+      <div data-dc-tpl="33" style="display: flex; flex-direction: column; gap: 10px;">
+        <h2 data-dc-tpl="34" style="font-family: Archivo, sans-serif; font-weight: 700; font-size: 21px; margin: 0px;">Payment terms</h2>
+        <p data-dc-tpl="35" style="color: rgb(58, 65, 80); margin: 0px;">Schools and municipalities qualify for Net 30 on request. All other orders are due on delivery unless arranged in advance.</p>
+      </div>
+
+      <div data-dc-tpl="36" style="display: flex; flex-direction: column; gap: 10px;">
+        <h2 data-dc-tpl="37" style="font-family: Archivo, sans-serif; font-weight: 700; font-size: 21px; margin: 0px;">Product</h2>
+        <p data-dc-tpl="38" style="color: rgb(58, 65, 80); margin: 0px;">Playground material is IPEMA-certified and fall-height rated; documentation is available for inspections. Black is uncoated recycled rubber. Brown and red carry a 12-year color warranty.</p>
+      </div>
+
+      <div data-dc-tpl="39" style="display: flex; flex-direction: column; gap: 10px;">
+        <h2 data-dc-tpl="40" style="font-family: Archivo, sans-serif; font-weight: 700; font-size: 21px; margin: 0px;">Playground safety disclaimer</h2>
+        <p data-dc-tpl="41" style="color: rgb(92, 100, 115); margin: 0px; font-size: 14.5px;">While 405 Rubber Mulch chunk nuggets are tested to meet standard ASTM F1292 impact-attenuation guidelines (providing up to a 10-foot critical fall height protection at a consolidated 6-inch depth), playground fall height requirements and mandatory safety depths can vary strictly by state, municipal code, and individual childcare licensing agencies. Final compliance and safety verification remain the sole responsibility of the buyer, the equipment manufacturer's specified fall height guidelines, and the local certified playground safety inspector (CPSI).</p>
+      </div>
+
+      <div data-dc-tpl="42" style="display: flex; flex-direction: column; gap: 10px; scroll-margin-top: 96px;">
+        <h2 data-dc-tpl="43" style="font-family: Archivo, sans-serif; font-weight: 700; font-size: 21px; margin: 0px;">Cookies &amp; analytics</h2>
+        <p data-dc-tpl="44" style="color: rgb(58, 65, 80); margin: 0px;">This site may collect cookies and similar identifiers through Google Analytics and Google Ads to measure traffic and ad performance. They tell us which pages are useful — they don't tell us who you are. By using the site you consent to these cookies. Most browsers let you block or clear cookies in their settings, and the site works fine without them.</p>
+      </div>
+
+      <div data-dc-tpl="45" style="background: rgb(244, 241, 232); border: 1px solid rgb(227, 224, 214); border-radius: 14px; padding: 20px 24px;">
+        <p data-dc-tpl="46" style="margin: 0px; color: rgb(58, 65, 80);">Questions about this policy? Call <a data-dc-tpl="47" href="tel:+14052068111" style="color: rgb(46, 60, 119); font-weight: 700;">(405) 206-8111</a> or email <a data-dc-tpl="48" href="mailto:b2b@discountokc.com" style="color: rgb(46, 60, 119); font-weight: 700;">b2b@discountokc.com</a>.</p>
+      </div>
+    </div>
+  </main>
+
+  <div data-dc-tpl="49" style="height: 0px;"></div>
+  <div data-dc-tpl="50" style="display: none; position: fixed; bottom: 0px; left: 0px; right: 0px; z-index: 60; background: rgba(251, 247, 236, 0.96); backdrop-filter: blur(8px); border-top: 1px solid rgb(227, 224, 214); padding: 10px 14px calc(10px + env(safe-area-inset-bottom)); gap: 10px;">
+    <a data-dc-tpl="51" href="tel:+14052068111" style="flex: 1 1 0%; display: flex; align-items: center; justify-content: center; gap: 8px; min-height: 48px; background: rgb(255, 255, 255); border: 1.5px solid rgb(46, 60, 119); color: rgb(46, 60, 119); font-weight: 700; font-size: 16px; text-decoration: none; border-radius: 999px;"><svg data-dc-tpl="52" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width: 18px; height: 18px;"><path data-dc-tpl="53" d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>Call now</a>
+    <a data-dc-tpl="54" href="/get-a-quote/" style="flex: 1.2 1 0%; display: flex; align-items: center; justify-content: center; min-height: 48px; background: rgb(216, 64, 63); color: rgb(255, 255, 255); font-weight: 700; font-size: 16px; text-decoration: none; border-radius: 999px; box-shadow: rgba(216, 64, 63, 0.35) 0px 4px 14px;">Get a quote</a>
+  </div>
+  <footer data-dc-tpl="55" style="background: rgb(27, 36, 68); color: rgb(194, 204, 236); padding: 32px 24px; font-size: 14px;">
+    <div data-dc-tpl="56" style="max-width: 1240px; margin: 0px auto; display: flex; justify-content: space-between; gap: 16px; flex-wrap: wrap; align-items: center;">
+      <span data-dc-tpl="57">© 2026 405 Rubber Mulch · Part of Jameson's Discount Home Improvement, OKC · <a data-dc-tpl="58" href="/terms/#cookies" style="color: inherit; text-decoration: underline;">We use cookies for analytics</a></span>
+      <nav data-dc-tpl="59" style="display: flex; gap: 22px; flex-wrap: wrap;">
+        <a data-dc-tpl="60" href="/" class="scp4" style="color: rgb(194, 204, 236); text-decoration: none;">Home</a>
+        <a data-dc-tpl="61" href="/premium-quality/" class="scp4" style="color: rgb(194, 204, 236); text-decoration: none;">Why our mulch</a>
+        <a data-dc-tpl="62" href="/commercial-playgrounds/" class="scp4" style="color: rgb(194, 204, 236); text-decoration: none;">Schools &amp; daycares</a>
+        <a data-dc-tpl="63" href="/coverage-calculator/" class="scp4" style="color: rgb(194, 204, 236); text-decoration: none;">Calculator</a>
+        <a data-dc-tpl="64" href="/get-a-quote/" class="scp4" style="color: rgb(194, 204, 236); text-decoration: none;">Get a quote</a>
+        <a data-dc-tpl="65" href="/oklahoma/" class="scp4" style="color: rgb(194, 204, 236); text-decoration: none;">States we serve</a>
+      </nav>
+    </div>
+  </footer></div></div></div><!--/dc-static-->
 <x-dc>
 
 <div style="font-family: 'Public Sans', system-ui, sans-serif; color: #1C2230; background: #FBF7EC; font-size: 16px; line-height: 1.6; min-height: 100vh; display: flex; flex-direction: column;">

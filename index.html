@@ -32,7 +32,24 @@
     gtag('js', new Date());
     gtag('config', 'GT-WB72BHMG');
     gtag('config', 'G-F6P1TCFK29');
-    gtag('config', 'AW-18336005673');
+  gtag('config', 'AW-18336005673');
+  // Google Ads website call conversion: swaps (405) 206-8111 for a Google
+  // forwarding number for ad visitors. The page body renders after this runs,
+  // so the callback re-applies the swap as React adds text.
+  gtag('config', 'AW-18336005673/VxaCCN6jzuEcEKn8pKdE', {
+    'phone_conversion_number': '(405) 206-8111',
+    'phone_conversion_callback': function (formatted, digits) {
+      var swap = function () {
+        var w = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT), n;
+        while ((n = w.nextNode())) if (n.nodeValue.indexOf('(405) 206-8111') > -1) n.nodeValue = n.nodeValue.split('(405) 206-8111').join(formatted);
+        document.querySelectorAll('a[href^="tel:"]').forEach(function (a) { if (a.getAttribute('href').replace(/\D/g, '').slice(-10) === '4052068111') a.setAttribute('href', 'tel:+1' + String(digits).replace(/\D/g, '').slice(-10)); });
+      };
+      swap();
+      var mo = new MutationObserver(swap);
+      mo.observe(document.body, { childList: true, subtree: true, characterData: true });
+      setTimeout(function () { mo.disconnect(); }, 15000);
+    }
+  });
   </script>
 <script type="application/ld+json">
   {
@@ -75,8 +92,434 @@
     body { margin: 0; background: #FBF7EC; }
     input:focus, select:focus, textarea:focus { outline: 3px solid rgba(76,139,90,.45); outline-offset: 1px; }
   </style>
+<!--dc-static-head--><style>.dc-js #dc-static{display:none!important}</style><script>document.documentElement.classList.add('dc-js');(function(){var n=0,t=setInterval(function(){var r=document.getElementById('dc-root'),s=document.getElementById('dc-static');if((r&&r.firstElementChild&&s)||++n>300){clearInterval(t);if(r&&r.firstElementChild&&s)s.remove();}},100);})();</script><!--/dc-static-head-->
 </head>
 <body>
+<!--dc-static--><div id="dc-static"><div class="sc-host" data-sc-name="Root"><div data-dc-tpl="0" style="font-family: &quot;Public Sans&quot;, system-ui, sans-serif; color: rgb(28, 34, 48); background: rgb(251, 247, 236); font-size: 16px; line-height: 1.55;">
+
+  
+  <div data-dc-tpl="1" style="background: rgb(27, 36, 68); color: rgb(251, 247, 236); font-size: 13.5px;">
+    <div data-dc-tpl="2" style="max-width: 1240px; margin: 0px auto; padding: 8px 24px; display: flex; align-items: center; justify-content: space-between; gap: 16px; flex-wrap: wrap;">
+      <span data-dc-tpl="3" style="display: flex; align-items: center; gap: 8px; font-weight: 600;">
+        <svg data-dc-tpl="4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width: 15px; height: 15px;"><path data-dc-tpl="5" d="M14 18V6a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2v11a1 1 0 0 0 1 1h2"></path><path data-dc-tpl="6" d="M15 18H9"></path><path data-dc-tpl="7" d="M19 18h2a1 1 0 0 0 1-1v-3.65a1 1 0 0 0-.22-.62l-3.48-4.35A1 1 0 0 0 17.52 8H14"></path><circle data-dc-tpl="8" cx="17" cy="18" r="2"></circle><circle data-dc-tpl="9" cx="7" cy="18" r="2"></circle></svg>
+        Truckload delivery across <a data-dc-tpl="10" href="/oklahoma/" class="scp0" style="color: rgb(251, 247, 236); text-decoration: underline;">OK</a> · <a data-dc-tpl="11" href="/arkansas/" class="scp0" style="color: rgb(251, 247, 236); text-decoration: underline;">AR</a> · <a data-dc-tpl="12" href="/kansas/" class="scp0" style="color: rgb(251, 247, 236); text-decoration: underline;">KS</a> · <a data-dc-tpl="13" href="/missouri/" class="scp0" style="color: rgb(251, 247, 236); text-decoration: underline;">MO</a>
+      </span>
+      
+        <span data-dc-tpl="15" style="color: rgb(194, 204, 236);">Part of Jameson's Discount Home Improvement · <a data-dc-tpl="16" href="https://discountokc.com" target="_blank" rel="noopener" class="scp0" style="color: rgb(194, 204, 236); text-decoration: underline;">discountokc.com</a></span>
+      
+      <a data-dc-tpl="17" href="tel:+14052068111" style="color: rgb(251, 247, 236); text-decoration: none; font-weight: 700;">(405) 206-8111</a>
+    </div>
+  </div>
+
+  
+  <header data-dc-tpl="18" style="position: sticky; top: 0px; z-index: 50; background: rgba(255, 255, 255, 0.92); backdrop-filter: blur(8px); border-bottom: 1px solid rgb(227, 224, 214); transform: none; transition: transform 0.28s;">
+    <div data-dc-tpl="19" style="max-width: 1240px; margin: 0px auto; padding: 0px 24px; height: 72px; display: flex; align-items: center; justify-content: space-between; gap: 24px;">
+      <a data-dc-tpl="20" href="#top" style="display: flex; align-items: center; gap: 12px; text-decoration: none; color: rgb(28, 34, 48);">
+        <img data-dc-tpl="21" src="/img/logo-tire.png" alt="405 Rubber Mulch — Jameson's" style="width: 48px; height: 48px; object-fit: contain;">
+        <span data-dc-tpl="22" style="display: flex; flex-direction: column; line-height: 1.1;">
+          <b data-dc-tpl="23" style="font-family: Archivo, sans-serif; font-weight: 800; font-size: 17px; letter-spacing: -0.02em; white-space: nowrap;">405 Rubber Mulch</b>
+          <span data-dc-tpl="24" style="font-size: 12px; color: rgb(92, 100, 115);">Bulk &amp; truckload delivery</span>
+        </span>
+      </a>
+      <nav data-dc-tpl="25" style="display: flex; align-items: center; gap: 22px; font-weight: 600; font-size: 15px;">
+        <a data-dc-tpl="26" href="/premium-quality/" class="scp1" style="color: rgb(58, 65, 80); text-decoration: none;">Why our mulch</a>
+        <a data-dc-tpl="27" href="/commercial-playgrounds/" class="scp1" style="color: rgb(58, 65, 80); text-decoration: none;">Schools &amp; daycares</a>
+        <a data-dc-tpl="28" href="/fundraiser/" class="scp1" style="color: rgb(58, 65, 80); text-decoration: none;">Fundraising</a>
+        <a data-dc-tpl="29" href="/coverage-calculator/" class="scp1" style="color: rgb(58, 65, 80); text-decoration: none;">Calculator</a>
+        <a data-dc-tpl="30" href="/about/" class="scp1" style="color: rgb(58, 65, 80); text-decoration: none;">About</a>
+        <a data-dc-tpl="31" href="#get-a-quote" class="scp2 scp3" style="background: rgb(59, 115, 73); color: rgb(251, 247, 236); font-weight: 700; text-decoration: none; padding: 11px 22px; border-radius: 999px; box-shadow: rgba(47, 94, 58, 0.35) 0px 2px 8px;">Get a quote</a>
+      </nav>
+      <button data-dc-tpl="32" aria-label="Menu" style="display: none; align-items: center; justify-content: center; background: rgb(255, 255, 255); border: 1px solid rgb(227, 224, 214); border-radius: 10px; width: 44px; height: 44px; cursor: pointer; color: rgb(28, 34, 48);">
+        
+          <svg data-dc-tpl="34" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" style="width: 22px; height: 22px;"><path data-dc-tpl="35" d="M4 6h16"></path><path data-dc-tpl="36" d="M4 12h16"></path><path data-dc-tpl="37" d="M4 18h16"></path></svg>
+        
+        
+      </button>
+    </div>
+    
+    <div data-dc-tpl="52" style="border-top: 1px solid rgb(227, 224, 214); background: rgb(255, 255, 255);">
+      <div data-dc-tpl="53" style="max-width: 1240px; margin: 0px auto; padding: 6px 12px; display: flex; gap: 2px 4px; flex-wrap: wrap; align-items: center; font-size: 12.5px;">
+        <span data-dc-tpl="54" style="color: rgb(129, 136, 151); font-weight: 600;">Serving:</span>
+        <a data-dc-tpl="55" href="/oklahoma/" class="scp4" style="color: rgb(58, 65, 80); text-decoration: none; padding: 2px 5px; border-radius: 6px; font-weight: 600;">Oklahoma</a>
+        <a data-dc-tpl="56" href="/arkansas/" class="scp4" style="color: rgb(58, 65, 80); text-decoration: none; padding: 2px 5px; border-radius: 6px; font-weight: 600;">Arkansas</a>
+        <a data-dc-tpl="57" href="/kansas/" class="scp4" style="color: rgb(58, 65, 80); text-decoration: none; padding: 2px 5px; border-radius: 6px; font-weight: 600;">Kansas</a>
+        <a data-dc-tpl="58" href="/missouri/" class="scp4" style="color: rgb(58, 65, 80); text-decoration: none; padding: 2px 5px; border-radius: 6px; font-weight: 600;">Missouri</a>
+      </div>
+    </div>
+  </header>
+
+  
+  <div data-dc-tpl="59" data-screen-label="Announcement" style="background: rgb(29, 78, 137); color: rgb(251, 247, 236); padding: 10px 24px;">
+    <div data-dc-tpl="60" style="max-width: 1240px; margin: 0px auto; display: flex; align-items: center; justify-content: center; gap: 10px; text-align: center; font-size: 14.5px; font-weight: 600; flex-wrap: wrap;">
+      <span data-dc-tpl="61" style="display: inline-flex; align-items: center; gap: 6px; background: rgba(251, 247, 236, 0.16); border: 1px solid rgba(251, 247, 236, 0.35); font-size: 12px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; padding: 4px 10px; border-radius: 999px;">
+        <svg data-dc-tpl="62" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" style="width: 14px; height: 14px;"><path data-dc-tpl="63" d="M20 6 9 17l-5-5"></path></svg>
+        In stock now
+      </span>
+      <span data-dc-tpl="64">Painted <b data-dc-tpl="65" style="color: rgb(143, 192, 255);">blue</b> mulch is here — a fresh new color, ready to order.</span>
+    </div>
+  </div>
+
+  
+  <section data-dc-tpl="66" data-screen-label="Hero" style="position: relative; background: rgb(27, 36, 68); overflow: hidden;">
+    <img data-dc-tpl="67" src="/img/playground.jpg" alt="Commercial playground on black rubber mulch" style="position: absolute; inset: 0px; width: 100%; height: 100%; object-fit: cover; object-position: center 65%;">
+    <div data-dc-tpl="68" style="position: absolute; inset: 0px; background: rgba(17, 20, 28, 0.58);"></div>
+    <div data-dc-tpl="69" style="position: relative; max-width: 1240px; margin: 0px auto; padding: clamp(36px, 6vw, 120px) 24px clamp(48px, 7vw, 110px);">
+      <div data-dc-tpl="70" style="max-width: 640px; display: flex; flex-direction: column; gap: 22px;">
+        <span data-dc-tpl="71" style="display: inline-flex; align-self: flex-start; align-items: center; gap: 8px; background: rgba(251, 247, 236, 0.14); border: 1px solid rgba(251, 247, 236, 0.3); color: rgb(251, 247, 236); font-size: 13px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; padding: 7px 14px; border-radius: 999px;">
+          <svg data-dc-tpl="72" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width: 15px; height: 15px;"><path data-dc-tpl="73" d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"></path></svg>
+          IPEMA-certified · Semi-truck tires only
+        </span>
+        <h1 data-dc-tpl="74" style="font-family: Archivo, sans-serif; font-weight: 800; letter-spacing: -0.022em; font-size: clamp(38px, 5.2vw, 60px); line-height: 1.04; color: rgb(255, 255, 255); margin: 0px;">Premium commercial-grade rubber mulch. Delivered by the truckload.</h1>
+        <p data-dc-tpl="75" style="font-size: clamp(17px, 2vw, 20px); color: rgb(226, 231, 245); margin: 0px; max-width: 54ch;">Heavy chunk nuggets cut from semi-truck tires — not the flimsy shredded stuff. A premium product at a bare-bones DIY price, true to our Jameson's Discount roots: you meet the truck, your community spreads it, and everybody keeps the savings. Delivered across Oklahoma, Arkansas, Kansas &amp; Missouri.</p>
+        <div data-dc-tpl="76" style="display: flex; gap: 14px; flex-wrap: wrap; margin-top: 6px;">
+          <a data-dc-tpl="77" href="#get-a-quote" class="scp5 scp3" style="background: rgb(216, 64, 63); color: rgb(255, 255, 255); font-weight: 700; font-size: 17px; text-decoration: none; padding: 15px 30px; border-radius: 999px; box-shadow: rgba(216, 64, 63, 0.4) 0px 4px 14px;">Get a delivery quote</a>
+          <a data-dc-tpl="78" href="/coverage-calculator/" class="scp6 scp3" style="background: rgba(251, 247, 236, 0.12); border: 1px solid rgba(251, 247, 236, 0.45); color: rgb(251, 247, 236); font-weight: 700; font-size: 17px; text-decoration: none; padding: 15px 30px; border-radius: 999px;">How many sacks do I need?</a>
+        </div>
+        <div data-dc-tpl="79" style="display: flex; gap: 26px; flex-wrap: wrap; margin-top: 14px; color: rgb(226, 231, 245); font-size: 14.5px; font-weight: 600;">
+          <span data-dc-tpl="80" style="display: flex; align-items: center; gap: 7px;"><svg data-dc-tpl="81" viewBox="0 0 24 24" fill="none" stroke="#7FBF8E" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" style="width: 16px; height: 16px;"><path data-dc-tpl="82" d="M20 6 9 17l-5-5"></path></svg> 2,000-lb supersacks</span>
+          <span data-dc-tpl="83" style="display: flex; align-items: center; gap: 7px;"><svg data-dc-tpl="84" viewBox="0 0 24 24" fill="none" stroke="#7FBF8E" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" style="width: 16px; height: 16px;"><path data-dc-tpl="85" d="M20 6 9 17l-5-5"></path></svg> 12-year color-lock warranty</span>
+          <span data-dc-tpl="86" style="display: flex; align-items: center; gap: 7px;"><svg data-dc-tpl="87" viewBox="0 0 24 24" fill="none" stroke="#7FBF8E" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" style="width: 16px; height: 16px;"><path data-dc-tpl="88" d="M20 6 9 17l-5-5"></path></svg> DIY &amp; save pricing</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  
+  <section data-dc-tpl="89" data-screen-label="Local pickup" style="scroll-margin-top: 84px; background: rgb(244, 241, 232); border-bottom: 1px solid rgb(227, 224, 214); padding: 14px 24px;">
+    <div data-dc-tpl="90" style="max-width: 1240px; margin: 0px auto; display: flex; flex-wrap: wrap; align-items: baseline; gap: 3px 8px; font-size: 14px; color: rgb(58, 65, 80);">
+      <span data-dc-tpl="91"><b data-dc-tpl="92" style="color: rgb(28, 34, 48);">In the OKC metro?</b> Skip delivery — pick up bags or a supersack in stock at Jameson's:</span>
+      <a data-dc-tpl="93" href="https://maps.google.com/?q=7010+SE+15th+St,+Midwest+City,+OK+73110" target="_blank" rel="noopener" class="scp7" style="color: rgb(46, 60, 119); font-weight: 700; text-decoration: none;">Midwest City</a>
+      <span data-dc-tpl="94" style="color: rgb(183, 188, 198);">·</span>
+      <a data-dc-tpl="95" href="https://maps.google.com/?q=8100+S+Santa+Fe+Ave,+Oklahoma+City,+OK+73139" target="_blank" rel="noopener" class="scp7" style="color: rgb(46, 60, 119); font-weight: 700; text-decoration: none;">South OKC</a>
+    </div>
+  </section>
+
+  
+  <section data-dc-tpl="96" data-screen-label="Fill the truck" style="scroll-margin-top: 84px; background: rgb(255, 255, 255); padding: clamp(28px, 4vw, 48px) 24px 0px;">
+    <div data-dc-tpl="97" style="max-width: 960px; margin: 0px auto;">
+      <div data-dc-tpl="98" style="background: radial-gradient(700px 320px at 85% -10%, rgba(99, 132, 255, 0.35), transparent 60%), linear-gradient(150deg, rgb(19, 26, 54) 0%, rgb(28, 38, 80) 55%, rgb(39, 51, 107) 100%); color: rgb(251, 247, 236); border-radius: 18px; box-shadow: rgba(17, 20, 28, 0.25) 0px 18px 44px; padding: clamp(20px, 3vw, 30px); display: flex; flex-direction: column; gap: 14px;">
+        <div data-dc-tpl="99" style="display: flex; align-items: center; justify-content: space-between; gap: 10px 18px; flex-wrap: wrap;">
+          <b data-dc-tpl="100" style="font-family: Archivo, sans-serif; font-size: clamp(17px, 2vw, 20px); color: rgb(255, 255, 255); white-space: nowrap;">Fill the truck — watch the price drop</b>
+          <span data-dc-tpl="101" style="display: inline-flex; align-items: center; gap: 10px;">
+            <span data-dc-tpl="102" style="display: inline-flex; align-items: center; justify-content: center; border: 1.5px dashed rgba(74, 222, 128, 0.65); border-radius: 8px; background: rgba(74, 222, 128, 0.08); width: 36px; height: 24px; font-size: 13px; line-height: 1; white-space: nowrap; overflow: hidden;"><span class="sc-interp">🛝🌳</span></span>
+            <span data-dc-tpl="103" style="display: flex; flex-direction: column; line-height: 1.25;">
+              <b data-dc-tpl="104" style="font-size: 13px; color: rgb(255, 255, 255);">covers ≈ <span class="sc-interp">1,050 sq ft</span></b>
+              <span data-dc-tpl="105" style="font-size: 11.5px; color: rgb(151, 163, 209); white-space: nowrap;"><span class="sc-interp">~35 × 30 ft</span> footprint at 6" depth</span>
+            </span>
+          </span>
+          <label data-dc-tpl="106" style="display: flex; align-items: center; gap: 10px;">
+            <span data-dc-tpl="107" style="font-weight: 700; font-size: 14px; color: rgb(215, 222, 245);">Sacks you need:</span>
+            <button data-dc-tpl="108" type="button" aria-label="Fewer sacks" class="scp8 scp9" style="width: 36px; height: 36px; border-radius: 50%; border: 1px solid rgba(255, 255, 255, 0.35); background: rgba(255, 255, 255, 0.1); color: rgb(255, 255, 255); font-size: 20px; font-weight: 700; cursor: pointer; line-height: 1; flex: 0 0 auto;">−</button>
+            <input data-dc-tpl="109" type="number" min="1" max="200" value="7" style="font-family: &quot;Spline Sans Mono&quot;, monospace; font-size: 17px; padding: 9px 12px; border: 1px solid rgba(255, 255, 255, 0.22); border-radius: 10px; background: rgba(255, 255, 255, 0.08); color: rgb(255, 255, 255); width: 74px; box-sizing: border-box; text-align: center;">
+            <button data-dc-tpl="110" type="button" aria-label="More sacks" class="scp8 scp9" style="width: 36px; height: 36px; border-radius: 50%; border: 1px solid rgba(255, 255, 255, 0.35); background: rgba(255, 255, 255, 0.1); color: rgb(255, 255, 255); font-size: 20px; font-weight: 700; cursor: pointer; line-height: 1; flex: 0 0 auto;">+</button>
+          </label>
+        </div>
+        <div data-dc-tpl="111" style="border: 1px solid rgba(255, 255, 255, 0.14); border-radius: 12px; background: rgba(7, 10, 24, 0.45); padding: 8px; display: grid; grid-template-columns: repeat(11, 1fr); gap: 5px;">
+              <span data-dc-tpl="112" style="aspect-ratio: 1 / 1; border-radius: 5px; box-shadow: rgba(255, 255, 255, 0.14) 0px 1px 0px inset; background: linear-gradient(160deg, rgb(255, 255, 255), rgb(203, 213, 225));"></span>
+              <span data-dc-tpl="113" style="aspect-ratio: 1 / 1; border-radius: 5px; box-shadow: rgba(255, 255, 255, 0.14) 0px 1px 0px inset; background: linear-gradient(160deg, rgb(255, 255, 255), rgb(203, 213, 225));"></span>
+              <span data-dc-tpl="114" style="aspect-ratio: 1 / 1; border-radius: 5px; box-shadow: rgba(255, 255, 255, 0.14) 0px 1px 0px inset; background: linear-gradient(160deg, rgb(255, 255, 255), rgb(203, 213, 225));"></span>
+              <span data-dc-tpl="115" style="aspect-ratio: 1 / 1; border-radius: 5px; box-shadow: rgba(255, 255, 255, 0.14) 0px 1px 0px inset; background: linear-gradient(160deg, rgb(255, 255, 255), rgb(203, 213, 225));"></span>
+              <span data-dc-tpl="116" style="aspect-ratio: 1 / 1; border-radius: 5px; box-shadow: rgba(255, 255, 255, 0.14) 0px 1px 0px inset; background: linear-gradient(160deg, rgb(255, 255, 255), rgb(203, 213, 225));"></span>
+              <span data-dc-tpl="117" style="aspect-ratio: 1 / 1; border-radius: 5px; box-shadow: rgba(255, 255, 255, 0.14) 0px 1px 0px inset; background: linear-gradient(160deg, rgb(255, 255, 255), rgb(203, 213, 225));"></span>
+              <span data-dc-tpl="118" style="aspect-ratio: 1 / 1; border-radius: 5px; box-shadow: rgba(255, 255, 255, 0.14) 0px 1px 0px inset; background: linear-gradient(160deg, rgb(255, 255, 255), rgb(203, 213, 225));"></span>
+              <span data-dc-tpl="119" style="aspect-ratio: 1 / 1; border-radius: 5px; box-shadow: rgba(255, 255, 255, 0.14) 0px 1px 0px inset; background: linear-gradient(160deg, rgb(74, 222, 128), rgb(22, 163, 74));"></span>
+              <span data-dc-tpl="120" style="aspect-ratio: 1 / 1; border-radius: 5px; box-shadow: rgba(255, 255, 255, 0.14) 0px 1px 0px inset; background: linear-gradient(160deg, rgb(74, 222, 128), rgb(22, 163, 74));"></span>
+              <span data-dc-tpl="121" style="aspect-ratio: 1 / 1; border-radius: 5px; box-shadow: rgba(255, 255, 255, 0.14) 0px 1px 0px inset; background: linear-gradient(160deg, rgb(74, 222, 128), rgb(22, 163, 74));"></span>
+              <span data-dc-tpl="122" style="aspect-ratio: 1 / 1; border-radius: 5px; box-shadow: rgba(255, 255, 255, 0.14) 0px 1px 0px inset; background: linear-gradient(160deg, rgb(74, 222, 128), rgb(22, 163, 74));"></span>
+              <span data-dc-tpl="123" style="aspect-ratio: 1 / 1; border-radius: 5px; box-shadow: rgba(255, 255, 255, 0.14) 0px 1px 0px inset; background: linear-gradient(160deg, rgb(74, 222, 128), rgb(22, 163, 74));"></span>
+              <span data-dc-tpl="124" style="aspect-ratio: 1 / 1; border-radius: 5px; box-shadow: rgba(255, 255, 255, 0.14) 0px 1px 0px inset; background: linear-gradient(160deg, rgb(74, 222, 128), rgb(22, 163, 74));"></span>
+              <span data-dc-tpl="125" style="aspect-ratio: 1 / 1; border-radius: 5px; box-shadow: rgba(255, 255, 255, 0.14) 0px 1px 0px inset; background: linear-gradient(160deg, rgb(74, 222, 128), rgb(22, 163, 74));"></span>
+              <span data-dc-tpl="126" style="aspect-ratio: 1 / 1; border-radius: 5px; box-shadow: rgba(255, 255, 255, 0.14) 0px 1px 0px inset; background: linear-gradient(160deg, rgb(74, 222, 128), rgb(22, 163, 74));"></span>
+              <span data-dc-tpl="127" style="aspect-ratio: 1 / 1; border-radius: 5px; box-shadow: rgba(255, 255, 255, 0.14) 0px 1px 0px inset; background: linear-gradient(160deg, rgb(74, 222, 128), rgb(22, 163, 74));"></span>
+              <span data-dc-tpl="128" style="aspect-ratio: 1 / 1; border-radius: 5px; box-shadow: rgba(255, 255, 255, 0.14) 0px 1px 0px inset; background: linear-gradient(160deg, rgb(74, 222, 128), rgb(22, 163, 74));"></span>
+              <span data-dc-tpl="129" style="aspect-ratio: 1 / 1; border-radius: 5px; box-shadow: rgba(255, 255, 255, 0.14) 0px 1px 0px inset; background: linear-gradient(160deg, rgb(74, 222, 128), rgb(22, 163, 74));"></span>
+              <span data-dc-tpl="130" style="aspect-ratio: 1 / 1; border-radius: 5px; box-shadow: rgba(255, 255, 255, 0.14) 0px 1px 0px inset; background: linear-gradient(160deg, rgb(74, 222, 128), rgb(22, 163, 74));"></span>
+              <span data-dc-tpl="131" style="aspect-ratio: 1 / 1; border-radius: 5px; box-shadow: rgba(255, 255, 255, 0.14) 0px 1px 0px inset; background: linear-gradient(160deg, rgb(74, 222, 128), rgb(22, 163, 74));"></span>
+              <span data-dc-tpl="132" style="aspect-ratio: 1 / 1; border-radius: 5px; box-shadow: rgba(255, 255, 255, 0.14) 0px 1px 0px inset; background: linear-gradient(160deg, rgb(74, 222, 128), rgb(22, 163, 74));"></span>
+              <span data-dc-tpl="133" style="aspect-ratio: 1 / 1; border-radius: 5px; box-shadow: rgba(255, 255, 255, 0.14) 0px 1px 0px inset; background: linear-gradient(160deg, rgb(74, 222, 128), rgb(22, 163, 74));"></span>
+        </div>
+        <div data-dc-tpl="134" style="display: flex; gap: 8px 16px; flex-wrap: wrap; align-items: center; font-size: 13px; color: rgb(215, 222, 245);">
+          <span data-dc-tpl="135" style="display: inline-flex; align-items: center; gap: 7px;"><span data-dc-tpl="136" style="width: 11px; height: 11px; border-radius: 3px; background: linear-gradient(160deg, rgb(255, 255, 255), rgb(203, 213, 225)); display: inline-block;"></span> Your sacks — <b data-dc-tpl="137" style="font-family: &quot;Spline Sans Mono&quot;, monospace; color: rgb(255, 255, 255);"><span class="sc-interp">7</span></b></span>
+          <span data-dc-tpl="138" style="display: inline-flex; align-items: center; gap: 7px;"><span data-dc-tpl="139" style="width: 11px; height: 11px; border-radius: 3px; background: linear-gradient(160deg, rgb(74, 222, 128), rgb(22, 163, 74)); display: inline-block;"></span> Neighborhood &amp; raffle — <b data-dc-tpl="140" style="font-family: &quot;Spline Sans Mono&quot;, monospace; color: rgb(255, 255, 255);"><span class="sc-interp">15</span></b></span>
+          <span data-dc-tpl="141" style="font-family: &quot;Spline Sans Mono&quot;, monospace; font-weight: 600; color: rgb(74, 222, 128); margin-left: auto;"><span class="sc-interp">7 of 22 slots are yours</span></span>
+        </div>
+        <div data-dc-tpl="142" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(200px, 100%), 1fr)); gap: 10px;">
+          <div data-dc-tpl="143" role="link" class="scpa" tabindex="0" style="background: rgba(255, 255, 255, 0.07); border: 1px solid rgba(255, 255, 255, 0.22); border-radius: 12px; padding: 12px 16px; cursor: pointer;">
+            <span data-dc-tpl="144" style="font-size: 11.5px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: rgb(255, 255, 255);">Your sacks, delivered</span>
+            <div data-dc-tpl="145" style="font-family: &quot;Spline Sans Mono&quot;, monospace; font-weight: 600; font-size: 22px; color: rgb(255, 255, 255); margin-top: 2px;"><span class="sc-interp">$3,826</span></div>
+            <span data-dc-tpl="146" style="display: block; font-size: 12px; color: rgb(201, 210, 242);"><span class="sc-interp">for 7 supersacks, freight included</span></span>
+          </div>
+          <div data-dc-tpl="147" role="link" class="scpb" tabindex="0" style="background: rgba(239, 68, 68, 0.1); border: 1px solid rgba(239, 68, 68, 0.38); border-radius: 12px; padding: 12px 16px; cursor: pointer;">
+            <span data-dc-tpl="148" style="font-size: 11.5px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: rgb(239, 68, 68);">Single-pallet quotes</span>
+            <div data-dc-tpl="149" style="font-family: &quot;Spline Sans Mono&quot;, monospace; font-weight: 600; font-size: 22px; color: rgb(239, 68, 68); margin-top: 2px; text-decoration: line-through 2px rgba(239, 68, 68, 0.6);"><span class="sc-interp">$7,000+</span></div>
+            <span data-dc-tpl="150" style="display: block; font-size: 12px; color: rgb(245, 181, 181);">what shipping pallets alone costs</span>
+          </div>
+          <div data-dc-tpl="151" role="link" class="scpc" tabindex="0" style="background: rgba(74, 222, 128, 0.1); border: 1px solid rgba(74, 222, 128, 0.32); border-radius: 12px; padding: 12px 16px; cursor: pointer;">
+            <span data-dc-tpl="152" style="font-size: 11.5px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: rgb(134, 239, 172);">Your per-sack price</span>
+            <div data-dc-tpl="153" style="font-family: &quot;Spline Sans Mono&quot;, monospace; font-weight: 600; font-size: 22px; color: rgb(74, 222, 128); margin-top: 2px;"><span class="sc-interp">$547</span></div>
+            <span data-dc-tpl="154" style="display: block; font-size: 12px; color: rgb(169, 232, 188);">drops with every pallet — $425 at a full truck</span>
+          </div>
+        </div>
+        <div data-dc-tpl="155" style="font-size: 13.5px; color: rgb(185, 195, 232);"><span class="sc-interp">Your 7 sacks land at $3,826 delivered. Every sack your neighborhood, raffle, or sponsors add costs less per sack than the last — fill all 22 and the truck runs $9,350 flat, $425 a sack. Businesses, churches, and HOAs split loads all the time.</span></div>
+      </div>
+    </div>
+  </section>
+
+  
+  <section data-dc-tpl="156" data-screen-label="Get a quote" style="scroll-margin-top: 84px; background: rgb(255, 255, 255); padding: clamp(64px, 8vw, 110px) 24px;">
+    <div data-dc-tpl="157" style="max-width: 1240px; margin: 0px auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(min(320px, 100%), 1fr)); gap: clamp(32px, 5vw, 72px); align-items: start;">
+      <div data-dc-tpl="158" style="display: flex; flex-direction: column; gap: 18px;">
+        <span data-dc-tpl="159" style="color: rgb(59, 115, 73); font-weight: 700; font-size: 13px; letter-spacing: 0.12em; text-transform: uppercase;">Get a quote</span>
+        <h2 data-dc-tpl="160" style="font-family: Archivo, sans-serif; font-weight: 800; letter-spacing: -0.022em; font-size: clamp(30px, 4vw, 44px); line-height: 1.08; margin: 0px;">Ready to order? Drop us a line.</h2>
+        <p data-dc-tpl="161" style="color: rgb(92, 100, 115); font-size: 18px; margin: 0px;">Tell us where the mulch is going and roughly how much ground it covers. We'll come back with a delivered price — freight included, no surprises at the curb.</p>
+        <div data-dc-tpl="162" style="display: flex; flex-direction: column; gap: 12px; margin-top: 6px; font-size: 15.5px; color: rgb(58, 65, 80);">
+          <span data-dc-tpl="163" style="display: flex; gap: 10px; align-items: center;"><svg data-dc-tpl="164" viewBox="0 0 24 24" fill="none" stroke="#3B7349" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" style="width: 17px; height: 17px; flex: 0 0 auto;"><path data-dc-tpl="165" d="M20 6 9 17l-5-5"></path></svg> Don't know your square footage? We'll measure from satellite.</span>
+          <span data-dc-tpl="166" style="display: flex; gap: 10px; align-items: center;"><svg data-dc-tpl="167" viewBox="0 0 24 24" fill="none" stroke="#3B7349" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" style="width: 17px; height: 17px; flex: 0 0 auto;"><path data-dc-tpl="168" d="M20 6 9 17l-5-5"></path></svg> Schools &amp; municipalities: PO and bid paperwork welcome.</span>
+          <span data-dc-tpl="169" style="display: flex; gap: 10px; align-items: center;"><svg data-dc-tpl="170" viewBox="0 0 24 24" fill="none" stroke="#3B7349" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" style="width: 17px; height: 17px; flex: 0 0 auto;"><path data-dc-tpl="171" d="M20 6 9 17l-5-5"></path></svg> Prefer the phone? <a data-dc-tpl="172" href="tel:+14052068111" style="color: rgb(46, 60, 119); font-weight: 700;">(405) 206-8111</a></span>
+        </div>
+        <div data-dc-tpl="173" style="margin-top: 12px; background: rgb(14, 14, 14); border-radius: 14px; overflow: hidden; box-shadow: rgba(17, 20, 28, 0.3) 0px 16px 40px; display: grid; grid-template-columns: 1.2fr 1fr; align-items: center;">
+          <div data-dc-tpl="174" style="padding: clamp(22px, 3vw, 34px); display: flex; flex-direction: column; gap: 10px;">
+            <b data-dc-tpl="175" style="font-family: Archivo, sans-serif; font-weight: 800; font-size: clamp(20px, 2.4vw, 27px); line-height: 1.12; letter-spacing: -0.01em; color: rgb(255, 255, 255); text-transform: uppercase;">Playground certified rubber mulch</b>
+            <span data-dc-tpl="176" style="color: rgb(230, 230, 230); font-weight: 700; font-size: clamp(14px, 1.6vw, 17px); letter-spacing: 0.02em;">2,000 LBS DELIVERED<br data-dc-tpl="177">OK · KS · AR · MO</span>
+            <b data-dc-tpl="178" style="font-family: Archivo, sans-serif; font-weight: 800; font-size: clamp(28px, 3.6vw, 44px); color: rgb(245, 197, 24); line-height: 1;">ONLY $425</b>
+            <span data-dc-tpl="179" style="color: rgb(230, 230, 230); font-weight: 600; font-size: clamp(12px, 1.5vw, 15px); margin-top: -2px;">at full truck pricing</span>
+            <span data-dc-tpl="180" style="border-top: 3px solid rgb(245, 197, 24); padding-top: 8px; color: rgb(245, 197, 24); font-family: Archivo, sans-serif; font-weight: 800; font-size: clamp(13px, 1.7vw, 18px); letter-spacing: 0.03em;">WWW.405RUBBERMULCH.COM</span>
+          </div>
+          <img data-dc-tpl="181" src="/img/supersack.png" alt="2,000-lb palletized supersack of playground certified rubber mulch" style="width: 100%; height: 100%; object-fit: contain; background: rgb(14, 14, 14); padding: 12px 12px 12px 0px; box-sizing: border-box;">
+        </div>
+        <div data-dc-tpl="182" style="margin-top: 12px; background: rgb(244, 241, 232); border: 1px solid rgb(227, 224, 214); border-radius: 14px; padding: 18px 20px; display: flex; flex-direction: column; gap: 8px;">
+          <span data-dc-tpl="183" style="font-size: 14.5px; color: rgb(76, 84, 98);"><b data-dc-tpl="184" style="color: rgb(28, 34, 48);">A full truck is 22 supersacks — and it's the way to go.</b> A full flatbed is how our price lands at $425 a sack, and every sack you add drops your per-sack price. Businesses, churches, and HOAs split truckloads all the time — and a <a data-dc-tpl="185" href="/fundraiser/" style="color: rgb(59, 115, 73); font-weight: 700;">mulch raffle or flowerbed sponsorship</a> can fill the rest while it funds your playground.</span>
+          <span data-dc-tpl="186" style="font-size: 14.5px; color: rgb(76, 84, 98);">Delivered on a flatbed, palletized in 2,000-lb supersacks. You unload with a forklift or tractor forks — we'll walk you through it.</span>
+        </div>
+      </div>
+
+      <div data-dc-tpl="187" style="background: rgb(251, 247, 236); border: 1px solid rgb(227, 224, 214); border-radius: 14px; padding: clamp(26px, 3.5vw, 38px); box-shadow: rgba(28, 34, 48, 0.08) 0px 8px 28px;">
+        
+          
+        
+        
+      </div>
+    </div>
+  </section>
+
+
+
+
+  
+  <section data-dc-tpl="243" data-screen-label="Why our mulch" style="scroll-margin-top: 84px; background: rgb(255, 255, 255); padding: clamp(32px, 5vw, 80px) 24px clamp(64px, 8vw, 110px);">
+    <div data-dc-tpl="244" style="max-width: 1240px; margin: 0px auto;">
+      <div data-dc-tpl="245" style="max-width: 720px; margin: 0px auto; text-align: center; display: flex; flex-direction: column; gap: 14px;">
+        <span data-dc-tpl="246" style="color: rgb(59, 115, 73); font-weight: 700; font-size: 13px; letter-spacing: 0.12em; text-transform: uppercase;">Why our mulch is better</span>
+        <h2 data-dc-tpl="247" style="font-family: Archivo, sans-serif; font-weight: 800; letter-spacing: -0.022em; font-size: clamp(30px, 4vw, 44px); line-height: 1.08; margin: 0px;">Not all rubber mulch is made the same.</h2>
+        <p data-dc-tpl="248" style="color: rgb(92, 100, 115); font-size: 18px; margin: 0px;">Most "cheap" rubber mulch is shredded car and van tires — stringy, lightweight, laced with exposed steel wire. Ours is cut exclusively from heavy semi-truck tires into meaty chunk nuggets.</p>
+      </div>
+
+      <div data-dc-tpl="249" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(320px, 100%), 1fr)); gap: 28px; margin-top: 48px;">
+        <div data-dc-tpl="250" style="background: rgb(255, 255, 255); border: 1px solid rgb(227, 224, 214); border-radius: 14px; overflow: hidden; box-shadow: rgba(28, 34, 48, 0.06) 0px 1px 4px;">
+          <div data-dc-tpl="251" style="position: relative;">
+            <img data-dc-tpl="252" src="/img/competitor-shreds.png" alt="Competitor shredded car-tire mulch — stringy and flimsy" style="width: 100%; aspect-ratio: 4 / 3; object-fit: cover; display: block; filter: saturate(0.85);">
+            <span data-dc-tpl="253" style="position: absolute; top: 14px; left: 14px; background: rgb(251, 247, 236); color: rgb(160, 44, 43); border: 1px solid rgb(245, 188, 186); font-weight: 700; font-size: 12.5px; letter-spacing: 0.08em; text-transform: uppercase; padding: 6px 12px; border-radius: 999px;">The other guys</span>
+          </div>
+          <div data-dc-tpl="254" style="padding: 24px 26px 28px; display: flex; flex-direction: column; gap: 12px;">
+            <h3 data-dc-tpl="255" style="font-family: Archivo, sans-serif; font-weight: 700; font-size: 21px; margin: 0px; color: rgb(58, 65, 80);">Shredded car &amp; van tires</h3>
+            <div data-dc-tpl="256" style="display: flex; flex-direction: column; gap: 9px; font-size: 15.5px; color: rgb(76, 84, 98);">
+              <span data-dc-tpl="257" style="display: flex; gap: 10px; align-items: flex-start;"><svg data-dc-tpl="258" viewBox="0 0 24 24" fill="none" stroke="#C5342F" stroke-width="2.4" stroke-linecap="round" style="width: 16px; height: 16px; flex: 0 0 auto; margin-top: 3px;"><path data-dc-tpl="259" d="M18 6 6 18"></path><path data-dc-tpl="260" d="m6 6 12 12"></path></svg> Flimsy, stringy shreds that blow and wash away</span>
+              <span data-dc-tpl="261" style="display: flex; gap: 10px; align-items: flex-start;"><svg data-dc-tpl="262" viewBox="0 0 24 24" fill="none" stroke="#C5342F" stroke-width="2.4" stroke-linecap="round" style="width: 16px; height: 16px; flex: 0 0 auto; margin-top: 3px;"><path data-dc-tpl="263" d="M18 6 6 18"></path><path data-dc-tpl="264" d="m6 6 12 12"></path></svg> Exposed steel-wire risk from bead and belt</span>
+              <span data-dc-tpl="265" style="display: flex; gap: 10px; align-items: flex-start;"><svg data-dc-tpl="266" viewBox="0 0 24 24" fill="none" stroke="#C5342F" stroke-width="2.4" stroke-linecap="round" style="width: 16px; height: 16px; flex: 0 0 auto; margin-top: 3px;"><path data-dc-tpl="267" d="M18 6 6 18"></path><path data-dc-tpl="268" d="m6 6 12 12"></path></svg> Looks messy after one season</span>
+            </div>
+          </div>
+        </div>
+
+        <div data-dc-tpl="269" style="background: rgb(255, 255, 255); border: 2px solid rgb(59, 115, 73); border-radius: 14px; overflow: hidden; box-shadow: rgba(47, 94, 58, 0.16) 0px 8px 24px;">
+          <div data-dc-tpl="270" style="position: relative;">
+            <img data-dc-tpl="271" src="/img/our-nuggets.png" alt="405 Rubber Mulch chunk nuggets cut from semi-truck tires" style="width: 100%; aspect-ratio: 4 / 3; object-fit: cover; display: block;">
+            <span data-dc-tpl="272" style="position: absolute; top: 14px; left: 14px; background: rgb(47, 94, 58); color: rgb(251, 247, 236); font-weight: 700; font-size: 12.5px; letter-spacing: 0.08em; text-transform: uppercase; padding: 6px 12px; border-radius: 999px;">Our chunk nuggets</span>
+          </div>
+          <div data-dc-tpl="273" style="padding: 24px 26px 28px; display: flex; flex-direction: column; gap: 12px;">
+            <h3 data-dc-tpl="274" style="font-family: Archivo, sans-serif; font-weight: 700; font-size: 21px; margin: 0px;">Semi-truck tire chunk nuggets</h3>
+            <div data-dc-tpl="275" style="display: flex; flex-direction: column; gap: 9px; font-size: 15.5px; color: rgb(42, 49, 66);">
+              <span data-dc-tpl="276" style="display: flex; gap: 10px; align-items: flex-start;"><svg data-dc-tpl="277" viewBox="0 0 24 24" fill="none" stroke="#3B7349" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" style="width: 16px; height: 16px; flex: 0 0 auto; margin-top: 3px;"><path data-dc-tpl="278" d="M20 6 9 17l-5-5"></path></svg> Heavy, meaty chunks that hunker down in wind and rain</span>
+              <span data-dc-tpl="279" style="display: flex; gap: 10px; align-items: flex-start;"><svg data-dc-tpl="280" viewBox="0 0 24 24" fill="none" stroke="#3B7349" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" style="width: 16px; height: 16px; flex: 0 0 auto; margin-top: 3px;"><path data-dc-tpl="281" d="M20 6 9 17l-5-5"></path></svg> 99%+ metal-free — magnet-extracted and sampled</span>
+              <span data-dc-tpl="282" style="display: flex; gap: 10px; align-items: flex-start;"><svg data-dc-tpl="283" viewBox="0 0 24 24" fill="none" stroke="#3B7349" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" style="width: 16px; height: 16px; flex: 0 0 auto; margin-top: 3px;"><path data-dc-tpl="284" d="M20 6 9 17l-5-5"></path></svg> Superior impact absorption for playgrounds</span>
+              <span data-dc-tpl="285" style="display: flex; gap: 10px; align-items: flex-start;"><svg data-dc-tpl="286" viewBox="0 0 24 24" fill="none" stroke="#3B7349" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" style="width: 16px; height: 16px; flex: 0 0 auto; margin-top: 3px;"><path data-dc-tpl="287" d="M20 6 9 17l-5-5"></path></svg> 12-year color-lock warranty on brown &amp; red</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      
+      <div data-dc-tpl="288" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(250px, 100%), 1fr)); gap: 12px; margin-top: 36px;">
+        <div data-dc-tpl="289" style="display: flex; align-items: center; gap: 10px; background: rgb(244, 241, 232); border: 1px solid rgb(227, 224, 214); border-radius: 12px; padding: 12px 16px; font-size: 14px; color: rgb(76, 84, 98);">
+          <svg data-dc-tpl="290" viewBox="0 0 24 24" fill="none" stroke="#3B7349" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width: 20px; height: 20px; flex: 0 0 auto;"><path data-dc-tpl="291" d="M12 22a7 7 0 0 0 7-7c0-2-1-3.9-3-5.5s-3.5-4-4-6.5c-.5 2.5-2 4.9-4 6.5C6 11.1 5 13 5 15a7 7 0 0 0 7 7z"></path></svg>
+          <span data-dc-tpl="292"><b data-dc-tpl="293" style="color: rgb(28, 34, 48);">Stays put</b> — won't float or blow away</span>
+        </div>
+        <div data-dc-tpl="294" style="display: flex; align-items: center; gap: 10px; background: rgb(244, 241, 232); border: 1px solid rgb(227, 224, 214); border-radius: 12px; padding: 12px 16px; font-size: 14px; color: rgb(76, 84, 98);">
+          <svg data-dc-tpl="295" viewBox="0 0 24 24" fill="none" stroke="#3B7349" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width: 20px; height: 20px; flex: 0 0 auto;"><circle data-dc-tpl="296" cx="12" cy="12" r="10"></circle><polyline data-dc-tpl="297" points="12 6 12 12 16 14"></polyline></svg>
+          <span data-dc-tpl="298"><b data-dc-tpl="299" style="color: rgb(28, 34, 48);">Built to last</b> — no rot, no annual topping off</span>
+        </div>
+        <div data-dc-tpl="300" style="display: flex; align-items: center; gap: 10px; background: rgb(244, 241, 232); border: 1px solid rgb(227, 224, 214); border-radius: 12px; padding: 12px 16px; font-size: 14px; color: rgb(76, 84, 98);">
+          <svg data-dc-tpl="301" viewBox="0 0 24 24" fill="none" stroke="#3B7349" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width: 20px; height: 20px; flex: 0 0 auto;"><path data-dc-tpl="302" d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"></path></svg>
+          <span data-dc-tpl="303"><b data-dc-tpl="304" style="color: rgb(28, 34, 48);">No termites or ants</b> — nothing for insects to nest in</span>
+        </div>
+        <div data-dc-tpl="305" style="display: flex; align-items: center; gap: 10px; background: rgb(244, 241, 232); border: 1px solid rgb(227, 224, 214); border-radius: 12px; padding: 12px 16px; font-size: 14px; color: rgb(76, 84, 98);">
+          <svg data-dc-tpl="306" viewBox="0 0 24 24" fill="none" stroke="#3B7349" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width: 20px; height: 20px; flex: 0 0 auto;"><path data-dc-tpl="307" d="M7 19H4.815a1.83 1.83 0 0 1-1.57-.881 1.785 1.785 0 0 1-.004-1.784L7.196 9.5"></path><path data-dc-tpl="308" d="M11 19h8.203a1.83 1.83 0 0 0 1.556-.89 1.784 1.784 0 0 0 0-1.775l-1.226-2.12"></path><path data-dc-tpl="309" d="m14 16-3 3 3 3"></path><path data-dc-tpl="310" d="M8.293 13.596 7.196 9.5 3.1 10.598"></path><path data-dc-tpl="311" d="m9.344 5.811 1.093-1.892A1.83 1.83 0 0 1 11.985 3a1.784 1.784 0 0 1 1.546.888l3.943 6.843"></path><path data-dc-tpl="312" d="m13.378 9.633 4.096 1.098 1.097-4.096"></path></svg>
+          <span data-dc-tpl="313"><b data-dc-tpl="314" style="color: rgb(28, 34, 48);">Recycled &amp; weed-blocking</b> — made from recycled tires; weeds can't get through</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <div data-dc-tpl="315" style="background: rgb(47, 94, 58); color: rgb(251, 247, 236); padding: 10px 24px;">
+    <div data-dc-tpl="316" style="max-width: 1240px; margin: 0px auto; display: flex; align-items: center; justify-content: center; gap: 10px; text-align: center; font-size: 14.5px; font-weight: 600; flex-wrap: wrap;">
+      <b data-dc-tpl="317">Don't pay a less-than-truckload penalty.</b>
+      <span data-dc-tpl="318" style="color: rgb(219, 234, 221);">Every sack you add lowers your per-sack price.</span>
+      <a data-dc-tpl="319" href="#fill-the-truck" style="color: rgb(255, 255, 255); text-decoration: underline; font-weight: 700;">See the truck math →</a>
+    </div>
+  </div>
+
+  
+  <section data-dc-tpl="320" data-screen-label="Schools &amp; daycares" style="scroll-margin-top: 84px; background: rgb(46, 60, 119); color: rgb(251, 247, 236); padding: clamp(64px, 8vw, 110px) 24px;">
+    <div data-dc-tpl="321" style="max-width: 1240px; margin: 0px auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(min(340px, 100%), 1fr)); gap: clamp(32px, 5vw, 64px); align-items: center;">
+      <div data-dc-tpl="322" style="display: flex; flex-direction: column; gap: 18px;">
+        <span data-dc-tpl="323" style="color: rgb(149, 164, 217); font-weight: 700; font-size: 13px; letter-spacing: 0.12em; text-transform: uppercase;">Schools · Daycares · Parks · Churches · HOAs</span>
+        <h2 data-dc-tpl="324" style="font-family: Archivo, sans-serif; font-weight: 800; letter-spacing: -0.022em; font-size: clamp(30px, 4vw, 44px); line-height: 1.08; margin: 0px; color: rgb(255, 255, 255);">Playground surfacing your board can sign off on.</h2>
+        <p data-dc-tpl="325" style="color: rgb(194, 204, 236); font-size: 17.5px; margin: 0px;">IPEMA-certified playground mulch with the impact absorption to meet fall-height requirements — and the logistics to get 40,000+ lbs of it onto your site without drama.</p>
+        <div data-dc-tpl="326" style="display: flex; flex-direction: column; gap: 16px; margin-top: 8px;">
+          <div data-dc-tpl="327" style="display: flex; gap: 14px; align-items: flex-start;">
+            <span data-dc-tpl="328" style="background: rgba(251, 247, 236, 0.12); border-radius: 10px; padding: 9px; display: flex;"><svg data-dc-tpl="329" viewBox="0 0 24 24" fill="none" stroke="#FBF7EC" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width: 20px; height: 20px;"><path data-dc-tpl="330" d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"></path><path data-dc-tpl="331" d="m9 12 2 2 4-4"></path></svg></span>
+            <span data-dc-tpl="332"><b data-dc-tpl="333" style="display: block; font-family: Archivo, sans-serif; font-size: 17px; color: rgb(255, 255, 255);">IPEMA-certified safety surfacing</b><span data-dc-tpl="334" style="color: rgb(194, 204, 236); font-size: 15px;">Tested to ASTM F1292 impact standards. At a 6-inch depth it protects falls from playground equipment heights.</span></span>
+          </div>
+          <div data-dc-tpl="335" style="display: flex; gap: 14px; align-items: flex-start;">
+            <span data-dc-tpl="336" style="background: rgba(251, 247, 236, 0.12); border-radius: 10px; padding: 9px; display: flex;"><svg data-dc-tpl="337" viewBox="0 0 24 24" fill="none" stroke="#FBF7EC" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width: 20px; height: 20px;"><circle data-dc-tpl="338" cx="12" cy="12" r="10"></circle><path data-dc-tpl="339" d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"></path><path data-dc-tpl="340" d="M2 12h20"></path></svg></span>
+            <span data-dc-tpl="341"><b data-dc-tpl="342" style="display: block; font-family: Archivo, sans-serif; font-size: 17px; color: rgb(255, 255, 255);">We measure from satellite</b><span data-dc-tpl="343" style="color: rgb(194, 204, 236); font-size: 15px;">Send the address — we'll measure your playground from satellite imagery and quote a delivered price. No site visit needed.</span></span>
+          </div>
+          <div data-dc-tpl="344" style="display: flex; gap: 14px; align-items: flex-start;">
+            <span data-dc-tpl="345" style="background: rgba(251, 247, 236, 0.12); border-radius: 10px; padding: 9px; display: flex;"><svg data-dc-tpl="346" viewBox="0 0 24 24" fill="none" stroke="#FBF7EC" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width: 20px; height: 20px;"><path data-dc-tpl="347" d="M14 18V6a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2v11a1 1 0 0 0 1 1h2"></path><path data-dc-tpl="348" d="M15 18H9"></path><path data-dc-tpl="349" d="M19 18h2a1 1 0 0 0 1-1v-3.65a1 1 0 0 0-.22-.62l-3.48-4.35A1 1 0 0 0 17.52 8H14"></path><circle data-dc-tpl="350" cx="17" cy="18" r="2"></circle><circle data-dc-tpl="351" cx="7" cy="18" r="2"></circle></svg></span>
+            <span data-dc-tpl="352"><b data-dc-tpl="353" style="display: block; font-family: Archivo, sans-serif; font-size: 17px; color: rgb(255, 255, 255);">Flatbed delivery, palletized supersacks</b><span data-dc-tpl="354" style="color: rgb(194, 204, 236); font-size: 15px;">A full truck is 22 supersacks — 44,000 lbs. Unload with a forklift, tractor forks, or rented equipment. We coordinate the schedule with your facilities team.</span></span>
+          </div>
+        </div>
+        <a data-dc-tpl="355" href="#get-a-quote" class="scpd scp3" style="align-self: flex-start; margin-top: 10px; background: rgb(251, 247, 236); color: rgb(46, 60, 119); font-weight: 700; font-size: 16.5px; text-decoration: none; padding: 14px 28px; border-radius: 999px;">Get a playground quote</a>
+      </div>
+      <div data-dc-tpl="356" style="display: flex; flex-direction: column; gap: 16px;">
+        <img data-dc-tpl="357" src="/img/playground-rubber-mulch.jpg" alt="School playground surfaced with black rubber mulch" style="width: 100%; border-radius: 14px; aspect-ratio: 4 / 3; object-fit: cover; box-shadow: rgba(17, 20, 28, 0.35) 0px 16px 40px;">
+        <div data-dc-tpl="358" style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 14px; text-align: center;">
+          <div data-dc-tpl="359" style="background: rgba(251, 247, 236, 0.08); border: 1px solid rgba(251, 247, 236, 0.18); border-radius: 14px; padding: 16px 10px;">
+            <b data-dc-tpl="360" style="display: block; font-family: &quot;Spline Sans Mono&quot;, monospace; font-size: clamp(20px, 2.2vw, 26px); color: rgb(255, 255, 255);">6 in</b>
+            <span data-dc-tpl="361" style="font-size: 13px; color: rgb(194, 204, 236);">playground safety depth</span>
+          </div>
+          <div data-dc-tpl="362" style="background: rgba(251, 247, 236, 0.08); border: 1px solid rgba(251, 247, 236, 0.18); border-radius: 14px; padding: 16px 10px;">
+            <b data-dc-tpl="363" style="display: block; font-family: &quot;Spline Sans Mono&quot;, monospace; font-size: clamp(20px, 2.2vw, 26px); color: rgb(255, 255, 255);">2,000 lb</b>
+            <span data-dc-tpl="364" style="font-size: 13px; color: rgb(194, 204, 236);">per supersack</span>
+          </div>
+          <div data-dc-tpl="365" style="background: rgba(251, 247, 236, 0.08); border: 1px solid rgba(251, 247, 236, 0.18); border-radius: 14px; padding: 16px 10px;">
+            <b data-dc-tpl="366" style="display: block; font-family: &quot;Spline Sans Mono&quot;, monospace; font-size: clamp(20px, 2.2vw, 26px); color: rgb(255, 255, 255);">4 states</b>
+            <span data-dc-tpl="367" style="font-size: 13px; color: rgb(194, 204, 236);">OK · AR · KS · MO</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  
+  <section data-dc-tpl="368" data-screen-label="Coverage calculator" style="scroll-margin-top: 84px; background: rgb(244, 241, 232); padding: clamp(64px, 8vw, 110px) 24px;">
+    <div data-dc-tpl="369" style="max-width: 1240px; margin: 0px auto;">
+      <div data-dc-tpl="370" style="max-width: 680px; margin: 0px auto; text-align: center; display: flex; flex-direction: column; gap: 14px;">
+        <span data-dc-tpl="371" style="color: rgb(59, 115, 73); font-weight: 700; font-size: 13px; letter-spacing: 0.12em; text-transform: uppercase;">Coverage calculator</span>
+        <h2 data-dc-tpl="372" style="font-family: Archivo, sans-serif; font-weight: 800; letter-spacing: -0.022em; font-size: clamp(30px, 4vw, 44px); line-height: 1.08; margin: 0px;">How many supersacks do you need?</h2>
+        <p data-dc-tpl="373" style="color: rgb(92, 100, 115); font-size: 18px; margin: 0px;">One 2,000-lb supersack covers about 300 sq ft at a 3-inch depth — 150 sq ft at 6 inches. Enter your area and depth; we'll do the math.</p>
+      </div>
+
+      <div data-dc-tpl="374" style="max-width: 960px; margin: 44px auto 0px; background: rgb(255, 255, 255); border: 1px solid rgb(227, 224, 214); border-radius: 14px; box-shadow: rgba(28, 34, 48, 0.08) 0px 8px 28px; display: grid; grid-template-columns: repeat(auto-fit, minmax(min(300px, 100%), 1fr)); overflow: hidden;">
+        <div data-dc-tpl="375" style="padding: clamp(28px, 4vw, 40px); display: flex; flex-direction: column; gap: 22px;">
+          <label data-dc-tpl="376" style="display: flex; flex-direction: column; gap: 8px;">
+            <span data-dc-tpl="377" style="font-weight: 700; font-size: 15px;">Area to cover (sq ft)</span>
+            <input data-dc-tpl="378" type="number" min="1" placeholder="e.g. 2500" value="" style="font-family: &quot;Spline Sans Mono&quot;, monospace; font-size: 20px; padding: 14px 16px; border: 1px solid rgb(214, 218, 226); border-radius: 10px; background: rgb(251, 247, 236); color: rgb(28, 34, 48); width: 100%; box-sizing: border-box;">
+            <span data-dc-tpl="379" style="font-size: 13.5px; color: rgb(129, 136, 151);">Length × width of the area, in feet. Don't know it? <a data-dc-tpl="380" href="#get-a-quote" style="color: rgb(59, 115, 73); font-weight: 600;">Send us the address</a> — we'll measure from satellite.</span>
+          </label>
+          <div data-dc-tpl="381" style="display: flex; flex-direction: column; gap: 8px;">
+            <span data-dc-tpl="382" style="font-weight: 700; font-size: 15px;">Depth</span>
+            <div data-dc-tpl="383" style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 10px;">
+              <button data-dc-tpl="384" style="font-family: &quot;Spline Sans Mono&quot;, monospace; font-weight: 600; font-size: 15px; padding: 12px 8px; border-radius: 10px; cursor: pointer; border: 1px solid rgb(214, 218, 226); background: rgb(255, 255, 255); color: rgb(58, 65, 80);">1.5 in<span data-dc-tpl="385" style="display: block; font-family: &quot;Public Sans&quot;, sans-serif; font-weight: 500; font-size: 11.5px; margin-top: 2px;">weed control</span></button>
+              <button data-dc-tpl="386" style="font-family: &quot;Spline Sans Mono&quot;, monospace; font-weight: 600; font-size: 15px; padding: 12px 8px; border-radius: 10px; cursor: pointer; border: 2px solid rgb(47, 94, 58); background: rgb(47, 94, 58); color: rgb(251, 247, 236);">3 in<span data-dc-tpl="387" style="display: block; font-family: &quot;Public Sans&quot;, sans-serif; font-weight: 500; font-size: 11.5px; margin-top: 2px;">landscape</span></button>
+              <button data-dc-tpl="388" style="font-family: &quot;Spline Sans Mono&quot;, monospace; font-weight: 600; font-size: 15px; padding: 12px 8px; border-radius: 10px; cursor: pointer; border: 1px solid rgb(214, 218, 226); background: rgb(255, 255, 255); color: rgb(58, 65, 80);">6 in<span data-dc-tpl="389" style="display: block; font-family: &quot;Public Sans&quot;, sans-serif; font-weight: 500; font-size: 11.5px; margin-top: 2px;">playground</span></button>
+            </div>
+            <label data-dc-tpl="390" style="display: flex; align-items: center; gap: 10px; margin-top: 2px;">
+              <span data-dc-tpl="391" style="font-weight: 600; font-size: 14px; color: rgb(76, 84, 98);">Or a custom depth:</span>
+              <input data-dc-tpl="392" type="number" min="1" max="12" step="0.5" placeholder="e.g. 4" value="" style="font-family: &quot;Spline Sans Mono&quot;, monospace; font-size: 16px; padding: 9px 12px; border: 1px solid rgb(214, 218, 226); border-radius: 10px; background: rgb(251, 247, 236); color: rgb(28, 34, 48); width: 90px; box-sizing: border-box;">
+              <span data-dc-tpl="393" style="font-weight: 600; font-size: 14px; color: rgb(76, 84, 98);">inches</span>
+            </label>
+            <span data-dc-tpl="394" style="font-size: 13.5px; color: rgb(129, 136, 151);">Rubber needs just 1.5 in to control weeds — half the depth of wood mulch. Playgrounds need 6 in to meet fall-height standards.</span>
+          </div>
+        </div>
+
+        <div data-dc-tpl="395" style="background: rgb(47, 94, 58); color: rgb(251, 247, 236); padding: clamp(28px, 4vw, 40px); display: flex; flex-direction: column; justify-content: center; gap: 18px;">
+          <div data-dc-tpl="396">
+            <span data-dc-tpl="397" style="font-size: 13px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: rgb(185, 213, 192);">You'll need about</span>
+            <div data-dc-tpl="398" style="display: flex; align-items: baseline; gap: 12px; margin-top: 4px;">
+              <b data-dc-tpl="399" style="font-family: &quot;Spline Sans Mono&quot;, monospace; font-size: clamp(44px, 5vw, 64px); line-height: 1; color: rgb(255, 255, 255);"><span class="sc-interp">—</span></b>
+              <span data-dc-tpl="400" style="font-size: 19px; font-weight: 600;">supersacks</span>
+            </div>
+          </div>
+          <div data-dc-tpl="401" style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px 18px; font-size: 15px; border-top: 1px solid rgba(251, 247, 236, 0.25); padding-top: 16px;">
+            <span data-dc-tpl="402" style="color: rgb(185, 213, 192);">Total weight</span><b data-dc-tpl="403" style="font-family: &quot;Spline Sans Mono&quot;, monospace; text-align: right;"><span class="sc-interp">—</span></b>
+            <span data-dc-tpl="404" style="color: rgb(185, 213, 192);">Truckloads</span><b data-dc-tpl="405" style="font-family: &quot;Spline Sans Mono&quot;, monospace; text-align: right;"><span class="sc-interp">—</span></b>
+            
+              <span data-dc-tpl="407" style="color: rgb(185, 213, 192);">Delivered price</span><b data-dc-tpl="408" style="font-family: &quot;Spline Sans Mono&quot;, monospace; text-align: right;"><span class="sc-interp">—</span></b>
+            
+          </div>
+          
+            <span data-dc-tpl="410" style="font-size: 13px; color: rgb(185, 213, 192);">$425 a sack (flat $9,350) applies at a full 22-sack truckload. Less than a full truckload? Every sack you add lowers your per-sack price — <a data-dc-tpl="411" href="#fill-the-truck" style="color: rgb(185, 213, 192); font-weight: 600;">see how towns fill a truck</a>. Color-locked brown or red adds $115 a sack.</span>
+          
+          <a data-dc-tpl="412" href="#get-a-quote" class="scp5 scp3" style="align-self: flex-start; background: rgb(216, 64, 63); color: rgb(255, 255, 255); font-weight: 700; font-size: 16px; text-decoration: none; padding: 13px 26px; border-radius: 999px;">Quote <span class="sc-interp">—</span> sacks delivered</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  
+  <div data-dc-tpl="413" style="height: 0px;"></div>
+  <div data-dc-tpl="414" style="display: none; position: fixed; bottom: 0px; left: 0px; right: 0px; z-index: 60; background: rgba(251, 247, 236, 0.96); backdrop-filter: blur(8px); border-top: 1px solid rgb(227, 224, 214); padding: 10px 14px calc(10px + env(safe-area-inset-bottom)); gap: 10px;">
+    <a data-dc-tpl="415" href="tel:+14052068111" style="flex: 1 1 0%; display: flex; align-items: center; justify-content: center; gap: 8px; min-height: 48px; background: rgb(255, 255, 255); border: 1.5px solid rgb(46, 60, 119); color: rgb(46, 60, 119); font-weight: 700; font-size: 16px; text-decoration: none; border-radius: 999px;"><svg data-dc-tpl="416" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width: 18px; height: 18px;"><path data-dc-tpl="417" d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>Call now</a>
+    <a data-dc-tpl="418" href="/get-a-quote/" style="flex: 1.2 1 0%; display: flex; align-items: center; justify-content: center; min-height: 48px; background: rgb(216, 64, 63); color: rgb(255, 255, 255); font-weight: 700; font-size: 16px; text-decoration: none; border-radius: 999px; box-shadow: rgba(216, 64, 63, 0.35) 0px 4px 14px;">Get a quote</a>
+  </div>
+  <footer data-dc-tpl="419" style="background: rgb(27, 36, 68); color: rgb(194, 204, 236); padding: 48px 24px 36px; font-size: 14.5px;">
+    <div data-dc-tpl="420" style="max-width: 1240px; margin: 0px auto; display: flex; flex-direction: column; gap: 28px;">
+      <div data-dc-tpl="421" style="display: flex; justify-content: space-between; gap: 32px; flex-wrap: wrap;">
+        <div data-dc-tpl="422" style="display: flex; flex-direction: column; gap: 10px; max-width: 380px;">
+          <span data-dc-tpl="423" style="display: flex; align-items: center; gap: 10px;">
+            <img data-dc-tpl="424" src="/img/logo-tire.png" alt="405 Rubber Mulch — Jameson's" style="width: 40px; height: 40px; object-fit: contain;">
+            <b data-dc-tpl="425" style="font-family: Archivo, sans-serif; color: rgb(255, 255, 255); font-size: 16px;">405 Rubber Mulch</b>
+          </span>
+          <span data-dc-tpl="426">Bulk and truckload rubber mulch delivered across Oklahoma, Arkansas, Kansas &amp; Missouri. Part of Jameson's Discount Home Improvement Warehouse, Oklahoma City.</span>
+          <a data-dc-tpl="427" href="tel:+14052068111" style="color: rgb(255, 255, 255); font-weight: 700; text-decoration: none; font-size: 16px;">(405) 206-8111</a>
+        </div>
+        <nav data-dc-tpl="428" style="display: flex; gap: clamp(32px, 5vw, 72px); flex-wrap: wrap;">
+          <div data-dc-tpl="429" style="display: flex; flex-direction: column; gap: 9px;">
+            <b data-dc-tpl="430" style="color: rgb(255, 255, 255); font-size: 13px; letter-spacing: 0.1em; text-transform: uppercase;">On this page</b>
+            <a data-dc-tpl="431" href="/premium-quality/" class="scpe" style="color: rgb(194, 204, 236); text-decoration: none;">Why our mulch is better</a>
+            <a data-dc-tpl="432" href="/commercial-playgrounds/" class="scpe" style="color: rgb(194, 204, 236); text-decoration: none;">Schools &amp; daycare playgrounds</a>
+            <a data-dc-tpl="433" href="/fundraiser/" class="scpe" style="color: rgb(194, 204, 236); text-decoration: none;">Fundraising &amp; playground remodels</a>
+            <a data-dc-tpl="434" href="/about/" class="scpe" style="color: rgb(194, 204, 236); text-decoration: none;">About us</a>
+            <a data-dc-tpl="435" href="/coverage-calculator/" class="scpe" style="color: rgb(194, 204, 236); text-decoration: none;">Coverage calculator</a>
+            <a data-dc-tpl="436" href="#get-a-quote" class="scpe" style="color: rgb(194, 204, 236); text-decoration: none;">Get a quote</a>
+            <a data-dc-tpl="437" href="/terms/" class="scpe" style="color: rgb(194, 204, 236); text-decoration: none;">Terms &amp; policies</a>
+          </div>
+          <div data-dc-tpl="438" style="display: flex; flex-direction: column; gap: 9px;">
+            <b data-dc-tpl="439" style="color: rgb(255, 255, 255); font-size: 13px; letter-spacing: 0.1em; text-transform: uppercase;">Service area</b>
+            <a data-dc-tpl="440" href="/oklahoma/" class="scpe" style="color: rgb(194, 204, 236); text-decoration: none;">Oklahoma</a>
+            <a data-dc-tpl="441" href="/arkansas/" class="scpe" style="color: rgb(194, 204, 236); text-decoration: none;">Arkansas</a>
+            <a data-dc-tpl="442" href="/kansas/" class="scpe" style="color: rgb(194, 204, 236); text-decoration: none;">Kansas</a>
+            <a data-dc-tpl="443" href="/missouri/" class="scpe" style="color: rgb(194, 204, 236); text-decoration: none;">Missouri</a>
+          </div>
+        </nav>
+      </div>
+      <div data-dc-tpl="444" style="border-top: 1px solid rgba(194, 204, 236, 0.2); padding-top: 20px; display: flex; justify-content: space-between; gap: 16px; flex-wrap: wrap; font-size: 13px; color: rgb(149, 164, 217);">
+        <span data-dc-tpl="445">© 2026 405 Rubber Mulch · 405rubbermulch.com · <a data-dc-tpl="446" href="/terms/#cookies" style="color: inherit; text-decoration: underline;">We use cookies for analytics</a></span>
+        <span data-dc-tpl="447">IPEMA-certified · Semi-truck tire chunk nuggets only</span>
+      </div>
+    </div>
+  </footer></div></div></div><!--/dc-static-->
 <x-dc>
 
 <div id="top" style="font-family: 'Public Sans', system-ui, sans-serif; color: #1C2230; background: #FBF7EC; font-size: 16px; line-height: 1.55;">
@@ -738,6 +1181,7 @@ class Component extends DCLogic {
         if (this.state.submitting) return;
         const endpoint = this.props.formspreeEndpoint ?? '';
         const form = e.target;
+        try { var _ud = new FormData(form); sessionStorage.setItem('ec_ud', JSON.stringify({ e: String(_ud.get('email') || ''), p: String(_ud.get('phone') || '') })); } catch (_) {}
         const fireConversion = () => {
           if (typeof window !== 'undefined' && typeof window.gtag === 'function') {
             window.gtag('event', 'conversion', { 'send_to': 'AW-18336005673/AaJ_CMze69McEKn8pKdE' });
