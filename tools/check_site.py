@@ -87,8 +87,14 @@ def main():
     pages = sorted(p for p in ROOT.rglob("index.html") if ".git" not in p.parts and "node_modules" not in p.parts)
     for f in pages:
         rel = f.relative_to(ROOT).as_posix()
+        raw = f.read_text(encoding="utf-8")
         pg = Page()
-        pg.feed(f.read_text(encoding="utf-8"))
+        pg.feed(raw)
+        # Some crawlers (Bing's SEO checker) count <h1 as text, even inside <template>.
+        # Template headings are written <dc-h1> and mapped back to <h1> by support.js.
+        literal_h1 = len(re.findall(r"<h1\b", raw, re.I))
+        if rel != "thank-you/index.html" and literal_h1 != 1:
+            errors.append(f"{rel}: {literal_h1} literal '<h1' strings in raw HTML (want 1; use <dc-h1> in the template)")
         if pg.lang != "en":
             errors.append(f"{rel}: <html lang> is {pg.lang!r}, expected 'en'")
         if not pg.title:
