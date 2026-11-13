@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<script defer src="/support.js"></script>
+<script defer src="/support.js?v=2"></script>
 <link rel="icon" href="/favicon.ico" sizes="any">
 <link rel="icon" type="image/png" sizes="192x192" href="/img/favicon-192x192.png">
 <link rel="icon" type="image/png" sizes="96x96" href="/img/favicon-96x96.png">
@@ -221,7 +221,7 @@
       </nav>
     </div>
   </footer></div></div></div><!--/dc-static-->
-<x-dc>
+<x-dc><template>
 
 <div style="font-family: 'Public Sans', system-ui, sans-serif; color: #1C2230; background: #FBF7EC; font-size: 16px; line-height: 1.55; min-height: 100vh; display: flex; flex-direction: column;">
 
@@ -378,7 +378,7 @@
     </div>
   </footer>
 </div>
-</x-dc>
+</template></x-dc>
 <script type="text/x-dc" data-dc-script>
 class Component extends DCLogic {
   state = { sqft: '', depth: 3, customDepth: '', menuOpen: false, isMobile: (typeof window !== 'undefined' && window.innerWidth < 900) };

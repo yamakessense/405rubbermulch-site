@@ -29,7 +29,8 @@
       scriptEl?.getAttribute("data-props") ?? null
     );
     return {
-      template: dc.innerHTML,
+      // The template may be wrapped in an inert <template> so crawlers ignore the raw copy.
+      template: (dc.querySelector(":scope > template") || dc).innerHTML,
       js: scriptEl ? scriptEl.textContent || "" : "",
       props,
       preview
@@ -40,7 +41,7 @@
     if (!openMatch) return null;
     const close = src.lastIndexOf("</x-dc>");
     if (close === -1 || close < openMatch.index) return null;
-    const template = src.slice(openMatch.index + openMatch[0].length, close);
+    const template = src.slice(openMatch.index + openMatch[0].length, close).replace(/^\s*<template>/, "").replace(/<\/template>\s*$/, "");
     const doc = new DOMParser().parseFromString(src, "text/html");
     const scriptEl = doc.querySelector("script[data-dc-script]");
     const { props, preview } = parseDataProps(
