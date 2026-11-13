@@ -8,6 +8,8 @@
 - Color-locked brown or red adds $115 a sack at every quantity.
 - Full-truck price, delivered: black $425 a sack ($9,350 a truck); brown or red $540 a sack ($11,880 a truck).
 - Less than a full truck: $368 a sack plus $1,250 freight for the load (brown or red $483 a sack plus $1,250). Example: 7 black supersacks delivered = $3,826.
+- More than 22 sacks: each full truck is $9,350 (black) and the remaining sacks are priced as a partial truck. Example: 33 black supersacks = $9,350 + (11 x $368 + $1,250 = $5,298) = $14,648 delivered.
+- Delivered price examples (black): 5 sacks $3,090; 10 sacks $4,930; 15 sacks $6,770; 22 sacks $9,350.
 - Coverage: one supersack covers about 150 sq ft at 6 inches (playgrounds) or 300 sq ft at 3 inches.
 - Buyer unloads with forks rated for 2,000 lb. Schools and towns: purchase orders and bid paperwork welcome.
 - Pickup: Jameson's, 7010 SE 15th St, Midwest City, OK and 8100 S. Santa Fe Ave, Oklahoma City, OK.
