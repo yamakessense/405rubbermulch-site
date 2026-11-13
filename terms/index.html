@@ -69,7 +69,7 @@
 <style>
     body { margin: 0; background: #FBF7EC; }
   </style>
-<!--dc-static-head--><style>.dc-js #dc-static{display:none!important}</style><script>document.documentElement.classList.add('dc-js');(function(){var n=0,t=setInterval(function(){var r=document.getElementById('dc-root'),s=document.getElementById('dc-static');if(r&&r.innerText.trim().length>50){clearInterval(t);if(s)s.remove();}else if(++n>80){clearInterval(t);document.documentElement.classList.remove('dc-js');}},100);})();</script><!--/dc-static-head-->
+<!--dc-static-head--><style>.dc-js #dc-root{display:none!important}</style><script>document.documentElement.classList.add('dc-js');(function(){var n=0,t=setInterval(function(){var r=document.getElementById('dc-root'),s=document.getElementById('dc-static'),h=document.documentElement;if(!s){clearInterval(t);h.classList.remove('dc-js');return;}if(r&&r.textContent.trim().length>50){clearInterval(t);s.remove();h.classList.remove('dc-js');}else if(++n>160){clearInterval(t);h.classList.remove('dc-js');}},50);})();</script><!--/dc-static-head-->
 </head>
 <body>
 <!--dc-static--><div id="dc-static"><div class="sc-host" data-sc-name="Root"><div data-dc-tpl="0" style="font-family: &quot;Public Sans&quot;, system-ui, sans-serif; color: rgb(28, 34, 48); background: rgb(251, 247, 236); font-size: 16px; line-height: 1.6; min-height: 100vh; display: flex; flex-direction: column;">
