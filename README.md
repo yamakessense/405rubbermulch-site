@@ -28,7 +28,12 @@ After that, publishing an update = commit + push to `main`, then Hostinger auto-
 2. Copy the exported files over these (replace `index.html`, add new pages like `thank-you/`, etc.).
 3. **Run `python3 tools/build-seo.py`** — see below. A fresh export re-buries the SEO tags in
    `<helmet>`; this puts them back in `<head>`. It is idempotent, so running it twice is harmless.
-4. `git add -A && git commit -m "…" && git push`
+4. **Run `python3 tools/prerender.py`** — bakes a plain-HTML copy of each rendered page into the
+   file so crawlers that don't run JavaScript see real words and prices instead of `{{ }}`.
+   Needs Playwright + Chrome and `REACT_DIR` (see the script's docstring). Re-run after every
+   content change; `--check` exits 1 if a page lacks its copy.
+5. Re-add the tracking pieces below if the export dropped them, then
+   `git add -A && git commit -m "…" && git push`
 
 ## SEO tags must live in the real `<head>` (don't break this)
 Claude Design exports put every head-level tag — `<title>`, the meta description, canonical,
@@ -52,11 +57,14 @@ description for a duplicate one. The script de-duplicates against the existing `
 favicons appear in both) and deletes the emptied `<helmet>` wrapper. Pages with no `<helmet>` are
 left alone.
 
-### Still outstanding: the page body is client-rendered
+### Page body is client-rendered (partly solved by tools/prerender.py)
 `<x-dc>` is a template full of `{{ }}` bindings that React turns into the real page in the browser.
 A crawler that doesn't run JS still sees no body copy at all — so Bing indexes these pages on their
-head tags alone. Fixing that means pre-rendering each page to static HTML at build time, which is a
-real change to the export workflow and has not been done.
+head tags alone. `tools/prerender.py` now bakes a static copy of the rendered body ahead of `<x-dc>`, hidden for
+JS visitors and removed once React renders; if React never renders (blocked script), it is
+un-hidden after 8 s so the page isn't blank. The raw `<x-dc>` template (with its `{{ }}`) still
+follows it in the file because support.js needs it, so non-JS crawlers read the real copy first
+but can still see template text after it.
 
 ## Conversion tracking (how it works — don't break this)
 - Every page's `<head>` runs `gtag('config', 'AW-18336005673')`. This must stay on **all** pages:
@@ -64,8 +72,17 @@ real change to the export workflow and has not been done.
   anywhere on the site. Without it, later conversions can't be attributed and never show in Ads.
 - The quote forms (homepage, `get-a-quote/`, `fundraiser/`) submit to Formspree via fetch (AJAX),
   then redirect to **`/thank-you/`**, which fires the conversion event
-  (`AW-18336005673/AaJ_CMze69McEKn8pKdE`) on page load. The forms also carry
+  (`AW-18336005673/AaJ_CMze69McEKn8pKdE`) only when it finds the one-time `ec_ud` marker the
+  form leaves after Formspree answers OK. Refreshes, direct visits and failed submits don't count. The forms also carry
   `action`/`method`/`_next` attributes so a plain no-JS submission posts to Formspree and lands on
   the same thank-you page (note: Formspree honors `_next` on paid plans).
-- To verify: open `/thank-you/` in a browser with Google Tag Assistant — the conversion fires on
-  every load. `/thank-you/` is `noindex` and unlinked, so real traffic only reaches it via a form.
+- **Enhanced conversions:** after Formspree confirms a submission, each quote form saves the
+  visitor's email and phone to `sessionStorage` (`ec_ud`). `/thank-you/` reads it, calls
+  `gtag('set', 'user_data', …)` (Google hashes it), fires the conversion, and deletes the key.
+- **Website call conversion:** every page except `/thank-you/` configures
+  `AW-18336005673/VxaCCN6jzuEcEKn8pKdE` with `phone_conversion_number: '(405) 206-8111'`.
+  A `phone_conversion_callback` swaps the number (text and `tel:` links) for Google's
+  forwarding number on ad visits, re-applying (via MutationObserver, scoped to `#dc-root`/`#dc-static`) as React renders. Keep the number on the
+  page written exactly `(405) 206-8111`.
+- To verify: submit a real quote with Google Tag Assistant open; opening `/thank-you/` directly
+  correctly fires nothing. `/thank-you/` is `noindex` and unlinked, so real traffic only reaches it via a form.
