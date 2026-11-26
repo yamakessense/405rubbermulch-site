@@ -1,0 +1,30 @@
+name: Tell Bing about changed pages (IndexNow)
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+jobs:
+  ping:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Wait for Hostinger to put the push live
+        run: sleep 120
+      - name: Send changed pages to IndexNow
+        env:
+          BEFORE: ${{ github.event.before }}
+          AFTER: ${{ github.sha }}
+          EVENT: ${{ github.event_name }}
+        run: |
+          if [ "$EVENT" != "push" ] || ! git cat-file -e "$BEFORE" 2>/dev/null; then
+            python3 tools/indexnow_ping.py --all
+          else
+            python3 tools/indexnow_ping.py $(git diff --name-only "$BEFORE" "$AFTER")
+          fi
