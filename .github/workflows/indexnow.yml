@@ -4,6 +4,16 @@ on:
   push:
     branches: [main]
   workflow_dispatch:
+    inputs:
+      site:
+        description: "Which site to send"
+        type: choice
+        options: [405rubbermulch, discountokc]
+        default: 405rubbermulch
+      urls:
+        description: "discountokc.com pages to send, space separated (blank sends every page)"
+        required: false
+        default: ""
 
 jobs:
   ping:
@@ -16,14 +26,19 @@ jobs:
         with:
           python-version: "3.12"
       - name: Wait for Hostinger to put the push live
+        if: github.event_name == 'push'
         run: sleep 120
       - name: Send changed pages to IndexNow
         env:
           BEFORE: ${{ github.event.before }}
           AFTER: ${{ github.sha }}
           EVENT: ${{ github.event_name }}
+          SITE: ${{ inputs.site }}
+          URLS: ${{ inputs.urls }}
         run: |
-          if [ "$EVENT" != "push" ] || ! git cat-file -e "$BEFORE" 2>/dev/null; then
+          if [ "$SITE" = "discountokc" ]; then
+            python3 tools/indexnow_ping.py --discountokc $URLS
+          elif [ "$EVENT" != "push" ] || ! git cat-file -e "$BEFORE" 2>/dev/null; then
             python3 tools/indexnow_ping.py --all
           else
             python3 tools/indexnow_ping.py $(git diff --name-only "$BEFORE" "$AFTER")
