@@ -7,6 +7,10 @@ RedirectMatch 404 ^/tools/
 
 RewriteEngine On
 
+# Send www.405rubbermulch.com to the plain address so search engines see one site
+RewriteCond %{HTTP_HOST} ^www\.405rubbermulch\.com$ [NC]
+RewriteRule ^(.*)$ https://405rubbermulch.com/$1 [R=301,L]
+
 # Oklahoma
 Redirect 301 /405-area.html /oklahoma/
 Redirect 301 /918-area.html /oklahoma/
